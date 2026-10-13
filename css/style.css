@@ -1,9 +1,8 @@
 /* ==========================================
    GRAB Research Benchmark Website
-   Main Stylesheet
+   Original Stylesheet
    ========================================== */
 
-/* Global colour variables */
 :root {
     --ink: #0b1920;
     --teal: #43d3ca;
@@ -12,7 +11,6 @@
     --muted: #a4b9bd;
 }
 
-/* Global styling */
 * {
     box-sizing: border-box;
 }
@@ -28,26 +26,17 @@ body {
     background: var(--paper);
 }
 
-
 /* ==========================================
-   HERO SECTION
-   GRAB Conceptualisation Background
+   HERO SECTION - ORIGINAL DARK BACKGROUND
    ========================================== */
 
 .hero {
     min-height: 610px;
-
-    /* Background image with dark overlay */
-    background-image:
-        linear-gradient(
-            rgba(5, 15, 20, 0.50),
-            rgba(5, 15, 20, 0.50)
-        ),
-        url('../assets/images/Conceptualization2.png');
-
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    background: radial-gradient(
+        circle at 52% 30%,
+        #112b30 0%,
+        var(--ink) 65%
+    );
 
     color: white;
     position: relative;
@@ -60,8 +49,6 @@ body {
     padding: 65px 24px 52px;
 }
 
-
-/* Hero content */
 .hero-inner {
     position: relative;
     z-index: 2;
@@ -69,9 +56,8 @@ body {
     text-align: center;
 }
 
-
 /* ==========================================
-   SMALL HEADING AND TECHNICAL METRICS
+   TYPOGRAPHY
    ========================================== */
 
 .eyebrow,
@@ -87,48 +73,31 @@ body {
     margin: 0 0 32px;
 }
 
-
-/* ==========================================
-   MAIN GRAB TITLE
-   ========================================== */
-
 h1 {
     font-size: clamp(36px, 5.2vw, 70px);
     line-height: 1.13;
     letter-spacing: -2px;
-
     margin: 0 auto 22px;
     font-weight: 750;
 }
 
-/* Orange highlighted title */
 .highlight {
     background: var(--orange);
-
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
-
     padding: 0 .12em;
 }
-
-
-/* ==========================================
-   PROJECT INTRODUCTION
-   ========================================== */
 
 .intro {
     max-width: 720px;
     margin: 0 auto 28px;
-
-    color: #ffffff;
-
+    color: #b2c5ca;
     font-size: 18px;
     line-height: 1.75;
 }
 
-
 /* ==========================================
-   ACTION BUTTONS
+   BUTTONS
    ========================================== */
 
 .actions {
@@ -142,7 +111,6 @@ h1 {
     display: inline-flex;
     align-items: center;
     gap: 18px;
-
     padding: 17px 24px;
 
     text-decoration: none;
@@ -158,13 +126,11 @@ h1 {
     transform: translateY(-3px);
 }
 
-/* Explore Benchmark button */
 .primary {
     background: var(--teal);
     color: #08282a;
 }
 
-/* View Repository button */
 .secondary {
     border: 1px solid #42565d;
     color: #e6f3f3;
@@ -174,9 +140,8 @@ h1 {
     background: #1b343b;
 }
 
-
 /* ==========================================
-   BENCHMARK TECHNICAL HIGHLIGHTS
+   TECHNICAL HIGHLIGHTS
    ========================================== */
 
 .metrics {
@@ -188,7 +153,7 @@ h1 {
     margin-top: 45px;
 
     font-size: 12px;
-    color: #b2c5ca;
+    color: #79959f;
     letter-spacing: .7px;
 }
 
@@ -197,21 +162,51 @@ h1 {
     font-weight: 600;
 }
 
-
 /* ==========================================
-   DISABLE PREVIOUS BACKGROUND DECORATIONS
+   ORIGINAL DECORATIVE BACKGROUND EFFECTS
    ========================================== */
 
-.orbit,
-.orbit-one,
-.orbit-two,
-.glow {
-    display: none;
+.orbit {
+    position: absolute;
+    border: 1px solid rgba(67, 211, 202, .12);
+    border-radius: 50%;
+    pointer-events: none;
 }
 
+.orbit-one {
+    width: 740px;
+    height: 740px;
+    top: -350px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.orbit-two {
+    width: 450px;
+    height: 450px;
+    top: -205px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.glow {
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    left: 56%;
+    top: 35%;
+
+    background: radial-gradient(
+        circle,
+        rgba(67, 211, 202, .17),
+        transparent 70%
+    );
+
+    filter: blur(15px);
+}
 
 /* ==========================================
-   BENCHMARK COMPONENTS SECTION
+   BENCHMARK COMPONENTS
    ========================================== */
 
 .benchmark {
@@ -226,8 +221,6 @@ h1 {
     grid-template-columns: repeat(4, 1fr);
 }
 
-
-/* Individual benchmark cards */
 .card {
     padding: 35px 25px 50px;
     border-right: 1px solid #d8dcd7;
@@ -255,7 +248,6 @@ h1 {
     margin: 0;
 }
 
-
 /* ==========================================
    FOOTER
    ========================================== */
@@ -263,14 +255,12 @@ h1 {
 footer {
     text-align: center;
     padding: 30px;
-
     font-size: 12px;
     color: #687b80;
 }
 
-
 /* ==========================================
-   RESPONSIVE DESIGN - TABLETS
+   RESPONSIVE DESIGN - TABLET
    ========================================== */
 
 @media (max-width: 800px) {
@@ -286,9 +276,7 @@ footer {
     .desktop-break {
         display: none;
     }
-
 }
-
 
 /* ==========================================
    RESPONSIVE DESIGN - MOBILE
@@ -327,5 +315,4 @@ footer {
     h1 {
         letter-spacing: -1px;
     }
-
 }
