@@ -82,10 +82,9 @@ h1 {
 }
 
 .highlight {
-    background: var(--orange);
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
-    padding: 0 .12em;
+    background: transparent;
+    color: white;
+    padding: 0;
 }
 
 .intro {
