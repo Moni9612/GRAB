@@ -217,12 +217,13 @@ h1 {
     margin: auto;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .card {
-    padding: 35px 25px 50px;
+    padding: 35px 30px 50px;
     border-right: 1px solid #d8dcd7;
+    min-width: 0;
 }
 
 .card:first-child {
