@@ -157,10 +157,9 @@ h1 {
 }
 
 .metrics strong {
-    color: var(--teal);
+    color: #1E7A55;
     font-weight: 600;
 }
-
 /* ==========================================
    ORIGINAL DECORATIVE BACKGROUND EFFECTS
    ========================================== */
