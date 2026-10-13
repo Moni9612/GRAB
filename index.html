@@ -26,14 +26,106 @@
         </div>
       </div>
     </section>
-    <section class="benchmark" id="benchmark" aria-label="Benchmark components">
-      <div class="grid">
-        <article class="card"><span class="number">01 / DATA</span><h2>GRAB Dataset</h2><p>Real-world inorganic contaminants spanning different object properties.</p></article>
-        <article class="card"><span class="number">02 / HARDWARE</span><h2>Grasping modalities</h2><p>Rigid, soft adaptive, and suction grippers evaluated under shared conditions.</p></article>
-        <article class="card"><span class="number">03 / ATTRIBUTES</span><h2>Graspability evaluation</h2><p>Object, grasp pose, and clutter attributes considered before grasping.</p></article>
-        <article class="card"><span class="number">04 / RESULTS</span><h2>Performance benchmark</h2><p>Success, stability, efficiency, and grasp failure analysis.</p></article>
-      </div>
-    </section>
+    <!-- ==========================================
+     GRAB RESEARCH COMPONENTS
+     ========================================== -->
+
+<section class="benchmark" id="benchmark">
+
+    <div class="grid">
+
+        <!-- SECTION 01 -->
+        <!-- Real-World Robotic Grasping Pipeline -->
+
+        <div class="card">
+
+            <div class="number">
+                01 / PIPELINE
+            </div>
+
+            <h2>
+                Real-World Robotic Grasping Pipeline
+            </h2>
+
+            <a
+                class="repo-button"
+                href="https://github.com/Moni9612/GRAB-Grasping-Real-World-Attribute-Benchmark"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Repository ↗
+            </a>
+
+            <p>
+                GRAB is a comprehensive benchmark designed to
+                evaluate grasping-in-clutter performance in
+                real-world food waste contaminant sorting.
+                This repository provides setup instructions
+                for two grasping benchmark pipelines:
+                a parallel grasping pipeline for rigid and
+                adaptive force-controlled parallel grippers,
+                and a suction-based grasping pipeline.
+            </p>
+
+        </div>
+
+
+        <!-- SECTION 02 -->
+        <!-- Object Deformability Score Calculation -->
+
+        <div class="card">
+
+            <div class="number">
+                02 / DEFORMABILITY
+            </div>
+
+            <h2>
+                <a
+                    href="object-deformability.html"
+                    class="card-link"
+                >
+                    Object Deformability Score Calculation ↗
+                </a>
+            </h2>
+
+            <p>
+                This uses a technique to calculate the object
+                deformation by comparing the before and after
+                compression point clouds of deformable objects.
+            </p>
+
+        </div>
+
+
+        <!-- SECTION 03 -->
+        <!-- Experimental Protocol -->
+
+        <div class="card">
+
+            <div class="number">
+                03 / PROTOCOL
+            </div>
+
+            <h2>
+                <a
+                    href="experimental-protocol.html"
+                    class="card-link"
+                >
+                    Experimental Protocol ↗
+                </a>
+            </h2>
+
+            <p>
+                The experimental procedure consists of three
+                stages, each of which is explained in detail
+                in this section.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
   </main>
   <footer>GRAB · Grasping Real-World Attribute Benchmark</footer>
   <script src="js/script.js"></script>
