@@ -266,7 +266,7 @@ footer {
 @media (max-width: 800px) {
 
     .grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
 
     .hero {
@@ -275,6 +275,11 @@ footer {
 
     .desktop-break {
         display: none;
+    }
+
+    .card {
+        border-left: 1px solid #d8dcd7;
+        border-bottom: 1px solid #d8dcd7;
     }
 }
 
