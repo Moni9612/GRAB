@@ -54,26 +54,81 @@
 
     <main class="detail-page">
 
-        <a href="index.html" class="back-link">
-            ← Back to GRAB Homepage
-        </a>
+    <!-- Back to Homepage -->
+    <a href="index.html" class="back-link">
+        ← Back to GRAB Homepage
+    </a>
 
-        <h1>
-            Object Deformability Score Calculation
-        </h1>
+    <!-- Main Page Heading -->
+    <h1>
+        Object Deformability Score Calculation
+    </h1>
+
+    <!-- Brief Introduction -->
+    <p>
+        The Object Deformability Score (Q<sub>O</sub>) is a
+        pre-grasp attribute used in the GRAB benchmark to
+        characterize object deformation and its influence
+        on robotic graspability.
+    </p>
+
+
+    <!-- SECTION 1 -->
+    <section class="method-section">
+
+        <h2>
+            1. Object Deformability as a Graspability Attribute
+        </h2>
 
         <p>
-            This uses a technique to calculate the object
-            deformation by comparing the before and after
-            compression point clouds of deformable objects.
+            In the GRAB benchmark, the
+            <strong>Object Deformability Score
+            (Q<sub>O</sub>)</strong>
+            characterizes the intrinsic deformation behaviour
+            of individual objects and is determined prior
+            to grasp trial execution.
         </p>
 
         <p>
-            Detailed methodology and experimental results
-            will be added here.
+            The benchmark incorporates
+            <strong>21 distinct objects</strong>,
+            comprising three representative items from each
+            of seven inorganic contaminant categories.
+            All objects weigh less than 100 g and fit within
+            a bounding volume of 20 × 10 × 10 cm³,
+            ensuring compatibility with the gripper payload,
+            opening width, and suction constraints.
         </p>
 
-    </main>
+        <p>
+            Unlike conventional object datasets primarily
+            consisting of rigid objects, the GRAB dataset
+            incorporates both rigid and deformable objects,
+            representing a broad range of geometric and
+            deformation characteristics.
+        </p>
+
+        <p>
+            Since object weight and dimensions were
+            constrained to satisfy the grippers'
+            operational requirements,
+            <strong>deformability was selected as the
+            primary object-related property for evaluating
+            graspability.</strong>
+        </p>
+
+        <p>
+            Accordingly, object deformation is parameterized
+            as the
+            <strong>Object Deformability Score
+            (Q<sub>O</sub>)</strong>,
+            representing the object-related pre-grasp
+            condition within the GRAB benchmark.
+        </p>
+
+    </section>
+
+</main>
 
 </body>
 
