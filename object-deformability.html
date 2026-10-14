@@ -128,6 +128,164 @@
 
     </section>
 
+        <!-- ==========================================
+     SECTION 2: EXPERIMENTAL SETUP
+     ========================================== -->
+
+<section class="method-section" id="experimental-setup">
+
+    <h2>
+        2. Experimental Setup for Deformation Measurement
+    </h2>
+
+    <p>
+        A customized experimental platform was developed to acquire
+        3D representations of objects before and during compression,
+        enabling quantitative evaluation of object deformation.
+    </p>
+
+    <p>
+        The experimental setup consists of a
+        <strong>UR10 robotic manipulator</strong> equipped with an
+        <strong>OnRobot RG2 parallel gripper</strong> and customized
+        compression pads. An
+        <strong>Intel RealSense D415 RGB-D camera</strong>,
+        integrated with RecFusion 3D reconstruction software,
+        was used to capture object geometry before compression
+        and under an applied compression force of
+        <strong>40 N</strong>.
+    </p>
+
+    <p>
+        To account for directional deformation characteristics,
+        compression was performed independently along the
+        <strong>x and y axes</strong>.
+    </p>
+
+
+    <!-- EXPERIMENTAL FIGURE -->
+
+    <figure class="research-figure">
+
+        <img
+            src="assets/images/DCD.png"
+            alt="Experimental setup and point-cloud alignment workflow
+            for object deformability measurement"
+            loading="lazy"
+        >
+
+        <figcaption>
+            <strong>Figure 1.</strong>
+            Overview of the experimental setup and 3D point-cloud
+            processing workflow:
+            (a) customized 3D scanning platform,
+            (b) RecFusion 3D reconstruction,
+            (c) undeformed object point cloud,
+            (d) compressed object point cloud, and
+            (e) aligned point clouds after post-processing.
+        </figcaption>
+
+    </figure>
+
+
+    <!-- 3D RECONSTRUCTION -->
+
+    <h3>
+        2.1. 3D Reconstruction and Point-Cloud Acquisition
+    </h3>
+
+    <p>
+        RecFusion was used to reconstruct the 3D geometry of each
+        object from RGB-D measurements. The reconstruction process
+        involves projecting depth measurements into 3D space using
+        camera intrinsic parameters, followed by frame-to-frame
+        registration and volumetric
+        <strong>Truncated Signed Distance Function (TSDF)</strong>
+        fusion to generate dense 3D representations.
+    </p>
+
+    <p>
+        The reconstructed geometries were exported as 3D mesh files
+        and subsequently processed to obtain point-cloud
+        representations. As part of the data preparation procedure,
+        the exported ASCII-formatted files were converted into
+        binary format for subsequent point-cloud processing.
+    </p>
+
+    <p>
+        For each compression direction, two point clouds were
+        obtained: an initial point cloud representing the
+        undeformed object and a second point cloud representing
+        the object under compression.
+    </p>
+
+
+    <!-- POINT CLOUD ALIGNMENT -->
+
+    <h3>
+        2.2. Point-Cloud Preprocessing and Alignment
+    </h3>
+
+    <p>
+        Before deformation measurement, the reconstructed point
+        clouds were preprocessed to isolate the target object
+        from the surrounding environment. Spatial cropping
+        and colour-based thresholding were performed using
+        RecFusion and MeshLab to remove the background,
+        gripper components, and other unwanted points.
+    </p>
+
+    <p>
+        To ensure accurate geometric comparison, the undeformed
+        and compressed point clouds were aligned using a
+        <strong>two-stage registration procedure</strong>.
+    </p>
+
+
+    <div class="alignment-step">
+
+        <h4>
+            Step 1 — Coarse Alignment Using MeshLab
+        </h4>
+
+        <p>
+            The principal axes of the two point clouds were aligned
+            using MeshLab to establish an initial geometric
+            correspondence. This step reduces differences in
+            object orientation and positioning between the
+            undeformed and compressed states.
+        </p>
+
+    </div>
+
+
+    <div class="alignment-step">
+
+        <h4>
+            Step 2 — Fine Alignment Using ICP
+        </h4>
+
+        <p>
+            Following coarse alignment, the
+            <strong>Iterative Closest Point (ICP)</strong>
+            algorithm was applied to refine the registration.
+            ICP iteratively minimizes the residual distances
+            between corresponding points in the two point clouds,
+            improving their geometric alignment.
+        </p>
+
+    </div>
+
+
+    <p>
+        The resulting aligned point clouds were subsequently
+        used to calculate the
+        <strong>Density-Aware Chamfer Distance (DCD)</strong>,
+        providing a quantitative measure of object deformation.
+    </p>
+
+</section>
+    
 </main>
 
 </body>
