@@ -316,3 +316,33 @@ footer {
         letter-spacing: -1px;
     }
 }
+
+/* ==========================================
+   GRAB REPOSITORY BUTTON
+   ========================================== */
+
+.repo-button {
+    display: inline-block;
+
+    background-color: #1E7A55;
+    color: #ffffff;
+
+    padding: 10px 20px;
+    margin: 5px 0 20px;
+
+    border-radius: 6px;
+
+    font-family: ui-monospace, Consolas, monospace;
+    font-size: 13px;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.repo-button:hover {
+    background-color: #155c40;
+    transform: translateY(-2px);
+}
