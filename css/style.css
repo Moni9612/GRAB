@@ -346,3 +346,18 @@ footer {
     background-color: #155c40;
     transform: translateY(-2px);
 }
+/* ==========================================
+   CLICKABLE SECTION HEADINGS
+   ========================================== */
+
+.card-link {
+    color: #0b1920;
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.card-link:hover {
+    color: #1E7A55;
+    text-decoration: underline;
+}
