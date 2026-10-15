@@ -306,6 +306,52 @@
     }
 
 }
+
+/* ==========================================
+   OBJECT DEFORMABILITY RESULTS FIGURE
+   ========================================== */
+
+.deformability-figure {
+    margin: 35px auto 45px;
+    text-align: center;
+    max-width: 100%;
+}
+
+/* Figure image */
+
+.deformability-figure img {
+    display: block;
+    width: 100%;
+    max-width: 950px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+/* Figure caption */
+
+.detail-page .deformability-figure figcaption {
+    max-width: 900px;
+    margin: 18px auto 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #53636a;
+    text-align: center;
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 700px) {
+
+    .deformability-figure img {
+        width: 100%;
+    }
+
+    .deformability-figure figcaption {
+        font-size: 13px;
+    }
+
+}
     </style>
 
 </head>
@@ -774,6 +820,78 @@
 
 </div>
     
+
+</section>
+
+<!-- ==========================================
+     SECTION 3: OBJECT DEFORMABILITY RESULTS
+     ========================================== -->
+
+<section class="method-section" id="deformability-results">
+
+    <h2>
+        3. Object Deformability Score Results
+    </h2>
+
+    <p>
+        The proposed experimental methodology was applied to
+        <strong>21 objects across seven inorganic contaminant
+        categories</strong> to quantify their deformation
+        characteristics.
+    </p>
+
+    <p>
+        For each object, the
+        <strong>Density-Aware Chamfer Distance (DCD)</strong>
+        was calculated between the aligned point clouds
+        acquired before and during compression.
+        The DCD values obtained along the two compression
+        directions were averaged to determine the final
+        <strong>Object Deformability Score
+        (Q<sub>O</sub>)</strong>.
+    </p>
+
+    <p>
+        The resulting scores characterize the deformation
+        behaviour of individual objects, with values
+        approaching <strong>1 indicating greater deformability</strong>
+        and values approaching
+        <strong>0 indicating greater rigidity</strong>.
+    </p>
+
+    <p>
+        The results demonstrate considerable variation across
+        the seven object categories, with
+        <strong>mesh bags and plastic bags</strong>
+        exhibiting the highest average deformability scores,
+        while <strong>tin cans</strong> exhibit the lowest
+        average score.
+    </p>
+
+
+    <!-- OBJECT DEFORMABILITY RESULTS FIGURE -->
+
+    <figure class="deformability-figure">
+
+        <img
+            src="assets/images/Object_Deformability_Scores.png"
+            alt="Object deformability scores for 21 objects across
+            seven inorganic contaminant categories"
+            loading="lazy"
+        >
+
+        <figcaption>
+            <strong>Figure 2.</strong>
+            Object Deformability Scores obtained using
+            Density-Aware Chamfer Distance (DCD) for
+            21 objects across seven contaminant categories.
+            The figure presents individual object scores
+            and category-wise average DCD values,
+            ranging from highly deformable to relatively
+            rigid objects.
+        </figcaption>
+
+    </figure>
 
 </section>
     
