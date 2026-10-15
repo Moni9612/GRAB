@@ -13,7 +13,25 @@
     </title>
 
     <link rel="stylesheet" href="css/style.css">
+    <!-- MathJax for mathematical equations -->
 
+<script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['\\(', '\\)']],
+            displayMath: [['\\[', '\\]']]
+        },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+</script>
+
+<script
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
     <style>
 
         .detail-page {
@@ -222,6 +240,69 @@
 
     .icp-video-container {
         padding: 10px;
+    }
+
+}
+
+/* ==========================================
+   DCD EQUATION SECTION
+   ========================================== */
+
+.dcd-section {
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+.dcd-section h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0b1920;
+    margin-bottom: 20px;
+}
+
+/* Mathematical equation container */
+
+.equation-container {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #d8dcd7;
+    border-radius: 8px;
+
+    padding: 35px 25px 45px;
+    margin: 30px auto;
+
+    text-align: center;
+    overflow-x: auto;
+}
+
+/* Equation number */
+
+.equation-number {
+    position: absolute;
+    right: 20px;
+    bottom: 12px;
+
+    font-size: 14px;
+    color: #53636a;
+}
+
+/* MathJax rendering */
+
+.equation-container mjx-container {
+    font-size: 110% !important;
+    max-width: 100%;
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 700px) {
+
+    .equation-container {
+        padding: 25px 15px 40px;
+    }
+
+    .equation-container mjx-container {
+        font-size: 85% !important;
     }
 
 }
@@ -616,6 +697,83 @@
         <strong>Density-Aware Chamfer Distance (DCD)</strong>,
         providing a quantitative measure of object deformation.
     </p>
+<!-- ==========================================
+     DENSITY-AWARE CHAMFER DISTANCE
+     ========================================== -->
+
+<div class="dcd-section">
+
+    <h3>
+        Density-Aware Chamfer Distance (DCD) Calculation
+    </h3>
+
+    <p>
+        The Density-Aware Chamfer Distance (DCD) measures the
+        geometric discrepancy between two aligned 3D point clouds:
+        one representing the object before compression
+        (\(S_1\)) and the other representing the object
+        under an applied compression force of 40 N (\(S_2\)).
+        Unlike conventional Chamfer Distance, DCD incorporates
+        local point-density information, providing a more
+        representative measure of geometric variation under
+        nonuniform point sampling.
+    </p>
+
+    <!-- DCD EQUATION -->
+
+    <div class="equation-container">
+
+        \[
+        \begin{aligned}
+        d_{\mathrm{DCD}}(S_1,S_2)
+        = \frac{1}{2}\Bigg(
+        &\frac{1}{|S_1|}
+        \sum_{x\in S_1}
+        \left(
+        1-\frac{1}{\hat{n}_y}
+        e^{-\alpha\|x-\hat{y}\|_2}
+        \right)
+        \\[10pt]
+        +\;&\frac{1}{|S_2|}
+        \sum_{y\in S_2}
+        \left(
+        1-\frac{1}{\hat{n}_x}
+        e^{-\alpha\|y-\hat{x}\|_2}
+        \right)
+        \Bigg)
+        \end{aligned}
+        \]
+
+        <div class="equation-number">
+            (6)
+        </div>
+
+    </div>
+
+    <!-- EQUATION EXPLANATION -->
+
+    <p>
+        Here, \(S_1\) and \(S_2\) represent the point clouds
+        before and during compression, respectively.
+        The terms \(\hat{y}\) and \(\hat{x}\) denote the
+        nearest-neighbour points in the opposite point cloud,
+        while \(\hat{n}_y\) and \(\hat{n}_x\) represent the
+        corresponding local point-density normalization factors.
+    </p>
+
+    <p>
+        The exponential term maps Euclidean distances into
+        a bounded range, with the parameter \(\alpha\)
+        controlling the sensitivity to geometric deviations.
+        Smaller distances produce values closer to zero,
+        while larger distances progressively approach one.
+        Consequently, DCD provides a normalized measure of
+        geometric differences between the undeformed and
+        compressed object representations.
+    </p>
+
+</div>
+    
 
 </section>
     
