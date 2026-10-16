@@ -62,20 +62,235 @@
             Experimental Protocol
         </h1>
 
-        <p>
-            The experimental procedure consists of three
-            stages, each of which is explained in detail
-            in this section.
-        </p>
+        <!-- ==========================================
+     EXPERIMENTAL PROTOCOL
+     ========================================== -->
 
-        <h2>Stage 1</h2>
-        <p>Details will be added here.</p>
+<h1>Experimental Protocol</h1>
 
-        <h2>Stage 2</h2>
-        <p>Details will be added here.</p>
+<p>
+    The GRAB benchmark evaluates robotic grasping performance
+    across four progressively challenging experimental conditions,
+    ranging from isolated objects to heavily cluttered mixed
+    food waste environments.
+</p>
 
-        <h2>Stage 3</h2>
-        <p>Details will be added here.</p>
+
+<!-- EXPERIMENTAL SETUP -->
+
+<section class="protocol-section">
+
+    <h2>1. Experimental Setup</h2>
+
+    <p>
+        The experimental platform consists of a
+        <strong>UR10 robotic arm</strong> and an
+        <strong>Intel RealSense D415 RGB-D camera</strong>,
+        operating within a
+        <strong>40 × 40 cm² workspace</strong>.
+        The camera is positioned 52.5 cm perpendicular to
+        the workspace, aligning the experimental area with
+        the workspace mask used by the 6D grasp pose
+        detection models.
+    </p>
+
+    <p>
+        Four experimental clutter levels (L1–L4) were
+        designed to systematically evaluate grasping
+        performance under increasing environmental complexity.
+        All experiments were conducted using three grasping
+        modalities: <strong>rigid parallel-jaw,
+        Fin-Ray soft adaptive, and suction grippers</strong>.
+    </p>
+
+</section>
+
+
+<!-- LEVEL 1 -->
+
+<section class="protocol-section">
+
+    <h2>2. Level 1 — Single Isolated Object</h2>
+
+    <p>
+        The baseline experiment evaluates grasping performance
+        with a single isolated object in the workspace.
+        Each of the 21 objects was randomly positioned at
+        five predefined locations: the four corners and
+        the centre of the workspace.
+    </p>
+
+    <p>
+        Each object was tested at all five positions,
+        resulting in <strong>105 grasp attempts per gripper</strong>
+        and <strong>315 trials across the three grasping
+        modalities</strong>.
+    </p>
+
+    <p>
+        Initial experiments revealed that suction grasping
+        was unsuccessful for plastic bags and mesh bags
+        due to difficulties maintaining an effective suction seal.
+        Consequently, these two categories were excluded
+        from suction-based evaluations in subsequent
+        cluttered experiments.
+    </p>
+
+</section>
+
+
+<!-- LEVEL 2 -->
+
+<section class="protocol-section">
+
+    <h2>3. Level 2 — Medium-Clutter Scene</h2>
+
+    <p>
+        The second experiment introduces multiple objects
+        simultaneously to evaluate grasping performance
+        under moderate clutter.
+    </p>
+
+    <p>
+        The 21-object dataset was divided into
+        <strong>three clusters of seven objects</strong>,
+        each containing one representative from every
+        contaminant category. For suction grasping,
+        five objects were used per cluster.
+    </p>
+
+    <p>
+        Objects were randomly dropped into the workspace
+        from a storage box to generate varied clutter
+        configurations. During each grasping cycle,
+        the highest-ranked feasible grasp was selected
+        from the top eight candidate poses generated
+        by AnyGrasp or SuctionNet after post-processing.
+    </p>
+
+    <p>
+        Each cluster was evaluated over five repetitions,
+        resulting in <strong>105 trials for each
+        parallel-jaw gripper</strong> and
+        <strong>75 trials for the suction gripper</strong>,
+        giving <strong>285 trials in total</strong>.
+    </p>
+
+</section>
+
+
+<!-- LEVEL 3 -->
+
+<section class="protocol-section">
+
+    <h2>4. Level 3 — Heavy-Clutter Scene</h2>
+
+    <p>
+        The third experiment evaluates grasping performance
+        under heavy clutter by introducing
+        <strong>14 inorganic objects per scene</strong>,
+        representing the maximum practical object density
+        within the experimental workspace and camera
+        depth constraints.
+    </p>
+
+    <p>
+        Clusters from Level 2 were combined in pairs
+        to form three groups, each containing two objects
+        from every contaminant category.
+        For suction grasping, the scene contained
+        <strong>10 objects</strong>, excluding plastic
+        bags and mesh bags.
+    </p>
+
+    <p>
+        Objects were randomly dropped into the workspace,
+        and consecutive grasping attempts were performed
+        using the same grasp-selection procedure as Level 2.
+        Each group was repeated five times.
+    </p>
+
+    <p>
+        This produced <strong>210 trials for each
+        parallel-jaw gripper</strong> and
+        <strong>150 trials for the suction gripper</strong>,
+        resulting in <strong>570 trials overall</strong>.
+    </p>
+
+</section>
+
+
+<!-- LEVEL 4 -->
+
+<section class="protocol-section">
+
+    <h2>5. Level 4 — Mixed Food Waste Scene</h2>
+
+    <p>
+        The final experiment introduces a more realistic
+        food waste sorting environment by combining
+        <strong>seven inorganic contaminants</strong>
+        with <strong>seven organic food waste items</strong>
+        in a wet, heterogeneous scene.
+    </p>
+
+    <p>
+        This configuration introduces additional manipulation
+        challenges, including object occlusion, surface
+        adhesion, variable textures, thin liquid layers,
+        and entanglement between objects.
+    </p>
+
+    <p>
+        Following the Level 3 procedure, objects were
+        randomly dropped into the workspace and consecutive
+        grasping cycles were performed.
+        The previously established suction-gripper
+        category exclusions were maintained.
+    </p>
+
+    <p>
+        A total of <strong>570 grasping trials</strong>
+        were conducted across the three grasping modalities
+        to evaluate performance in mixed food waste conditions.
+    </p>
+
+</section>
+
+
+<!-- EVALUATION -->
+
+<section class="protocol-section">
+
+    <h2>6. Evaluation and Data Collection</h2>
+
+    <p>
+        For every grasp attempt, regardless of success
+        or failure, six evaluation metrics were recorded.
+        These include three pre-grasp graspability
+        parameters and three grasp performance measures.
+    </p>
+
+    <p>
+        The graspability parameters comprise
+        <strong>Object Deformability Score
+        (Q<sub>O</sub>)</strong>,
+        <strong>Pose Score (Q<sub>P</sub>)</strong>,
+        and <strong>Clutter Score (Q<sub>C</sub>)</strong>.
+        Grasp performance was evaluated using
+        <strong>Success (S<sub>P</sub>)</strong>,
+        <strong>Stability (S<sub>B</sub>)</strong>,
+        and <strong>Efficiency (S<sub>F</sub>)</strong>.
+    </p>
+
+    <p>
+        Together, these measurements support systematic
+        comparison of grasping modalities and analysis
+        of the factors influencing grasp performance
+        across increasingly complex environments.
+    </p>
+
+</section>
 
     </main>
 
