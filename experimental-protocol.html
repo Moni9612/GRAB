@@ -101,6 +101,52 @@
 
 }
 
+/* ==========================================
+   EXPERIMENTAL SETUP FIGURE
+   ========================================== */
+
+.protocol-figure {
+    margin: 30px auto 35px;
+    text-align: center;
+    max-width: 100%;
+}
+
+/* Figure image */
+
+.protocol-figure img {
+    display: block;
+    width: 100%;
+    max-width: 750px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 6px;
+}
+
+/* Figure caption */
+
+.protocol-figure figcaption {
+    max-width: 750px;
+    margin: 15px auto 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #53636a;
+    text-align: center;
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 700px) {
+
+    .protocol-figure img {
+        width: 100%;
+    }
+
+    .protocol-figure figcaption {
+        font-size: 13px;
+    }
+
+}
+
     </style>
 
 </head>
@@ -132,6 +178,24 @@
 <section class="protocol-section">
 
     <h2>1. Experimental Setup</h2>
+
+    <!-- Experimental Setup Figure -->
+
+<figure class="protocol-figure">
+
+    <img
+        src="assets/images/Conceptualization2.png"
+        alt="Overview of the GRAB experimental setup"
+        loading="lazy"
+    >
+
+    <figcaption>
+        <strong>Figure 1.</strong>
+        Overview of the experimental setup used for
+        real-world robotic grasping evaluation.
+    </figcaption>
+
+</figure>
 
     <p>
         The experimental platform consists of a
