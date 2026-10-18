@@ -492,9 +492,6 @@
         geometric registration, and
         <strong>Density-Aware Chamfer Distance (DCD)</strong>
         to quantify deformation.
-    </p>
-
-    <p>
         The complete procedure encompasses the acquisition
         of undeformed and compressed object geometries,
         preparation and alignment of the corresponding
@@ -607,9 +604,6 @@
             fit within a bounding volume of
             20 × 10 × 10 cm³, satisfying the operational
             constraints of the evaluated grippers.
-        </p>
-
-        <p>
             The dataset encompasses objects with diverse
             geometric and deformation characteristics.
             As object mass and dimensions were constrained,
@@ -645,9 +639,6 @@
             An <strong>Intel RealSense D415 RGB-D camera</strong>
             and RecFusion 3D reconstruction software
             are employed to acquire the object geometry.
-        </p>
-
-        <p>
             A compression force of
             <strong>40 N</strong> is applied independently
             along the <strong>x and y axes</strong>.
@@ -689,9 +680,6 @@
             compressed using the robotic gripper,
             and its geometry is reconstructed under
             the applied load.
-        </p>
-
-        <p>
             This procedure is conducted independently
             along the x and y directions.
             Each directional experiment produces
@@ -933,9 +921,6 @@
             in object position or orientation could
             otherwise contribute to the measured
             geometric discrepancy.
-        </p>
-
-        <p>
             A two-stage registration procedure,
             comprising coarse alignment and fine
             ICP registration, is employed.
@@ -1034,9 +1019,6 @@
             The metric incorporates nearest-neighbour
             distances and density-aware normalization
             to account for variations in point sampling.
-        </p>
-
-        <p>
             Let \(S_1\) denote the point cloud
             representing the undeformed object
             and \(S_2\) denote the corresponding
@@ -1133,9 +1115,6 @@
             The same operation is performed from
             \(S_2\) to \(S_1\), and the two
             contributions are averaged.
-        </p>
-
-        <p>
             The exponential distance term incorporates
             the magnitude of geometric differences,
             while the density-aware factors account
@@ -1169,9 +1148,6 @@
             Each directional measurement compares
             the registered undeformed and compressed
             point clouds.
-        </p>
-
-        <p>
             The final
             <strong>Object Deformability Score
             (Q<sub>O</sub>)</strong> is obtained
@@ -1248,9 +1224,6 @@
             characterize differences in geometric
             deformation under the standardized
             compression conditions.
-        </p>
-
-        <p>
             The results indicate substantial variation
             across the investigated categories.
             <strong>Mesh bags and plastic bags</strong>
@@ -1372,9 +1345,6 @@
             for colour-based point-cloud filtering,
             and <strong>icp_alignment.py</strong>
             for point-cloud registration.
-        </p>
-
-        <p>
             The repository also includes the
             Density-Aware Chamfer Distance (DCD)
             implementation and reconstructed meshes
