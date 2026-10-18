@@ -4,19 +4,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="A step-by-step guide to calculating object deformability scores using 3D reconstruction, point-cloud registration, and Density-Aware Chamfer Distance for the GRAB benchmark.">
+          content="Experimental methodology for calculating object deformability scores using 3D reconstruction, point-cloud registration, and Density-Aware Chamfer Distance in the GRAB benchmark.">
 
-    <title>
-        Object Deformability Score Calculation | GRAB
-    </title>
+    <title>Object Deformability Score Calculation | GRAB</title>
 
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- MathJax for mathematical equations -->
+    <!-- Mathematical equation rendering -->
     <script>
         window.MathJax = {
             tex: {
@@ -75,13 +72,8 @@
             margin-bottom: 18px;
         }
 
-        .detail-page strong {
-            font-weight: 700;
-        }
-
         .method-section {
-            margin-top: 55px;
-            margin-bottom: 55px;
+            margin: 55px 0;
         }
 
         /* ==========================================
@@ -97,7 +89,6 @@
         }
 
         .back-link {
-            display: inline-block;
             color: #1E7A55;
             font-weight: 700;
             text-decoration: none;
@@ -130,16 +121,6 @@
         }
 
         /* ==========================================
-           INTRODUCTION
-           ========================================== */
-
-        .page-introduction {
-            font-size: 17px !important;
-            line-height: 1.85;
-            max-width: 900px;
-        }
-
-        /* ==========================================
            WORKFLOW OVERVIEW
            ========================================== */
 
@@ -154,7 +135,6 @@
         .workflow-overview h2 {
             font-size: 21px;
             margin-top: 0;
-            margin-bottom: 15px;
         }
 
         .workflow-grid {
@@ -193,10 +173,11 @@
         }
 
         /* ==========================================
-           EXPERIMENTAL FIGURE
+           FIGURES
            ========================================== */
 
-        .research-figure {
+        .research-figure,
+        .deformability-figure {
             margin: 35px auto 45px;
             text-align: center;
         }
@@ -210,8 +191,17 @@
             border-radius: 6px;
         }
 
-        .detail-page .research-figure figcaption {
-            max-width: 700px;
+        .deformability-figure img {
+            display: block;
+            width: 100%;
+            max-width: 950px;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+
+        .detail-page figure figcaption {
+            max-width: 900px;
             margin: 15px auto 0;
             font-size: 14px;
             line-height: 1.7;
@@ -235,32 +225,19 @@
             margin: 0 0 12px;
         }
 
-        .processing-step p {
-            margin-bottom: 12px;
-        }
-
         /* ==========================================
            RECONSTRUCTION VIDEOS
            ========================================== */
 
         .reconstruction-section {
-            margin-top: 45px;
-            margin-bottom: 35px;
-        }
-
-        .reconstruction-section h3 {
-            font-size: 19px;
-            font-weight: 700;
-            color: #0b1920;
-            margin-bottom: 20px;
+            margin: 45px 0 35px;
         }
 
         .comparison-heading {
             font-size: 18px;
             font-weight: 700;
             color: #0b1920;
-            margin-top: 35px;
-            margin-bottom: 20px;
+            margin: 35px 0 20px;
             padding-bottom: 10px;
             border-bottom: 1px solid #d8dcd7;
         }
@@ -288,7 +265,8 @@
             margin: 0 0 15px;
         }
 
-        .video-panel video {
+        .video-panel video,
+        .icp-video-container video {
             display: block;
             width: 100%;
             height: auto;
@@ -299,17 +277,8 @@
         .detail-page .video-caption {
             font-size: 14px;
             line-height: 1.6;
-            color: #53636a;
             text-align: center;
             margin: 15px 0 0;
-        }
-
-        /* ==========================================
-           OBJECT MESHES REFERENCE
-           ========================================== */
-
-        .object-meshes-note {
-            margin: 25px 0 40px;
         }
 
         .object-meshes-reference {
@@ -318,12 +287,8 @@
             text-decoration: underline;
         }
 
-        .object-meshes-reference:hover {
-            color: #145c40;
-        }
-
         /* ==========================================
-           ICP ALIGNMENT VIDEO
+           ICP VIDEO
            ========================================== */
 
         .icp-video-section {
@@ -335,7 +300,6 @@
 
         .icp-video-section h4 {
             font-size: 18px;
-            font-weight: 700;
             color: #0b1920;
             margin-bottom: 20px;
         }
@@ -347,37 +311,24 @@
             padding: 15px;
         }
 
-        .icp-video-container video {
-            display: block;
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            background: #0b1920;
-        }
-
         .detail-page .icp-video-caption {
             font-size: 14px;
             line-height: 1.7;
-            color: #53636a;
             text-align: center;
             margin-top: 15px;
         }
 
         /* ==========================================
-           DCD EQUATION
+           EQUATIONS
            ========================================== */
 
-        .dcd-section {
-            margin-top: 45px;
-            margin-bottom: 45px;
-        }
-
-        .equation-container {
+        .equation-container,
+        .score-equation {
             position: relative;
             background: #ffffff;
             border: 1px solid #d8dcd7;
             border-radius: 8px;
-            padding: 35px 25px 45px;
+            padding: 30px 25px 45px;
             margin: 30px auto;
             text-align: center;
             overflow-x: auto;
@@ -393,11 +344,10 @@
 
         .equation-container mjx-container {
             font-size: 110% !important;
-            max-width: 100%;
         }
 
         /* ==========================================
-           KEY CONCEPT BOX
+           TECHNICAL EXPLANATION
            ========================================== */
 
         .concept-box {
@@ -409,60 +359,14 @@
         }
 
         .concept-box h4 {
-            color: #0b1920;
             font-size: 17px;
+            color: #0b1920;
             margin: 0 0 12px;
         }
 
         .detail-page .concept-box p {
             font-size: 15px;
             margin-bottom: 10px;
-        }
-
-        .detail-page .concept-box p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* ==========================================
-           FINAL SCORE EQUATION
-           ========================================== */
-
-        .score-equation {
-            background: #ffffff;
-            border: 1px solid #d8dcd7;
-            border-radius: 8px;
-            padding: 25px 20px;
-            margin: 25px auto;
-            text-align: center;
-            overflow-x: auto;
-        }
-
-        /* ==========================================
-           RESULTS FIGURE
-           ========================================== */
-
-        .deformability-figure {
-            margin: 35px auto 45px;
-            text-align: center;
-            max-width: 100%;
-        }
-
-        .deformability-figure img {
-            display: block;
-            width: 100%;
-            max-width: 950px;
-            height: auto;
-            margin: 0 auto;
-            border-radius: 5px;
-        }
-
-        .detail-page .deformability-figure figcaption {
-            max-width: 900px;
-            margin: 18px auto 0;
-            font-size: 14px;
-            line-height: 1.7;
-            color: #53636a;
-            text-align: center;
         }
 
         /* ==========================================
@@ -491,19 +395,14 @@
         .results-table th {
             background: #eef3ee;
             color: #0b1920;
-            font-weight: 700;
         }
 
         .results-table td {
             color: #53636a;
         }
 
-        .results-table tr:last-child td {
-            border-bottom: none;
-        }
-
         /* ==========================================
-           MOBILE RESPONSIVENESS
+           RESPONSIVE LAYOUT
            ========================================== */
 
         @media (max-width: 700px) {
@@ -525,7 +424,8 @@
                 font-size: 15px;
             }
 
-            .workflow-grid {
+            .workflow-grid,
+            .video-comparison {
                 grid-template-columns: 1fr;
             }
 
@@ -533,33 +433,13 @@
                 padding: 20px;
             }
 
-            .video-comparison {
-                grid-template-columns: 1fr;
-            }
-
-            .video-panel {
-                padding: 12px;
-            }
-
-            .icp-video-section {
-                max-width: 100%;
-            }
-
-            .equation-container {
-                padding: 25px 15px 40px;
-            }
-
-            .equation-container mjx-container {
-                font-size: 85% !important;
-            }
-
             .page-navigation {
                 flex-wrap: wrap;
                 gap: 15px;
             }
 
-            .deformability-figure figcaption {
-                font-size: 13px;
+            .equation-container mjx-container {
+                font-size: 85% !important;
             }
 
         }
@@ -596,36 +476,37 @@
 
 
     <!-- ==========================================
-         PAGE INTRODUCTION
+         INTRODUCTION
          ========================================== -->
 
     <h1>Object Deformability Score Calculation</h1>
 
-    <p class="page-introduction">
-        This page presents the complete experimental and
-        computational methodology used to determine the
+    <p>
+        This page documents the experimental and computational
+        methodology used to calculate the
         <strong>Object Deformability Score
         (Q<sub>O</sub>)</strong> for the 21 objects
         included in the GRAB benchmark.
-        The procedure combines controlled object compression,
+        The methodology integrates controlled object compression,
         3D reconstruction, point-cloud preprocessing,
         geometric registration, and
         <strong>Density-Aware Chamfer Distance (DCD)</strong>
-        to quantify object deformation.
+        to quantify deformation.
     </p>
 
-    <p class="page-introduction">
-        The following sections explain each processing stage,
-        from acquiring the original 3D object geometry to
-        calculating the final deformability score.
-        Experimental figures, reconstruction demonstrations,
-        and point-cloud alignment visualizations are provided
-        to illustrate the complete workflow.
+    <p>
+        The complete procedure encompasses the acquisition
+        of undeformed and compressed object geometries,
+        preparation and alignment of the corresponding
+        point clouds, and calculation of a quantitative
+        deformability score. Experimental illustrations
+        and processing demonstrations accompany the
+        methodological descriptions.
     </p>
 
 
     <!-- ==========================================
-         WORKFLOW OVERVIEW
+         METHODOLOGY OVERVIEW
          ========================================== -->
 
     <section class="workflow-overview">
@@ -633,10 +514,10 @@
         <h2>Methodology Overview</h2>
 
         <p>
-            The calculation of object deformability follows
-            six main processing stages. Each stage prepares
-            the object geometry for accurate comparison
-            between its undeformed and compressed states.
+            Object deformability is quantified through
+            six sequential processing stages, from
+            controlled compression to the calculation
+            of the final object-level score.
         </p>
 
         <div class="workflow-grid">
@@ -645,8 +526,8 @@
                 <span class="workflow-number">STEP 01</span>
                 <h3>Controlled Compression</h3>
                 <p>
-                    Apply a 40 N compression force
-                    independently along the x and y axes.
+                    Application of a 40 N compression
+                    force independently along the x and y axes.
                 </p>
             </div>
 
@@ -654,8 +535,8 @@
                 <span class="workflow-number">STEP 02</span>
                 <h3>3D Reconstruction</h3>
                 <p>
-                    Capture the object geometry before and
-                    during compression using RecFusion.
+                    Acquisition of object geometry before
+                    and during compression using RecFusion.
                 </p>
             </div>
 
@@ -663,8 +544,8 @@
                 <span class="workflow-number">STEP 03</span>
                 <h3>Point-Cloud Conversion</h3>
                 <p>
-                    Export reconstructed meshes and prepare
-                    binary-format point-cloud data.
+                    Export of reconstructed meshes and
+                    preparation of binary-format point clouds.
                 </p>
             </div>
 
@@ -672,8 +553,9 @@
                 <span class="workflow-number">STEP 04</span>
                 <h3>Preprocessing</h3>
                 <p>
-                    Remove background, gripper components,
-                    and unrelated points.
+                    Removal of background geometry and
+                    unrelated points through spatial
+                    and colour-based filtering.
                 </p>
             </div>
 
@@ -681,8 +563,8 @@
                 <span class="workflow-number">STEP 05</span>
                 <h3>Point-Cloud Alignment</h3>
                 <p>
-                    Perform coarse registration using MeshLab
-                    followed by fine ICP alignment.
+                    Coarse registration using MeshLab
+                    followed by fine alignment using ICP.
                 </p>
             </div>
 
@@ -690,8 +572,9 @@
                 <span class="workflow-number">STEP 06</span>
                 <h3>DCD Calculation</h3>
                 <p>
-                    Compare aligned point clouds and combine
-                    directional measurements into Q<sub>O</sub>.
+                    Geometric comparison of aligned
+                    point clouds and aggregation of
+                    directional deformation measurements.
                 </p>
             </div>
 
@@ -701,7 +584,7 @@
 
 
     <!-- ==========================================
-         SECTION 1: OBJECT DEFORMABILITY
+         SECTION 1
          ========================================== -->
 
     <section class="method-section" id="object-deformability">
@@ -713,42 +596,36 @@
         <p>
             In the GRAB benchmark, the
             <strong>Object Deformability Score
-            (Q<sub>O</sub>)</strong>
-            characterizes the deformation behaviour of objects
-            as a pre-grasp graspability attribute.
+            (Q<sub>O</sub>)</strong> represents an
+            object-related pre-grasp attribute that
+            characterizes deformation under an applied force.
             The dataset comprises
-            <strong>21 distinct objects across seven inorganic
+            <strong>21 objects across seven inorganic
             contaminant categories</strong>, with three
-            representative items per category.
-            All objects weigh less than 100 g and fit within
-            a bounding volume of 20 × 10 × 10 cm³,
-            ensuring compatibility with the grippers'
-            operational constraints.
-            Unlike conventional datasets dominated by rigid
-            objects, GRAB includes objects with diverse
-            geometric and deformation characteristics.
-            Since object weight and dimensions were constrained,
-            <strong>deformability was selected as the primary
-            object-related property influencing graspability</strong>,
-            quantified through Q<sub>O</sub> prior to grasp execution.
+            representative objects per category.
+            All objects weigh less than 100 g and
+            fit within a bounding volume of
+            20 × 10 × 10 cm³, satisfying the operational
+            constraints of the evaluated grippers.
         </p>
 
         <p>
-            To quantify this property, each object is examined
-            in two physical states:
-            <strong>before compression</strong> and
-            <strong>during compression</strong>.
-            The geometric differences between these states
-            are measured using DCD, allowing objects with
-            different deformation characteristics to be
-            compared through a consistent measurement procedure.
+            The dataset encompasses objects with diverse
+            geometric and deformation characteristics.
+            As object mass and dimensions were constrained,
+            deformability was selected as the principal
+            object-related property for graspability
+            evaluation. The property is quantified
+            by comparing 3D representations acquired
+            before and during controlled compression,
+            using DCD as the geometric discrepancy measure.
         </p>
 
     </section>
 
 
     <!-- ==========================================
-         SECTION 2: EXPERIMENTAL SETUP
+         SECTION 2
          ========================================== -->
 
     <section class="method-section" id="experimental-setup">
@@ -758,23 +635,27 @@
         </h2>
 
         <p>
-            A customized experimental platform was developed
-            to acquire 3D representations of objects before
-            and during controlled compression.
-            This enables object deformation to be measured
-            through changes in the reconstructed geometry
-            rather than relying solely on visual inspection.
-            The setup consists of a <strong>UR10 robotic manipulator</strong>
-            equipped with an <strong>OnRobot RG2 parallel gripper</strong>
-            and customized compression pads. An <strong>Intel RealSense D415 RGB-D camera</strong>,
-            integrated with RecFusion 3D reconstruction software, is used to capture the object's geometry.
-            A controlled compression force of <strong>40 N</strong> is applied independently
-            along the <strong>x and y axes</strong>. Evaluating both directions helps account for
-            objects that deform differently depending on the direction of the applied force.
+            A customized experimental platform was
+            developed to measure changes in object geometry
+            under controlled compression. The platform
+            comprises a <strong>UR10 robotic manipulator</strong>
+            equipped with an
+            <strong>OnRobot RG2 parallel gripper</strong>
+            and customized compression pads.
+            An <strong>Intel RealSense D415 RGB-D camera</strong>
+            and RecFusion 3D reconstruction software
+            are employed to acquire the object geometry.
         </p>
 
-
-        <!-- EXPERIMENTAL FIGURE -->
+        <p>
+            A compression force of
+            <strong>40 N</strong> is applied independently
+            along the <strong>x and y axes</strong>.
+            Measurements along both directions account
+            for directional variations in object deformation
+            and provide a consistent basis for
+            comparative evaluation.
+        </p>
 
         <figure class="research-figure">
 
@@ -786,107 +667,107 @@
 
             <figcaption>
                 <strong>Figure 1.</strong>
-                Overview of the experimental setup and
-                3D point-cloud processing workflow:
-                (a) customized 3D scanning platform,
+                Experimental setup and point-cloud processing:
+                (a) customized scanning platform,
                 (b) RecFusion 3D reconstruction,
                 (c) undeformed object point cloud,
                 (d) compressed object point cloud, and
-                (e) aligned point clouds after post-processing.
+                (e) registered point clouds after alignment.
             </figcaption>
 
         </figure>
 
 
+        <!-- CONTROLLED COMPRESSION -->
+
         <h3>2.1. Controlled Compression Procedure</h3>
 
         <p>
-            For each object, the measurement procedure begins
-            by obtaining its geometry in the undeformed state.
-            The robotic gripper then applies the specified
-            compression force while the object is scanned
-            in its compressed configuration.
-            The procedure is performed independently along
-            both compression directions, producing two
-            deformation measurements for each object.
-            The same processing workflow is then applied
-            to each pair of reconstructed point clouds.
+            For each object, the undeformed geometry
+            is initially acquired before applying
+            the compression force. The object is then
+            compressed using the robotic gripper,
+            and its geometry is reconstructed under
+            the applied load.
+        </p>
+
+        <p>
+            This procedure is conducted independently
+            along the x and y directions.
+            Each directional experiment produces
+            a pair of 3D representations corresponding
+            to the undeformed and compressed states.
+            These paired representations constitute
+            the input data for subsequent geometric analysis.
         </p>
 
 
-        <!-- ==========================================
-             3D RECONSTRUCTION
-             ========================================== -->
+        <!-- 3D RECONSTRUCTION -->
 
         <h3>
             2.2. 3D Reconstruction and Point-Cloud Acquisition
         </h3>
 
         <p>
-            The next stage involves reconstructing the
-            three-dimensional geometry of the object in
-            its undeformed and compressed states.
-            <strong>RecFusion</strong> is used to generate
-            these 3D representations from RGB-D measurements
-            captured using the RealSense camera.
-            During reconstruction, depth measurements are
-            projected into 3D space using camera intrinsic
-            parameters. Successive measurements are registered
+            The undeformed and compressed object geometries
+            are reconstructed using
+            <strong>RecFusion</strong> from RGB-D measurements
+            acquired by the RealSense camera.
+            Depth measurements are projected into
+            three-dimensional space using the camera
+            intrinsic parameters.
+            Successive observations are registered
             and integrated through
             <strong>Truncated Signed Distance Function
-            (TSDF) fusion</strong> to produce a dense
-            representation of the object's geometry.
+            (TSDF) fusion</strong>, generating a
+            reconstructed representation of the object surface.
         </p>
 
         <div class="processing-step">
 
-            <h4>Step 1 — Reconstruct the Object Geometry</h4>
+            <h4>Step 1 — Object Geometry Reconstruction</h4>
 
             <p>
-                First, the object is scanned in its
-                undeformed state using RecFusion.
-                A second reconstruction is obtained
-                while the compression force is applied.
-                These reconstructions capture the
-                geometric changes caused by compression.
-            </p>
-
-        </div>
-
-        <div class="processing-step">
-
-            <h4>Step 2 — Export the Reconstructed Meshes</h4>
-
-            <p>
-                The reconstructed 3D geometries are exported
-                as mesh files for further processing.
-                Separate mesh representations are retained
+                Separate 3D reconstructions are acquired
                 for the undeformed and compressed states.
+                The resulting geometries capture the
+                physical changes induced by the applied
+                compression force.
             </p>
 
         </div>
 
         <div class="processing-step">
 
-            <h4>Step 3 — Prepare Binary Point-Cloud Data</h4>
+            <h4>Step 2 — Mesh Export</h4>
+
+            <p>
+                The reconstructed geometries are exported
+                as 3D mesh files. Separate mesh datasets
+                are retained for the two compression states
+                to support independent preprocessing
+                and subsequent geometric comparison.
+            </p>
+
+        </div>
+
+        <div class="processing-step">
+
+            <h4>Step 3 — ASCII-to-Binary Conversion</h4>
 
             <p>
                 The exported ASCII-formatted geometry data
                 are converted into binary format for
                 subsequent point-cloud processing.
-                This conversion prepares the data for
-                filtering, alignment, and geometric comparison.
-                The repository includes the Python script
-                <strong>binary_ascii.py</strong> for
-                ASCII-to-binary conversion.
+                This conversion is performed using
+                <strong>binary_ascii.py</strong>,
+                provided in the associated repository.
             </p>
 
         </div>
 
 
-        <!-- ==========================================
-             RECONSTRUCTION VIDEOS
-             ========================================== -->
+        <!-- RECONSTRUCTION VIDEOS -->
 
         <div class="reconstruction-section">
 
@@ -895,17 +776,12 @@
             </h3>
 
             <p>
-                The following demonstrations illustrate
-                the reconstructed object geometry at
-                the two compression states.
-                The left panels show the original RecFusion
-                meshes, while the right panels show
-                their corresponding binary-format
-                point-cloud representations.
+                The reconstruction results are illustrated
+                through the original RecFusion meshes
+                and their corresponding binary-format
+                point-cloud representations for the
+                undeformed and compressed object states.
             </p>
-
-
-            <!-- BEFORE COMPRESSION -->
 
             <h4 class="comparison-heading">
                 Before Compression
@@ -917,7 +793,8 @@
 
                     <h4>(a) RecFusion 3D Mesh</h4>
 
-                    <video autoplay muted loop playsinline preload="metadata">
+                    <video autoplay muted loop playsinline
+                           preload="metadata">
                         <source
                             src="assets/videos/before_grasp_recfusion.webm"
                             type="video/webm"
@@ -926,8 +803,8 @@
                     </video>
 
                     <p class="video-caption">
-                        Original 3D mesh reconstructed using
-                        RecFusion before compression.
+                        Reconstructed object geometry
+                        before compression.
                     </p>
 
                 </div>
@@ -936,7 +813,8 @@
 
                     <h4>(b) Binary Point-Cloud Representation</h4>
 
-                    <video autoplay muted loop playsinline preload="metadata">
+                    <video autoplay muted loop playsinline
+                           preload="metadata">
                         <source
                             src="assets/videos/before_grasp_binary.webm"
                             type="video/webm"
@@ -945,16 +823,15 @@
                     </video>
 
                     <p class="video-caption">
-                        Corresponding point-cloud representation
-                        following ASCII-to-binary conversion.
+                        Corresponding binary-format
+                        point-cloud representation
+                        of the undeformed object.
                     </p>
 
                 </div>
 
             </div>
 
-
-            <!-- DURING COMPRESSION -->
 
             <h4 class="comparison-heading">
                 During Compression
@@ -966,7 +843,8 @@
 
                     <h4>(c) RecFusion 3D Mesh</h4>
 
-                    <video autoplay muted loop playsinline preload="metadata">
+                    <video autoplay muted loop playsinline
+                           preload="metadata">
                         <source
                             src="assets/videos/after_grasp_recfusion.webm"
                             type="video/webm"
@@ -975,7 +853,7 @@
                     </video>
 
                     <p class="video-caption">
-                        Reconstructed 3D mesh of the object
+                        Reconstructed object geometry
                         under the applied compression force.
                     </p>
 
@@ -985,7 +863,8 @@
 
                     <h4>(d) Binary Point-Cloud Representation</h4>
 
-                    <video autoplay muted loop playsinline preload="metadata">
+                    <video autoplay muted loop playsinline
+                           preload="metadata">
                         <source
                             src="assets/videos/after_grasp_binary.webm"
                             type="video/webm"
@@ -994,8 +873,9 @@
                     </video>
 
                     <p class="video-caption">
-                        Corresponding binary-format point-cloud
-                        representation under compression.
+                        Corresponding binary-format
+                        point-cloud representation
+                        of the compressed object.
                     </p>
 
                 </div>
@@ -1004,36 +884,30 @@
 
         </div>
 
-
-        <!-- OBJECT MESHES REFERENCE -->
-
-        <p class="object-meshes-note">
+        <p>
             The reconstructed 3D meshes for all 21 objects
-            in the dataset are available in the
+            are provided in the
             <a href="#repository-button"
                class="object-meshes-reference">
                 <strong>object_meshes</strong>
             </a>
-            folder of the GitHub repository.
+            folder of the associated GitHub repository.
         </p>
 
 
-        <!-- ==========================================
-             POINT-CLOUD PREPROCESSING
-             ========================================== -->
+        <!-- PREPROCESSING AND ALIGNMENT -->
 
         <h3>
             2.3. Point-Cloud Preprocessing and Alignment
         </h3>
 
         <p>
-            Although RecFusion provides detailed 3D
-            reconstructions, the exported data may contain
-            points belonging to the experimental platform,
-            gripper, background, or other surrounding
-            components.
-            These unwanted points must be removed before
-            comparing the object's geometry.
+            The reconstructed point clouds may contain
+            background geometry, gripper components,
+            and other points unrelated to the target object.
+            These points are removed before registration
+            to ensure that the subsequent DCD measurement
+            primarily reflects differences in object geometry.
         </p>
 
         <div class="processing-step">
@@ -1042,78 +916,73 @@
 
             <p>
                 Spatial cropping and colour-based thresholding
-                are performed using RecFusion and MeshLab
+                are applied using RecFusion and MeshLab
                 to isolate the target object.
-                This reduces the influence of background
-                geometry and unrelated points on the
-                deformation measurement.
-                The repository also includes
-                <strong>color_filter.py</strong>,
-                a Python script associated with
-                colour-based filtering.
+                The associated repository includes
+                <strong>color_filter.py</strong>
+                for colour-based point-cloud filtering.
             </p>
 
         </div>
 
         <p>
-            Following preprocessing, the undeformed and
-            compressed point clouds must be brought into
-            a common coordinate frame.
-            Without proper alignment, differences in object
-            position or orientation could be incorrectly
-            interpreted as deformation.
-            To address this, a
-            <strong>two-stage point-cloud registration
-            procedure</strong> is employed.
+            Following preprocessing, the undeformed
+            and compressed point clouds are registered
+            within a common coordinate frame.
+            Registration is essential because differences
+            in object position or orientation could
+            otherwise contribute to the measured
+            geometric discrepancy.
         </p>
 
+        <p>
+            A two-stage registration procedure,
+            comprising coarse alignment and fine
+            ICP registration, is employed.
+        </p>
 
         <div class="processing-step">
 
             <h4>Step 2 — Coarse Alignment Using MeshLab</h4>
 
             <p>
-                The principal axes of the two point clouds
-                are aligned using MeshLab to establish an
-                initial geometric correspondence.
-                This step reduces major differences in
-                object orientation and positioning.
-                Coarse alignment provides a suitable
-                initialization for the subsequent
-                fine-registration procedure.
+                Initial alignment is performed using
+                MeshLab by approximately aligning
+                the principal axes of the two point clouds.
+                This reduces differences in orientation
+                and translation and establishes an
+                initial correspondence for fine registration.
             </p>
 
         </div>
-
 
         <div class="processing-step">
 
             <h4>Step 3 — Fine Alignment Using ICP</h4>
 
             <p>
-                Following coarse alignment, the
-                <strong>Iterative Closest Point (ICP)</strong>
-                algorithm is applied to refine the
-                registration between the two point clouds.
-                ICP iteratively establishes point
-                correspondences and estimates the
-                transformation that reduces residual
-                geometric distances between the two
-                representations.
-                This minimizes positional differences
-                while preserving the geometric changes
-                caused by object deformation.
-                The repository includes
-                <strong>icp_alignment.py</strong>
-                for point-cloud registration.
+                The <strong>Iterative Closest Point (ICP)</strong>
+                algorithm is subsequently applied to refine
+                the alignment. ICP iteratively estimates
+                point correspondences and a rigid
+                transformation that minimizes residual
+                geometric distances between the
+                two point clouds.
+            </p>
+
+            <p>
+                This procedure reduces discrepancies
+                associated with acquisition pose
+                while retaining non-rigid geometric
+                differences arising from compression.
+                The implementation is provided in
+                <strong>icp_alignment.py</strong>.
             </p>
 
         </div>
 
 
-        <!-- ==========================================
-             ICP ALIGNMENT VIDEO
-             ========================================== -->
+        <!-- ICP VIDEO -->
 
         <div class="icp-video-section">
 
@@ -1123,13 +992,8 @@
 
             <div class="icp-video-container">
 
-                <video
-                    autoplay
-                    muted
-                    loop
-                    playsinline
-                    preload="metadata"
-                >
+                <video autoplay muted loop playsinline
+                       preload="metadata">
                     <source
                         src="assets/videos/point_clouds_after_ICP_Alignment.webm"
                         type="video/webm"
@@ -1141,198 +1005,177 @@
 
             <p class="icp-video-caption">
                 <strong>ICP Alignment Result.</strong>
-                Visualization of the registered point clouds
-                representing the object before and during
-                compression. The superimposed point clouds
-                allow geometric differences caused by
-                deformation to be examined.
+                Superimposed point clouds representing
+                the undeformed and compressed object
+                geometries after registration.
             </p>
 
         </div>
 
         <p>
-            After preprocessing and registration, the two
-            aligned point clouds represent the same object
-            in its undeformed and compressed configurations.
-            They can now be compared using a geometric
-            distance metric to quantify deformation.
+            The resulting registered point clouds
+            represent the same object under two
+            compression states within a common
+            coordinate frame. These datasets form
+            the input to the DCD calculation.
         </p>
 
 
-        <!-- ==========================================
-             DCD CALCULATION
-             ========================================== -->
+        <!-- DCD CALCULATION -->
 
-        <div class="dcd-section">
+        <h3>
+            2.4. Density-Aware Chamfer Distance (DCD) Calculation
+        </h3>
 
-            <h3>
-                2.4. Density-Aware Chamfer Distance (DCD) Calculation
-            </h3>
+        <p>
+            <strong>Density-Aware Chamfer Distance (DCD)</strong>
+            is employed to quantify the geometric
+            discrepancy between the registered point clouds.
+            The metric incorporates nearest-neighbour
+            distances and density-aware normalization
+            to account for variations in point sampling.
+        </p>
+
+        <p>
+            Let \(S_1\) denote the point cloud
+            representing the undeformed object
+            and \(S_2\) denote the corresponding
+            point cloud under compression.
+            The DCD between these point clouds
+            is formulated as follows:
+        </p>
+
+
+        <!-- DCD EQUATION -->
+
+        <div class="equation-container">
+
+            \[
+            \begin{aligned}
+            d_{\mathrm{DCD}}(S_1,S_2)
+            = \frac{1}{2}\Bigg(
+            &\frac{1}{|S_1|}
+            \sum_{x\in S_1}
+            \left(
+            1-\frac{1}{\hat{n}_y}
+            e^{-\alpha\|x-\hat{y}\|_2}
+            \right)
+            \\[10pt]
+            +\;&\frac{1}{|S_2|}
+            \sum_{y\in S_2}
+            \left(
+            1-\frac{1}{\hat{n}_x}
+            e^{-\alpha\|y-\hat{x}\|_2}
+            \right)
+            \Bigg)
+            \end{aligned}
+            \]
+
+            <div class="equation-number">(6)</div>
+
+        </div>
+
+
+        <h3>Definition of DCD Parameters</h3>
+
+        <div class="concept-box">
+
+            <h4>Mathematical Notation</h4>
 
             <p>
-                The final geometric comparison is performed
-                using <strong>Density-Aware Chamfer Distance
-                (DCD)</strong>, which measures the discrepancy
-                between two aligned 3D point clouds.
-                Let <strong>\(S_1\)</strong> represent the
-                point cloud obtained before compression
-                and <strong>\(S_2\)</strong> represent
-                the corresponding point cloud acquired
-                during compression.
-                DCD compares these representations
-                by considering the distances between
-                corresponding nearest-neighbour points,
-                together with local point-density information.
-                Unlike conventional Chamfer Distance,
-                DCD incorporates density-aware normalization
-                to account for differences in point sampling.
-                This is particularly relevant when comparing
-                reconstructed point clouds that may have
-                nonuniform point distributions.
+                <strong>\(S_1\):</strong>
+                Point cloud acquired before compression.
             </p>
 
-
-            <!-- DCD EQUATION -->
-
-            <div class="equation-container">
-
-                \[
-                \begin{aligned}
-                d_{\mathrm{DCD}}(S_1,S_2)
-                = \frac{1}{2}\Bigg(
-                &\frac{1}{|S_1|}
-                \sum_{x\in S_1}
-                \left(
-                1-\frac{1}{\hat{n}_y}
-                e^{-\alpha\|x-\hat{y}\|_2}
-                \right)
-                \\[10pt]
-                +\;&\frac{1}{|S_2|}
-                \sum_{y\in S_2}
-                \left(
-                1-\frac{1}{\hat{n}_x}
-                e^{-\alpha\|y-\hat{x}\|_2}
-                \right)
-                \Bigg)
-                \end{aligned}
-                \]
-
-                <div class="equation-number">
-                    (6)
-                </div>
-
-            </div>
-
-
-            <h3>Understanding the DCD Equation</h3>
-
             <p>
-                The equation evaluates geometric differences
-                in both directions: from the undeformed
-                point cloud to the compressed point cloud,
-                and from the compressed point cloud
-                back to the undeformed point cloud.
-                The two contributions are averaged
-                to obtain a symmetric distance measure.
+                <strong>\(S_2\):</strong>
+                Point cloud acquired during compression.
             </p>
 
-            <div class="concept-box">
-
-                <h4>Explanation of Mathematical Terms</h4>
-
-                <p>
-                    <strong>\(S_1\):</strong>
-                    Point cloud representing the object
-                    before compression.
-                </p>
-
-                <p>
-                    <strong>\(S_2\):</strong>
-                    Point cloud representing the object
-                    during compression.
-                </p>
-
-                <p>
-                    <strong>\(\hat{y}\) and \(\hat{x}\):</strong>
-                    Nearest-neighbour points in the
-                    opposite point cloud.
-                </p>
-
-                <p>
-                    <strong>\(\|x-\hat{y}\|_2\):</strong>
-                    Euclidean distance between a point
-                    and its nearest neighbour.
-                </p>
-
-                <p>
-                    <strong>\(\hat{n}_y\) and
-                    \(\hat{n}_x\):</strong>
-                    Local point-density normalization factors.
-                </p>
-
-                <p>
-                    <strong>\(\alpha\):</strong>
-                    Parameter controlling the sensitivity
-                    of the exponential distance term
-                    to geometric deviations.
-                </p>
-
-            </div>
-
-
-            <h3>How DCD Quantifies Object Deformation</h3>
+            <p>
+                <strong>\(\hat{y}\) and \(\hat{x}\):</strong>
+                Nearest-neighbour points identified
+                in the opposite point cloud.
+            </p>
 
             <p>
-                For each point in the undeformed point cloud,
-                the nearest corresponding point is identified
-                in the compressed point cloud.
-                The geometric distance between these points
-                contributes to the DCD calculation.
-                The same comparison is then performed
-                in the reverse direction.
-                The exponential distance term converts
-                geometric discrepancies into bounded
-                contributions, while the density-aware
-                factors account for differences in
-                point distribution.
-                Small geometric discrepancies generally
-                produce lower DCD values, whereas larger
-                discrepancies produce higher values.
-                Accordingly, objects that undergo greater
-                geometric changes under the applied force
-                tend to exhibit higher DCD values.
-                Objects that retain their original geometry
-                tend to produce lower values.
+                <strong>\(\|x-\hat{y}\|_2\):</strong>
+                Euclidean distance between a point
+                and its nearest neighbour.
+            </p>
+
+            <p>
+                <strong>\(\hat{n}_y\) and
+                \(\hat{n}_x\):</strong>
+                Density-normalization factors associated
+                with the corresponding nearest-neighbour points.
+            </p>
+
+            <p>
+                <strong>\(\alpha\):</strong>
+                Parameter controlling the sensitivity
+                of the exponential distance term
+                to geometric discrepancies.
             </p>
 
         </div>
+
+
+        <h3>Interpretation of DCD Measurements</h3>
+
+        <p>
+            The DCD formulation evaluates geometric
+            discrepancies bidirectionally.
+            For each point in \(S_1\), the nearest
+            point in \(S_2\) is identified, and
+            the corresponding distance and density
+            contributions are calculated.
+            The same operation is performed from
+            \(S_2\) to \(S_1\), and the two
+            contributions are averaged.
+        </p>
+
+        <p>
+            The exponential distance term incorporates
+            the magnitude of geometric differences,
+            while the density-aware factors account
+            for variations in local point distribution.
+            Smaller geometric discrepancies generally
+            yield lower DCD values, whereas larger
+            discrepancies yield higher values.
+            Under the standardized compression conditions,
+            DCD therefore provides a quantitative
+            indicator of relative object deformation.
+        </p>
 
     </section>
 
 
     <!-- ==========================================
-         SECTION 3: FINAL SCORE CALCULATION
+         SECTION 3: FINAL SCORE
          ========================================== -->
 
     <section class="method-section" id="score-calculation">
 
         <h2>
-            3. Calculating the Final Object Deformability Score
+            3. Calculation of the Final Object Deformability Score
         </h2>
 
         <p>
-            Since an object's deformation response may
-            depend on the direction of compression,
-            the DCD measurement is performed independently
-            for the <strong>x-axis</strong> and
-            <strong>y-axis</strong> compression experiments.
-            Each direction produces a DCD value by comparing
-            the corresponding undeformed and compressed
-            point clouds after preprocessing and alignment.
-            These two directional measurements are then
-            averaged to determine a single
+            Object deformation may vary with the direction
+            of the applied force. Accordingly, DCD is
+            calculated independently for the
+            <strong>x-axis and y-axis compression experiments</strong>.
+            Each directional measurement compares
+            the registered undeformed and compressed
+            point clouds.
+        </p>
+
+        <p>
+            The final
             <strong>Object Deformability Score
-            (Q<sub>O</sub>)</strong> for each object.
+            (Q<sub>O</sub>)</strong> is obtained
+            by averaging the two directional DCD values:
         </p>
 
         <div class="score-equation">
@@ -1350,39 +1193,38 @@
 
         <p>
             Here, \(d_{\mathrm{DCD}}^{(x)}\) and
-            \(d_{\mathrm{DCD}}^{(y)}\) represent the
-            DCD values obtained from compression
-            along the x and y directions, respectively.
-            Their arithmetic mean provides the final
+            \(d_{\mathrm{DCD}}^{(y)}\) denote
+            the DCD values obtained from compression
+            along the x and y axes, respectively.
+            Their arithmetic mean represents the
             object-level deformability score.
         </p>
 
         <div class="concept-box">
 
-            <h4>Interpreting the Final Score</h4>
+            <h4>Score Interpretation</h4>
 
             <p>
-                <strong>Higher Q<sub>O</sub> values:</strong>
-                Indicate greater geometric deformation
-                under the applied compression force.
+                <strong>Higher Q<sub>O</sub> values</strong>
+                correspond to greater geometric
+                deformation under the applied force.
             </p>
 
             <p>
-                <strong>Lower Q<sub>O</sub> values:</strong>
-                Indicate smaller geometric changes,
-                corresponding to relatively rigid objects.
+                <strong>Lower Q<sub>O</sub> values</strong>
+                correspond to smaller geometric changes,
+                indicating relatively rigid behaviour.
             </p>
 
         </div>
 
         <p>
-            This procedure is repeated for each of the
-            21 objects, resulting in one final deformability
-            score per object.
-            The scores can then be compared across
-            individual objects and contaminant categories
-            to characterize their relative deformation
-            behaviour under consistent experimental conditions.
+            The same measurement and processing
+            procedure is applied to all 21 objects,
+            yielding one deformability score per object.
+            These scores enable comparative analysis
+            across individual objects and
+            contaminant categories.
         </p>
 
     </section>
@@ -1399,20 +1241,22 @@
         </h2>
 
         <p>
-            The complete methodology was applied to
-            <strong>21 objects from seven inorganic
-            contaminant categories</strong>.
-            For each object, the reconstructed geometries
-            were processed, aligned, and compared using DCD
-            to obtain the final deformability score.
-            The resulting scores reveal differences in
-            the deformation characteristics of the
-            investigated objects.
+            The DCD-based methodology was applied
+            to <strong>21 objects across seven
+            inorganic contaminant categories</strong>.
+            The resulting object-level scores
+            characterize differences in geometric
+            deformation under the standardized
+            compression conditions.
+        </p>
+
+        <p>
+            The results indicate substantial variation
+            across the investigated categories.
             <strong>Mesh bags and plastic bags</strong>
-            exhibit the highest average deformability scores,
-            whereas <strong>tin cans</strong> exhibit
-            the lowest average score among the
-            seven categories.
+            exhibit the highest average deformability
+            scores, whereas <strong>tin cans</strong>
+            exhibit the lowest category-average score.
         </p>
 
 
@@ -1422,20 +1266,16 @@
 
             <img
                 src="assets/images/Object_Deformability_Scores.png"
-                alt="Object deformability scores for 21 objects across seven inorganic contaminant categories"
+                alt="DCD-based deformability scores for 21 objects across seven contaminant categories"
                 loading="lazy"
             >
 
             <figcaption>
                 <strong>Figure 2.</strong>
-                Object Deformability Scores calculated
-                using Density-Aware Chamfer Distance
-                for 21 objects across seven inorganic
-                contaminant categories.
-                Individual object scores and category-wise
-                average values are presented, ranging
-                from highly deformable to relatively
-                rigid objects.
+                DCD-based Object Deformability Scores
+                for the 21-object dataset, showing
+                individual object scores and
+                category-wise average values.
             </figcaption>
 
         </figure>
@@ -1444,11 +1284,11 @@
         <h3>Category-Wise Deformability Comparison</h3>
 
         <p>
-            To summarize the results at the category level,
-            the scores of the three representative objects
-            within each contaminant category were averaged.
-            The resulting category-wise average DCD values
-            are presented below.
+            Category-level scores are obtained by
+            averaging the deformability scores
+            of the three representative objects
+            within each contaminant category.
+            The resulting values are summarized below.
         </p>
 
         <div class="results-table-wrapper">
@@ -1467,32 +1307,26 @@
                         <td>Mesh Bag</td>
                         <td>0.9432</td>
                     </tr>
-
                     <tr>
                         <td>Plastic Bag</td>
                         <td>0.9248</td>
                     </tr>
-
                     <tr>
                         <td>LPB</td>
                         <td>0.6839</td>
                     </tr>
-
                     <tr>
                         <td>Plastic Container</td>
                         <td>0.6438</td>
                     </tr>
-
                     <tr>
                         <td>Plastic Plate</td>
                         <td>0.6045</td>
                     </tr>
-
                     <tr>
                         <td>Plastic Bottle</td>
                         <td>0.6045</td>
                     </tr>
-
                     <tr>
                         <td>Tin Can</td>
                         <td>0.5419</td>
@@ -1504,15 +1338,14 @@
         </div>
 
         <p>
-            These results demonstrate that the DCD-based
-            methodology captures differences in object
-            deformation across the dataset.
-            The calculated Q<sub>O</sub> values serve
-            as the object-related pre-grasp attribute
-            within the GRAB benchmark, supporting
-            subsequent analysis of the relationship
-            between object deformability and
-            robotic grasping performance.
+            The observed differences demonstrate
+            the ability of the DCD-based methodology
+            to characterize relative deformation
+            behaviour across the dataset.
+            The calculated Q<sub>O</sub> values
+            are incorporated into the GRAB benchmark
+            as an object-related pre-grasp attribute
+            for analysing robotic grasping performance.
         </p>
 
     </section>
@@ -1529,24 +1362,26 @@
         </h2>
 
         <p>
-            The associated GitHub repository contains
-            the reconstructed object meshes and
-            Python scripts used in the point-cloud
-            processing workflow.
-            Relevant scripts include
-            <strong>binary_ascii.py</strong> for
-            ASCII-to-binary conversion,
-            <strong>color_filter.py</strong> for
-            colour-based point-cloud filtering, and
-            <strong>icp_alignment.py</strong> for
-            point-cloud registration.
-            The repository also contains the
-            Density-Aware Chamfer Distance implementation.
-            The reconstructed meshes for the complete
-            21-object dataset are provided in the
+            The associated GitHub repository provides
+            the reconstructed object meshes and Python
+            scripts used in the point-cloud processing
+            workflow, including
+            <strong>binary_ascii.py</strong>
+            for ASCII-to-binary conversion,
+            <strong>color_filter.py</strong>
+            for colour-based point-cloud filtering,
+            and <strong>icp_alignment.py</strong>
+            for point-cloud registration.
+        </p>
+
+        <p>
+            The repository also includes the
+            Density-Aware Chamfer Distance (DCD)
+            implementation and reconstructed meshes
+            for all 21 objects in the
             <strong>object_meshes</strong> folder.
-            Visitors can access the available resources
-            using the <strong>Repository ↗</strong>
+            These resources are accessible through
+            the <strong>Repository ↗</strong>
             button at the top of this page.
         </p>
 
