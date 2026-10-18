@@ -806,9 +806,6 @@
             The robotic gripper then applies the specified
             compression force while the object is scanned
             in its compressed configuration.
-        </p>
-
-        <p>
             The procedure is performed independently along
             both compression directions, producing two
             deformation measurements for each object.
@@ -832,9 +829,6 @@
             <strong>RecFusion</strong> is used to generate
             these 3D representations from RGB-D measurements
             captured using the RealSense camera.
-        </p>
-
-        <p>
             During reconstruction, depth measurements are
             projected into 3D space using camera intrinsic
             parameters. Successive measurements are registered
@@ -882,9 +876,6 @@
                 subsequent point-cloud processing.
                 This conversion prepares the data for
                 filtering, alignment, and geometric comparison.
-            </p>
-
-            <p>
                 The repository includes the Python script
                 <strong>binary_ascii.py</strong> for
                 ASCII-to-binary conversion.
@@ -1056,9 +1047,6 @@
                 This reduces the influence of background
                 geometry and unrelated points on the
                 deformation measurement.
-            </p>
-
-            <p>
                 The repository also includes
                 <strong>color_filter.py</strong>,
                 a Python script associated with
@@ -1074,9 +1062,6 @@
             Without proper alignment, differences in object
             position or orientation could be incorrectly
             interpreted as deformation.
-        </p>
-
-        <p>
             To address this, a
             <strong>two-stage point-cloud registration
             procedure</strong> is employed.
@@ -1093,9 +1078,6 @@
                 initial geometric correspondence.
                 This step reduces major differences in
                 object orientation and positioning.
-            </p>
-
-            <p>
                 Coarse alignment provides a suitable
                 initialization for the subsequent
                 fine-registration procedure.
@@ -1113,9 +1095,6 @@
                 <strong>Iterative Closest Point (ICP)</strong>
                 algorithm is applied to refine the
                 registration between the two point clouds.
-            </p>
-
-            <p>
                 ICP iteratively establishes point
                 correspondences and estimates the
                 transformation that reduces residual
@@ -1124,9 +1103,6 @@
                 This minimizes positional differences
                 while preserving the geometric changes
                 caused by object deformation.
-            </p>
-
-            <p>
                 The repository includes
                 <strong>icp_alignment.py</strong>
                 for point-cloud registration.
@@ -1198,9 +1174,6 @@
                 using <strong>Density-Aware Chamfer Distance
                 (DCD)</strong>, which measures the discrepancy
                 between two aligned 3D point clouds.
-            </p>
-
-            <p>
                 Let <strong>\(S_1\)</strong> represent the
                 point cloud obtained before compression
                 and <strong>\(S_2\)</strong> represent
@@ -1210,9 +1183,6 @@
                 by considering the distances between
                 corresponding nearest-neighbour points,
                 together with local point-density information.
-            </p>
-
-            <p>
                 Unlike conventional Chamfer Distance,
                 DCD incorporates density-aware normalization
                 to account for differences in point sampling.
@@ -1320,9 +1290,6 @@
                 contributes to the DCD calculation.
                 The same comparison is then performed
                 in the reverse direction.
-            </p>
-
-            <p>
                 The exponential distance term converts
                 geometric discrepancies into bounded
                 contributions, while the density-aware
@@ -1331,9 +1298,6 @@
                 Small geometric discrepancies generally
                 produce lower DCD values, whereas larger
                 discrepancies produce higher values.
-            </p>
-
-            <p>
                 Accordingly, objects that undergo greater
                 geometric changes under the applied force
                 tend to exhibit higher DCD values.
@@ -1362,9 +1326,6 @@
             the DCD measurement is performed independently
             for the <strong>x-axis</strong> and
             <strong>y-axis</strong> compression experiments.
-        </p>
-
-        <p>
             Each direction produces a DCD value by comparing
             the corresponding undeformed and compressed
             point clouds after preprocessing and alignment.
@@ -1444,9 +1405,6 @@
             For each object, the reconstructed geometries
             were processed, aligned, and compared using DCD
             to obtain the final deformability score.
-        </p>
-
-        <p>
             The resulting scores reveal differences in
             the deformation characteristics of the
             investigated objects.
@@ -1575,9 +1533,6 @@
             the reconstructed object meshes and
             Python scripts used in the point-cloud
             processing workflow.
-        </p>
-
-        <p>
             Relevant scripts include
             <strong>binary_ascii.py</strong> for
             ASCII-to-binary conversion,
@@ -1587,9 +1542,6 @@
             point-cloud registration.
             The repository also contains the
             Density-Aware Chamfer Distance implementation.
-        </p>
-
-        <p>
             The reconstructed meshes for the complete
             21-object dataset are provided in the
             <strong>object_meshes</strong> folder.
