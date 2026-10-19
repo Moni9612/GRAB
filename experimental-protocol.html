@@ -943,42 +943,31 @@
 
         <h3>5.4. Inorganic Target Selection and Grasp Execution</h3>
 
-        <p>
-            The objective of Level 4
-            was to evaluate the robotic
-            removal of inorganic contaminants
-            from mixed organic food waste.
-            Accordingly,
-            <strong>inorganic objects
-            were designated as the
-            grasping targets</strong>,
-            while organic materials
-            constituted environmental
-            clutter and introduced
-            additional physical disturbances.
-            Candidate grasp poses
-            were generated using
-            <strong>AnyGrasp</strong>
-            or <strong>SuctionNet</strong>,
-            depending on the grasping
-            modality.
-            Following post-processing,
-            the highest-ranked feasible
-            grasp was selected from
-            the top eight candidate poses.
-            Consecutive grasping attempts
-            were performed to remove
-            inorganic targets from
-            the mixed-scene configurations.
-            Consistent with Levels 2 and 3,
-            <strong>plastic bags and mesh
-            bags were excluded from
-            suction-gripper evaluations</strong>
-            because reliable suction
-            attachment could not
-            be established during
-            Level 1 experiments.
-        </p>
+        
+<h3>5.4. Grasp Selection and Execution</h3>
+
+<p>
+    The objective of Level 4 was to evaluate robotic grasping
+    performance under more realistic food waste conditions
+    by incorporating organic materials alongside inorganic
+    contaminants. The organic materials were introduced to
+    simulate the heterogeneous composition and environmental
+    disturbances encountered in real-world food waste,
+    including surface moisture, object occlusion, adhesion,
+    and physical interactions between materials.
+    Candidate grasp poses were generated using
+    <strong>AnyGrasp</strong> or <strong>SuctionNet</strong>,
+    depending on the grasping modality. Following
+    post-processing, the highest-ranked feasible grasp
+    was selected from the top eight candidate poses.
+    Consecutive grasping attempts were performed under
+    these mixed-scene conditions.
+    Consistent with Levels 2 and 3,
+    <strong>plastic bags and mesh bags were excluded
+    from suction-gripper evaluations</strong>
+    because reliable suction attachment could not
+    be established during Level 1 experiments.
+</p>
 
 
         <!-- EXPERIMENTAL EVALUATION -->
