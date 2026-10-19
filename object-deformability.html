@@ -1115,23 +1115,22 @@
 
             <h3>Object Deformability Score Calculation</h3>
 
-            <p>
-                <strong>Density-Aware Chamfer Distance (DCD)</strong>
-                is employed to quantify the geometric
-                discrepancy between the registered point clouds.
+           <p>
+    <strong>Density-Aware Chamfer Distance (DCD)</strong>
+    is employed to calculate the
+    <strong>Object Deformability Score (Q<sub>O</sub>)</strong>
+    by quantifying the geometric discrepancy between
+    the undeformed and compressed object geometries.
+    The metric incorporates nearest-neighbour distances
+    and density-aware normalisation to account for
+    variations in point sampling.
 
-                The metric incorporates nearest-neighbour
-                distances and density-aware normalisation
-                to account for variations in point sampling.
-
-                Let \(S_1\) denote the point cloud
-                representing the undeformed object
-                and \(S_2\) denote the corresponding
-                point cloud under compression.
-
-                The DCD between these point clouds
-                is formulated as follows:
-            </p>
+    Let \(S_1\) denote the point cloud representing
+    the undeformed object and \(S_2\) denote the
+    corresponding point cloud under compression.
+    The DCD between these point clouds is
+    formulated as follows:
+</p>
 
 
             <div class="equation-container">
@@ -1168,11 +1167,9 @@
 
         <div class="method-subsection">
 
-            <h3>Definition of DCD Parameters</h3>
-
             <div class="concept-box">
 
-                <h4>Mathematical Notation</h4>
+                <h4>Notation</h4>
 
                 <p>
                     <strong>\(S_1\):</strong>
@@ -1218,8 +1215,6 @@
         <!-- DCD INTERPRETATION -->
 
         <div class="method-subsection">
-
-            <h3>Interpretation of DCD Measurements</h3>
 
             <p>
                 The DCD formulation evaluates geometric
@@ -1300,29 +1295,6 @@
 
             Their arithmetic mean represents the
             object-level deformability score.
-        </p>
-
-
-        <div class="concept-box">
-
-            <h4>Score Interpretation</h4>
-
-            <p>
-                <strong>Higher Q<sub>O</sub> values</strong>
-                correspond to greater geometric
-                deformation under the applied force.
-            </p>
-
-            <p>
-                <strong>Lower Q<sub>O</sub> values</strong>
-                correspond to smaller geometric changes,
-                indicating relatively rigid behaviour.
-            </p>
-
-        </div>
-
-
-        <p>
             The same measurement and processing
             procedure is applied to all 21 objects,
             yielding one deformability score per object.
@@ -1383,35 +1355,6 @@
 
 
         <!-- CATEGORY-WISE COMPARISON -->
-
-        <div class="method-subsection">
-
-            <h3>Category-Wise Deformability Comparison</h3>
-
-            <p>
-                Category-level scores are obtained by averaging
-                the deformability scores of the three
-                representative objects within each
-                contaminant category.
-
-                The resulting category-wise average DCD
-                values are presented in
-                <strong>Figure 2</strong>,
-                alongside the individual object
-                deformability scores.
-
-                The observed differences demonstrate
-                the ability of the DCD-based methodology
-                to characterise relative deformation
-                behaviour across the dataset.
-
-                The calculated Q<sub>O</sub> values are
-                incorporated into the GRAB benchmark
-                as an object-related pre-grasp attribute
-                for analysing robotic grasping performance.
-            </p>
-
-        </div>
 
     </section>
 
