@@ -575,112 +575,84 @@
 
         <div class="workflow-grid">
 
-            <div class="workflow-step">
+    <div class="workflow-step">
+        <span class="workflow-number">STEP 01</span>
 
-                <span class="workflow-number">STEP 01</span>
+        <h3>Controlled Compression</h3>
 
-                <h3>Controlled Compression</h3>
+        <p>
+            Application of a 40 N compression force
+            independently along the x and y directions.
+        </p>
+    </div>
 
-                <p>
-                    Application of a 40 N compression force
-                    independently along the x and y directions.
-                </p>
+    <div class="workflow-step">
+        <span class="workflow-number">STEP 02</span>
 
-            </div>
+        <h3>Object Reconstruction</h3>
 
-            <div class="workflow-step">
+        <p>
+            Reconstruction of undeformed and compressed
+            object geometries using RecFusion.
+        </p>
+    </div>
 
-                <span class="workflow-number">STEP 02</span>
+    <div class="workflow-step">
+        <span class="workflow-number">STEP 03</span>
 
-                <h3>Object Reconstruction</h3>
+        <h3>Mesh Export</h3>
 
-                <p>
-                    Reconstruction of undeformed and compressed
-                    object geometries using RecFusion.
-                </p>
+        <p>
+            Export of reconstructed object geometries
+            as 3D mesh files.
+        </p>
+    </div>
 
-            </div>
+    <div class="workflow-step">
+        <span class="workflow-number">STEP 04</span>
 
-            <div class="workflow-step">
+        <h3>Background Removal</h3>
 
-                <span class="workflow-number">STEP 03</span>
+        <p>
+            Removal of unwanted background geometry
+            using RecFusion, MeshLab, and colour filtering.
+        </p>
+    </div>
 
-                <h3>Mesh Export</h3>
+    <div class="workflow-step">
+        <span class="workflow-number">STEP 05</span>
 
-                <p>
-                    Export of separate 3D meshes representing
-                    the undeformed and compressed object states.
-                </p>
+        <h3>ASCII-to-Binary Conversion</h3>
 
-            </div>
+        <p>
+            Conversion of processed geometry files
+            into binary format using binary_ascii.py.
+        </p>
+    </div>
 
-            <div class="workflow-step">
+    <div class="workflow-step">
+        <span class="workflow-number">STEP 06</span>
 
-                <span class="workflow-number">STEP 04</span>
+        <h3>Point-Cloud Alignment</h3>
 
-                <h3>Background Removal</h3>
+        <p>
+            Coarse alignment using MeshLab followed
+            by fine registration using ICP.
+        </p>
+    </div>
 
-                <p>
-                    Removal of unwanted background geometry
-                    using RecFusion.
-                </p>
+    <div class="workflow-step">
+        <span class="workflow-number">STEP 07</span>
 
-            </div>
+        <h3>DCD Calculation</h3>
 
-            <div class="workflow-step">
+        <p>
+            Calculation of directional DCD values
+            and the final Object Deformability Score.
+        </p>
+    </div>
 
-                <span class="workflow-number">STEP 05</span>
-
-                <h3>Colour Filtering</h3>
-
-                <p>
-                    Removal of residual non-object points
-                    using MeshLab and color_filter.py.
-                </p>
-
-            </div>
-
-            <div class="workflow-step">
-
-                <span class="workflow-number">STEP 06</span>
-
-                <h3>ASCII-to-Binary Conversion</h3>
-
-                <p>
-                    Conversion of processed geometry files
-                    using binary_ascii.py.
-                </p>
-
-            </div>
-
-            <div class="workflow-step">
-
-                <span class="workflow-number">STEP 07</span>
-
-                <h3>Point-Cloud Alignment</h3>
-
-                <p>
-                    Coarse registration using MeshLab
-                    followed by fine ICP alignment.
-                </p>
-
-            </div>
-
-            <div class="workflow-step">
-
-                <span class="workflow-number">STEP 08</span>
-
-                <h3>DCD Calculation</h3>
-
-                <p>
-                    Calculation of directional DCD values
-                    and the final object-level deformability score.
-                </p>
-
-            </div>
-
-        </div>
-
+</div>
     </section>
 
     <!-- ==========================================
