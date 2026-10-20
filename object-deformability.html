@@ -414,6 +414,64 @@
             grid-column: 4;
             grid-row: 3;
         }
+        /* ==========================================
+   ADDITIONAL RIGHT-HAND VIDEO SETS
+   ========================================== */
+
+/* Two video sets stacked inside each right panel */
+
+.right-video-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 12px;
+    min-width: 0;
+    padding: 8px;
+    background: #ffffff;
+    border: 1px solid #d8dcd7;
+    border-radius: 7px;
+}
+
+/* Remove the individual card styling inside the panel */
+
+.right-video-panel .small-video-set {
+    border: none;
+    background: transparent;
+    padding: 0;
+    flex: 0 0 auto;
+}
+
+/* Ensure each video group fits within the panel */
+
+.right-video-panel .small-video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+    width: 100%;
+}
+
+/* Position the two panels */
+
+.right-panel-top {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.right-panel-bottom {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+/* Responsive positioning */
+
+@media (max-width: 800px) {
+
+    .right-video-panel {
+        grid-column: auto !important;
+        grid-row: auto !important;
+    }
+
+}
 
         /* ==========================================
            ICP VIDEO
@@ -1188,61 +1246,203 @@
 
                     </div>
 
-                    <!-- ======================================
-                         SMALL SET 1 — BOTTLE
-                         ====================================== -->
+                    <!-- ==========================================
+     TOP RIGHT PANEL
+     EXISTING SET 1 + NEW SET 7
+     ========================================== -->
 
-                    <div class="small-video-set small-set-1">
+<div class="right-video-panel right-panel-top">
 
-                        <div class="small-video-grid">
+    <!-- ======================================
+         SET 1 — BOTTLE
+         ====================================== -->
 
-                            <video autoplay muted loop playsinline preload="metadata">
-                                <source src="assets/videos/mbottle_before.webm" type="video/webm">
-                            </video>
+    <div class="small-video-set">
 
-                            <video autoplay muted loop playsinline preload="metadata">
-                                <source src="assets/videos/pbottle_before.webm" type="video/webm">
-                            </video>
+        <div class="small-video-grid">
 
-                            <video autoplay muted loop playsinline preload="metadata">
-                                <source src="assets/videos/mbottle_after.webm" type="video/webm">
-                            </video>
+            <!-- Before Compression: RecFusion Mesh -->
 
-                            <video autoplay muted loop playsinline preload="metadata">
-                                <source src="assets/videos/pbottle_after.webm" type="video/webm">
-                            </video>
+            <video autoplay muted loop playsinline preload="metadata">
+                <source
+                    src="assets/videos/mbottle_before.webm"
+                    type="video/webm">
+            </video>
 
-                        </div>
+            <!-- Before Compression: Point Cloud -->
 
-                    </div>
+            <video autoplay muted loop playsinline preload="metadata">
+                <source
+                    src="assets/videos/pbottle_before.webm"
+                    type="video/webm">
+            </video>
 
-                    <!-- ======================================
-                         SMALL SET 2 — BOX
-                         ====================================== -->
+            <!-- After Compression: RecFusion Mesh -->
 
-                    <div class="small-video-set small-set-2">
+            <video autoplay muted loop playsinline preload="metadata">
+                <source
+                    src="assets/videos/mbottle_after.webm"
+                    type="video/webm">
+            </video>
 
-                        <div class="small-video-grid">
+            <!-- After Compression: Point Cloud -->
 
-                            <video autoplay muted loop playsinline preload="metadata">
-                                <source src="assets/videos/mbox_before.webm" type="video/webm">
-                            </video>
+            <video autoplay muted loop playsinline preload="metadata">
+                <source
+                    src="assets/videos/pbottle_after.webm"
+                    type="video/webm">
+            </video>
 
-                            <video autoplay muted loop playsinline preload="metadata">
-                                <source src="assets/videos/pbox_before.webm" type="video/webm">
-                            </video>
+        </div>
 
-                            <video autoplay muted loop playsinline preload="metadata">
-                                <source src="assets/videos/mbox_after.webm" type="video/webm">
-                            </video>
+    </div>
 
-                            <video autoplay muted loop playsinline preload="metadata">
-                                <source src="assets/videos/pbox_after.webm" type="video/webm">
-                            </video>
 
-                        </div>
+    <!-- ======================================
+         SET 7 — ADDITIONAL TIN CAN
+         ====================================== -->
 
-                    </div>
+    <div class="small-video-set">
+
+        <div class="small-video-grid">
+
+            <!-- Before Compression: RecFusion Mesh -->
+
+            <video autoplay muted loop playsinline preload="metadata">
+                <source
+                    src="assets/videos/mmtin_before.webm"
+                    type="video/webm">
+            </video>
+
+            <!-- Before Compression: Point Cloud -->
+
+            <video autoplay muted loop playsinline preload="metadata">
+                <source
+                    src="assets/videos/pptin_before.webm"
+                    type="video/webm">
+            </video>
+
+            <!-- After Compression: RecFusion Mesh -->
+
+            <video autoplay muted loop playsinline preload="metadata">
+                <source
+                    src="assets/videos/mmtin_after.webm"
+                    type="video/webm">
+            </video>
+
+            <!-- After Compression: Point Cloud -->
+
+            <video autoplay muted loop playsinline preload="metadata">
+                <source
+                    src="assets/videos/pptin_after.webm"
+                    type="video/webm">
+            </video>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==========================================
+     BOTTOM RIGHT PANEL
+     EXISTING SET 2 + NEW SET 8
+     ========================================== -->
+
+<div class="right-video-panel right-panel-bottom">
+
+    <!-- ======================================
+         SET 2 — BOX
+         ====================================== -->
+
+    <div class="small-video-set">
+
+        <div class="small-video-grid">
+
+            <!-- Before Compression: RecFusion Mesh -->
+
+            <video autoplay muted loop playsinline preload="metadata">
+                <source
+                    src="assets/videos/mbox_before.webm"
+                    type="video/webm">
+            </video>
+
+            <!-- Before Compression: Point Cloud -->
+
+            <video autoplay muted loop playsinline preload="metadata">
+                <source
+                    src="assets/videos/pbox_before.webm"
+                    type="video/webm">
+            </video>
+
+            <!-- After Compression: RecFusion Mesh -->
+
+            <video autoplay muted loop playsinline preload="metadata">
+                <source
+                    src="assets/videos/mbox_after.webm"
+                    type="video/webm">
+            </video>
+
+            <!-- After Compression: Point Cloud -->
+
+            <video autoplay muted loop playsinline preload="metadata">
+                <source
+                    src="assets/videos/pbox_after.webm"
+                    type="video/webm">
+            </video>
+
+        </div>
+
+    </div>
+
+
+    <!-- ======================================
+         SET 8 — ADDITIONAL BOX
+         ====================================== -->
+
+    <div class="small-video-set">
+
+        <div class="small-video-grid">
+
+            <!-- Before Compression: RecFusion Mesh -->
+
+            <video autoplay muted loop playsinline preload="metadata">
+                <source
+                    src="assets/videos/mmbox_before.webm"
+                    type="video/webm">
+            </video>
+
+            <!-- Before Compression: Point Cloud -->
+
+            <video autoplay muted loop playsinline preload="metadata">
+                <source
+                    src="assets/videos/ppbox_before.webm"
+                    type="video/webm">
+            </video>
+
+            <!-- After Compression: RecFusion Mesh -->
+
+            <video autoplay muted loop playsinline preload="metadata">
+                <source
+                    src="assets/videos/mmbox_after.webm"
+                    type="video/webm">
+            </video>
+
+            <!-- After Compression: Point Cloud -->
+
+            <video autoplay muted loop playsinline preload="metadata">
+                <source
+                    src="assets/videos/ppbox_after.webm"
+                    type="video/webm">
+            </video>
+
+        </div>
+
+    </div>
+
+</div>
 
                     <!-- ======================================
                          SMALL SET 3 — MESH BAG
