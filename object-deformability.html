@@ -847,310 +847,307 @@
              MESH EXPORT
              ========================================== -->
 
-        <div class="method-subsection">
+       <!-- ==========================================
+     MESH EXPORT
+     ========================================== -->
 
-            <h3>Mesh Export</h3>
+<div class="method-subsection">
 
-            <p>
-                Following reconstruction, the three-dimensional
-                object geometries were exported from
-                <strong>RecFusion</strong> as mesh files
-                for subsequent processing.
+    <h3>Mesh Export</h3>
 
-                Separate mesh representations were retained
-                for the undeformed and compressed states,
-                allowing the geometric changes induced
-                by compression to be evaluated independently.
-            </p>
+    <p>
+        Following reconstruction, the three-dimensional
+        object geometries were exported from
+        <strong>RecFusion</strong> as mesh files
+        for subsequent processing.
 
-            <p>
-                These exported meshes provided the input
-                for background removal, colour filtering,
-                and subsequent point-cloud registration.
+        Separate mesh representations were retained
+        for the undeformed and compressed states,
+        allowing the geometric changes induced
+        by compression to be evaluated independently.
+    </p>
 
-                The reconstructed object meshes for all
-                21 objects are available in the
+    <p>
+        These exported meshes provided the input
+        for subsequent background removal,
+        colour filtering, and point-cloud registration.
+    </p>
 
-                <a
-                    href="https://github.com/Moni9612/Object-Deformability-Score-Calculation/tree/main/object_meshes"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="object-meshes-reference"
+</div>
+
+
+<!-- ==========================================
+     BACKGROUND REMOVAL
+     ========================================== -->
+
+<div class="method-subsection">
+
+    <h3>Background Removal</h3>
+
+    <p>
+        The reconstructed object geometries may contain
+        unwanted background surfaces, gripper components,
+        and other environmental features captured during
+        the scanning process.
+
+        To minimise the influence of these non-object
+        regions on subsequent geometric measurements,
+        a two-stage background removal procedure
+        was employed using
+        <strong>RecFusion</strong>,
+        <strong>MeshLab</strong>, and a custom
+        Python implementation.
+    </p>
+
+    <p>
+        Initially, background removal was performed
+        using <strong>RecFusion</strong> to eliminate
+        unwanted environmental surfaces while retaining
+        the reconstructed object geometry.
+
+        This initial processing stage reduced the
+        presence of unnecessary background regions
+        within the exported meshes.
+    </p>
+
+    <p>
+        Following the initial background removal,
+        additional filtering was performed using
+        <strong>MeshLab</strong> to visually inspect
+        the reconstructed geometries and remove
+        residual unwanted points based on their
+        colour attributes.
+
+        This procedure was further supported by
+        a custom Python script,
+        <strong>color_filter.py</strong>,
+        which enables colour-based filtering
+        to isolate the target object from
+        remaining background regions and
+        gripper components.
+    </p>
+
+    <p>
+        The combined background removal and
+        colour filtering procedure was applied
+        to both the undeformed and compressed
+        object representations.
+
+        This processing stage ensured that
+        the resulting geometries primarily
+        represented the target object,
+        minimising the influence of unrelated
+        surfaces on subsequent point-cloud
+        registration and DCD calculations.
+    </p>
+
+    <p>
+        Following background removal and colour filtering,
+        the processed object geometry files for all
+        21 objects can be found in the
+
+        <a
+            href="https://github.com/Moni9612/Object-Deformability-Score-Calculation/tree/main/object_meshes"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="object-meshes-reference"
+        >
+            <strong>object_meshes</strong>
+        </a>
+
+        directory of the associated GitHub repository.
+    </p>
+
+</div>
+
+       <!-- ==========================================
+     ASCII TO BINARY CONVERSION
+     ========================================== -->
+
+<div class="method-subsection">
+
+    <h3>ASCII-to-Binary Conversion</h3>
+
+    <p>
+        Following background removal, the processed
+        object geometry files were converted from
+        <strong>ASCII to binary format</strong>
+        to prepare them for subsequent
+        point-cloud processing and registration.
+
+        This conversion was performed using
+        the custom Python script
+        <strong>binary_ascii.py</strong>.
+
+        The conversion changes the file encoding
+        while preserving the geometric information
+        required for subsequent analysis.
+
+        The resulting binary-format files
+        were used for point-cloud alignment
+        and geometric comparison.
+    </p>
+
+    <!-- RECONSTRUCTION VIDEO COMPARISON -->
+
+    <div class="reconstruction-section">
+
+        <h4>
+            3D Reconstruction Before and During Compression
+        </h4>
+
+        <p>
+            The following visualisations illustrate
+            the reconstructed RecFusion meshes
+            and their corresponding binary-format
+            point-cloud representations for
+            the undeformed and compressed states.
+        </p>
+
+        <!-- BEFORE COMPRESSION -->
+
+        <h4 class="comparison-heading">
+            Before Compression
+        </h4>
+
+        <div class="video-comparison">
+
+            <div class="video-panel">
+
+                <h4>(a) RecFusion 3D Mesh</h4>
+
+                <video
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
                 >
-                    <strong>object_meshes</strong>
-                </a>
 
-                directory of the associated GitHub repository.
-            </p>
+                    <source
+                        src="assets/videos/before_grasp_recfusion.webm"
+                        type="video/webm"
+                    >
 
-        </div>
+                    Your browser does not support HTML5 video.
 
-        <!-- ==========================================
-             BACKGROUND REMOVAL
-             ========================================== -->
+                </video>
 
-        <div class="method-subsection">
-
-            <h3>Background Removal Using RecFusion</h3>
-
-            <p>
-                The reconstructed geometries may contain
-                unwanted background surfaces and surrounding
-                environmental features captured during
-                the scanning process.
-
-                To minimise the influence of these
-                non-object regions on subsequent geometric
-                measurements, an initial background removal
-                procedure was performed using
-                <strong>RecFusion</strong>.
-            </p>
-
-            <p>
-                This processing stage focused on retaining
-                the reconstructed object geometry while
-                removing unnecessary background regions.
-
-                The resulting meshes were subsequently
-                processed using colour-based filtering
-                to further isolate the target object.
-            </p>
-
-        </div>
-
-        <!-- ==========================================
-             COLOUR FILTERING
-             ========================================== -->
-
-        <div class="method-subsection">
-
-            <h3>Colour Filtering Using MeshLab and Python</h3>
-
-            <p>
-                Following the initial background removal,
-                additional filtering was performed to
-                eliminate unwanted points associated
-                with the experimental setup, including
-                residual background regions and gripper
-                components.
-
-                <strong>MeshLab</strong> was employed
-                for visual inspection and colour-based
-                filtering of the reconstructed geometries.
-            </p>
-
-            <p>
-                The filtering procedure was further supported
-                by a custom Python implementation,
-                <strong>color_filter.py</strong>,
-                which enables the removal of points
-                based on their colour attributes.
-
-                This processing stage was intended
-                to retain the target object geometry
-                while reducing the contribution of unrelated
-                surfaces to subsequent registration
-                and DCD calculations.
-            </p>
-
-            <p>
-                The filtering procedure was applied
-                to both the undeformed and compressed
-                object representations to prepare
-                the corresponding datasets for
-                further processing.
-            </p>
-
-        </div>
-
-        <!-- ==========================================
-             ASCII TO BINARY CONVERSION
-             ========================================== -->
-
-        <div class="method-subsection">
-
-            <h3>ASCII-to-Binary Conversion</h3>
-
-            <p>
-                Following background removal and colour
-                filtering, the processed object geometry
-                files were converted from
-                <strong>ASCII to binary format</strong>.
-
-                This conversion was performed using
-                the custom Python script
-                <strong>binary_ascii.py</strong>.
-
-                The conversion changes the file encoding
-                while preserving the geometric information
-                required for subsequent point-cloud analysis.
-
-                The resulting binary-format files were
-                prepared for registration and geometric
-                comparison.
-            </p>
-
-            <!-- RECONSTRUCTION VIDEO COMPARISON -->
-
-            <div class="reconstruction-section">
-
-                <h4>
-                    3D Reconstruction Before and During Compression
-                </h4>
-
-                <p>
-                    The following visualisations illustrate
-                    the reconstructed RecFusion meshes
-                    and their corresponding binary-format
-                    point-cloud representations for
-                    the undeformed and compressed states.
+                <p class="video-caption">
+                    Reconstructed object geometry
+                    before compression.
                 </p>
 
-                <!-- BEFORE COMPRESSION -->
+            </div>
 
-                <h4 class="comparison-heading">
-                    Before Compression
-                </h4>
+            <div class="video-panel">
 
-                <div class="video-comparison">
+                <h4>(b) Binary Point-Cloud Representation</h4>
 
-                    <div class="video-panel">
+                <video
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                >
 
-                        <h4>(a) RecFusion 3D Mesh</h4>
+                    <source
+                        src="assets/videos/before_grasp_binary.webm"
+                        type="video/webm"
+                    >
 
-                        <video
-                            autoplay
-                            muted
-                            loop
-                            playsinline
-                            preload="metadata"
-                        >
+                    Your browser does not support HTML5 video.
 
-                            <source
-                                src="assets/videos/before_grasp_recfusion.webm"
-                                type="video/webm"
-                            >
+                </video>
 
-                            Your browser does not support HTML5 video.
-
-                        </video>
-
-                        <p class="video-caption">
-                            Reconstructed object geometry
-                            before compression.
-                        </p>
-
-                    </div>
-
-                    <div class="video-panel">
-
-                        <h4>(b) Binary Point-Cloud Representation</h4>
-
-                        <video
-                            autoplay
-                            muted
-                            loop
-                            playsinline
-                            preload="metadata"
-                        >
-
-                            <source
-                                src="assets/videos/before_grasp_binary.webm"
-                                type="video/webm"
-                            >
-
-                            Your browser does not support HTML5 video.
-
-                        </video>
-
-                        <p class="video-caption">
-                            Corresponding binary-format
-                            point-cloud representation
-                            of the undeformed object.
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <!-- DURING COMPRESSION -->
-
-                <h4 class="comparison-heading">
-                    During Compression
-                </h4>
-
-                <div class="video-comparison">
-
-                    <div class="video-panel">
-
-                        <h4>(c) RecFusion 3D Mesh</h4>
-
-                        <video
-                            autoplay
-                            muted
-                            loop
-                            playsinline
-                            preload="metadata"
-                        >
-
-                            <source
-                                src="assets/videos/after_grasp_recfusion.webm"
-                                type="video/webm"
-                            >
-
-                            Your browser does not support HTML5 video.
-
-                        </video>
-
-                        <p class="video-caption">
-                            Reconstructed object geometry
-                            under the applied compression force.
-                        </p>
-
-                    </div>
-
-                    <div class="video-panel">
-
-                        <h4>(d) Binary Point-Cloud Representation</h4>
-
-                        <video
-                            autoplay
-                            muted
-                            loop
-                            playsinline
-                            preload="metadata"
-                        >
-
-                            <source
-                                src="assets/videos/after_grasp_binary.webm"
-                                type="video/webm"
-                            >
-
-                            Your browser does not support HTML5 video.
-
-                        </video>
-
-                        <p class="video-caption">
-                            Corresponding binary-format
-                            point-cloud representation
-                            of the compressed object.
-                        </p>
-
-                    </div>
-
-                </div>
+                <p class="video-caption">
+                    Corresponding binary-format
+                    point-cloud representation
+                    of the undeformed object.
+                </p>
 
             </div>
 
         </div>
 
+        <!-- DURING COMPRESSION -->
+
+        <h4 class="comparison-heading">
+            During Compression
+        </h4>
+
+        <div class="video-comparison">
+
+            <div class="video-panel">
+
+                <h4>(c) RecFusion 3D Mesh</h4>
+
+                <video
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                >
+
+                    <source
+                        src="assets/videos/after_grasp_recfusion.webm"
+                        type="video/webm"
+                    >
+
+                    Your browser does not support HTML5 video.
+
+                </video>
+
+                <p class="video-caption">
+                    Reconstructed object geometry
+                    under the applied compression force.
+                </p>
+
+            </div>
+
+            <div class="video-panel">
+
+                <h4>(d) Binary Point-Cloud Representation</h4>
+
+                <video
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                >
+
+                    <source
+                        src="assets/videos/after_grasp_binary.webm"
+                        type="video/webm"
+                    >
+
+                    Your browser does not support HTML5 video.
+
+                </video>
+
+                <p class="video-caption">
+                    Corresponding binary-format
+                    point-cloud representation
+                    of the compressed object.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
         <!-- ==========================================
              POINT-CLOUD ALIGNMENT
              ========================================== -->
 
         <div class="method-subsection">
 
-            <h3>Point-Cloud Alignment Using MeshLab and ICP</h3>
+            <h3>Point-Cloud Alignment</h3>
 
             <p>
                 Following preprocessing and file conversion,
