@@ -31,7 +31,7 @@
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
     </script>
 
-    <style>
+    <>
 
         /* ==========================================
            MAIN PAGE LAYOUT
@@ -499,6 +499,194 @@
 
         }
 
+        /* ==========================================
+   RECONSTRUCTION VIDEO GALLERY
+   ========================================== */
+
+/* Main gallery:
+   Large 2x2 block on the left
+   Two small sets on the right
+   Four small sets underneath
+*/
+
+.reconstruction-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin: 30px 0 45px;
+    align-items: stretch;
+}
+
+/* ==========================================
+   LARGE VIDEO BLOCK
+   ========================================== */
+
+.featured-video-grid {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 2;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+/* Large video cards */
+
+.featured-video-card {
+    background: #ffffff;
+    border: 1px solid #d8dcd7;
+    border-radius: 8px;
+    padding: 14px;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.featured-video-card h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1E7A55;
+    text-align: center;
+    margin: 0 0 12px;
+    line-height: 1.5;
+}
+
+.featured-video-card video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    background: #0b1920;
+    border-radius: 5px;
+}
+
+.detail-page .featured-video-card p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #53636a;
+    text-align: center;
+    margin: 12px 0 0;
+}
+
+/* ==========================================
+   SMALL VIDEO SETS
+   ========================================== */
+
+.small-video-set {
+    background: #ffffff;
+    border: 1px solid #d8dcd7;
+    border-radius: 8px;
+    padding: 8px;
+    min-width: 0;
+}
+
+/* Four videos inside each small set */
+
+.small-video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px;
+}
+
+.small-video-grid video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    background: #0b1920;
+    border-radius: 3px;
+}
+
+/* ==========================================
+   SMALL SET POSITIONS
+   ========================================== */
+
+/* Two sets on the right */
+
+.small-set-1 {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.small-set-2 {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+/* Four sets along the bottom */
+
+.small-set-3 {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.small-set-4 {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.small-set-5 {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.small-set-6 {
+    grid-column: 4;
+    grid-row: 3;
+}
+
+/* ==========================================
+   RESPONSIVE LAYOUT
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    .reconstruction-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .featured-video-grid {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+
+    .small-video-set {
+        grid-column: auto !important;
+        grid-row: auto !important;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .reconstruction-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .featured-video-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .featured-video-card {
+        padding: 10px;
+    }
+
+    .featured-video-card h4 {
+        font-size: 14px;
+    }
+
+    .small-video-set {
+        padding: 5px;
+    }
+
+    .small-video-grid {
+        gap: 3px;
+    }
+}
+
     </style>
 
 </head>
@@ -944,151 +1132,316 @@
         and geometric comparison.
     </p>
 
-    <!-- RECONSTRUCTION VIDEO COMPARISON -->
+    <!-- ==========================================
+     RECONSTRUCTION VIDEO GALLERY
+     ========================================== -->
 
-    <div class="reconstruction-section">
+<div class="reconstruction-section">
 
-        <h4>
-            3D Reconstruction Before and During Compression
-        </h4>
+    <h4>
+        3D Reconstruction Before and During Compression
+    </h4>
 
-        <p>
-            The following visualisations illustrate
-            the reconstructed RecFusion meshes
-            and their corresponding binary-format
-            point-cloud representations for
-            the undeformed and compressed states.
-        </p>
+    <p>
+        The following visualisations illustrate the
+        reconstructed RecFusion meshes and their
+        corresponding binary-format point-cloud
+        representations for the undeformed and
+        compressed object states.
 
-        <!-- BEFORE COMPRESSION -->
+        The enlarged visualisations demonstrate
+        the reconstruction and conversion process,
+        while additional examples illustrate
+        the corresponding geometric representations
+        across different inorganic contaminant objects.
+    </p>
 
-        <h4 class="comparison-heading">
-            Before Compression
-        </h4>
+    <div class="reconstruction-gallery">
 
-        <div class="video-comparison">
+        <!-- ======================================
+             FOUR LARGE VIDEOS
+             ====================================== -->
 
-            <div class="video-panel">
+        <div class="featured-video-grid">
 
-                <h4>(a) RecFusion 3D Mesh</h4>
+            <!-- LARGE VIDEO 1 -->
 
-                <video
-                    autoplay
-                    muted
-                    loop
-                    playsinline
-                    preload="metadata"
-                >
+            <div class="featured-video-card">
+
+                <h4>
+                    (a) RecFusion 3D Mesh
+                    — Before Compression
+                </h4>
+
+                <video autoplay muted loop playsinline
+                       preload="metadata">
 
                     <source
                         src="assets/videos/before_grasp_recfusion.webm"
                         type="video/webm"
                     >
 
-                    Your browser does not support HTML5 video.
-
                 </video>
 
-                <p class="video-caption">
+                <p>
                     Reconstructed object geometry
                     before compression.
                 </p>
 
             </div>
 
-            <div class="video-panel">
 
-                <h4>(b) Binary Point-Cloud Representation</h4>
+            <!-- LARGE VIDEO 2 -->
 
-                <video
-                    autoplay
-                    muted
-                    loop
-                    playsinline
-                    preload="metadata"
-                >
+            <div class="featured-video-card">
+
+                <h4>
+                    (b) Binary Point-Cloud Representation
+                    — Before Compression
+                </h4>
+
+                <video autoplay muted loop playsinline
+                       preload="metadata">
 
                     <source
                         src="assets/videos/before_grasp_binary.webm"
                         type="video/webm"
                     >
 
-                    Your browser does not support HTML5 video.
-
                 </video>
 
-                <p class="video-caption">
-                    Corresponding binary-format
-                    point-cloud representation
+                <p>
+                    Binary-format point-cloud representation
                     of the undeformed object.
                 </p>
 
             </div>
 
-        </div>
 
-        <!-- DURING COMPRESSION -->
+            <!-- LARGE VIDEO 3 -->
 
-        <h4 class="comparison-heading">
-            During Compression
-        </h4>
+            <div class="featured-video-card">
 
-        <div class="video-comparison">
+                <h4>
+                    (c) RecFusion 3D Mesh
+                    — During Compression
+                </h4>
 
-            <div class="video-panel">
-
-                <h4>(c) RecFusion 3D Mesh</h4>
-
-                <video
-                    autoplay
-                    muted
-                    loop
-                    playsinline
-                    preload="metadata"
-                >
+                <video autoplay muted loop playsinline
+                       preload="metadata">
 
                     <source
                         src="assets/videos/after_grasp_recfusion.webm"
                         type="video/webm"
                     >
 
-                    Your browser does not support HTML5 video.
-
                 </video>
 
-                <p class="video-caption">
+                <p>
                     Reconstructed object geometry
                     under the applied compression force.
                 </p>
 
             </div>
 
-            <div class="video-panel">
 
-                <h4>(d) Binary Point-Cloud Representation</h4>
+            <!-- LARGE VIDEO 4 -->
 
-                <video
-                    autoplay
-                    muted
-                    loop
-                    playsinline
-                    preload="metadata"
-                >
+            <div class="featured-video-card">
+
+                <h4>
+                    (d) Binary Point-Cloud Representation
+                    — During Compression
+                </h4>
+
+                <video autoplay muted loop playsinline
+                       preload="metadata">
 
                     <source
                         src="assets/videos/after_grasp_binary.webm"
                         type="video/webm"
                     >
 
-                    Your browser does not support HTML5 video.
-
                 </video>
 
-                <p class="video-caption">
-                    Corresponding binary-format
-                    point-cloud representation
+                <p>
+                    Binary-format point-cloud representation
                     of the compressed object.
                 </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ======================================
+             SMALL SET 1 — BOTTLE
+             ====================================== -->
+
+        <div class="small-video-set small-set-1">
+
+            <div class="small-video-grid">
+
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/videos/mbottle_before.webm" type="video/webm">
+                </video>
+
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/videos/pbottle_before.webm" type="video/webm">
+                </video>
+
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/videos/mbottle_after.webm" type="video/webm">
+                </video>
+
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/videos/pbottle_after.webm" type="video/webm">
+                </video>
+
+            </div>
+
+        </div>
+
+
+        <!-- ======================================
+             SMALL SET 2 — BOX
+             ====================================== -->
+
+        <div class="small-video-set small-set-2">
+
+            <div class="small-video-grid">
+
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/videos/mbox_before.webm" type="video/webm">
+                </video>
+
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/videos/pbox_before.webm" type="video/webm">
+                </video>
+
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/videos/mbox_after.webm" type="video/webm">
+                </video>
+
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/videos/pbox_after.webm" type="video/webm">
+                </video>
+
+            </div>
+
+        </div>
+
+
+        <!-- ======================================
+             SMALL SET 3 — MESH BAG
+             ====================================== -->
+
+        <div class="small-video-set small-set-3">
+
+            <div class="small-video-grid">
+
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/videos/mmesh_before.webm" type="video/webm">
+                </video>
+
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/videos/pmesh_before.webm" type="video/webm">
+                </video>
+
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/videos/mmesh_after.webm" type="video/webm">
+                </video>
+
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/videos/pmesh_after.webm" type="video/webm">
+                </video>
+
+            </div>
+
+        </div>
+
+
+        <!-- ======================================
+             SMALL SET 4 — PLATE
+             ====================================== -->
+
+        <div class="small-video-set small-set-4">
+
+            <div class="small-video-grid">
+
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/videos/mplate_before.webm" type="video/webm">
+                </video>
+
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/videos/pplate_before.webm" type="video/webm">
+                </video>
+
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/videos/mplate_after.webm" type="video/webm">
+                </video>
+
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/videos/pplate_after.webm" type="video/webm">
+                </video>
+
+            </div>
+
+        </div>
+
+
+        <!-- ======================================
+             SMALL SET 5 — TIN CAN
+             ====================================== -->
+
+        <div class="small-video-set small-set-5">
+
+            <div class="small-video-grid">
+
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/videos/mtin_before.webm" type="video/webm">
+                </video>
+
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/videos/ptin_before.webm" type="video/webm">
+                </video>
+
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/videos/mtin_after.webm" type="video/webm">
+                </video>
+
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/videos/ptin_after.webm" type="video/webm">
+                </video>
+
+            </div>
+
+        </div>
+
+
+        <!-- ======================================
+             SMALL SET 6 — ADDITIONAL BOTTLE
+             ====================================== -->
+
+        <div class="small-video-set small-set-6">
+
+            <div class="small-video-grid">
+
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/videos/mmbottle_before.webm" type="video/webm">
+                </video>
+
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/videos/ppbottle_before.webm" type="video/webm">
+                </video>
+
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/videos/mmbottle_after.webm" type="video/webm">
+                </video>
+
+                <video autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/videos/ppbottle_after.webm" type="video/webm">
+                </video>
 
             </div>
 
