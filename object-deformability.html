@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- MathJax -->
+    <!-- Mathematical equation rendering -->
     <script>
         window.MathJax = {
             tex: {
@@ -31,7 +31,7 @@
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
     </script>
 
-    <>
+    <style>
 
         /* ==========================================
            MAIN PAGE LAYOUT
@@ -58,7 +58,7 @@
         }
 
         /* ==========================================
-           MAIN SECTIONS
+           MAIN METHODOLOGY SECTIONS
            ========================================== */
 
         .method-section {
@@ -76,7 +76,7 @@
         }
 
         /* ==========================================
-           INDENTED SUBSECTIONS
+           INDENTED METHODOLOGY SUBSECTIONS
            ========================================== */
 
         .method-subsection {
@@ -154,7 +154,7 @@
         }
 
         /* ==========================================
-           METHODOLOGY OVERVIEW
+           WORKFLOW OVERVIEW
            ========================================== */
 
         .workflow-overview {
@@ -338,7 +338,7 @@
             text-decoration: underline;
         }
 
-        /* ==========================================
+                /* ==========================================
            ICP VIDEO
            ========================================== */
 
@@ -374,16 +374,16 @@
            ========================================== */
 
         .equation-container,
-        .score-equation {
-            position: relative;
-            background: transparent;
-            border: none;
-            border-radius: 0;
-            padding: 20px 10px 35px;
-            margin: 25px auto;
-            text-align: center;
-            overflow-x: auto;
-        }
+.score-equation {
+    position: relative;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 20px 10px 35px;
+    margin: 25px auto;
+    text-align: center;
+    overflow-x: auto;
+}
 
         .equation-number {
             position: absolute;
@@ -398,15 +398,15 @@
         }
 
         /* ==========================================
-           NOTATION AND EXPLANATION
+           TECHNICAL EXPLANATION BOXES
            ========================================== */
 
         .concept-box {
-            background: transparent;
-            border: none;
-            border-radius: 0;
-            padding: 8px 0;
-            margin: 22px 0;
+            background: #f5f7f4;
+            border-left: 4px solid #1E7A55;
+            padding: 22px 25px;
+            margin: 30px 0;
+            border-radius: 0 7px 7px 0;
         }
 
         .concept-box h4 {
@@ -423,23 +423,6 @@
 
         .concept-box p:last-child {
             margin-bottom: 0;
-        }
-
-        /* ==========================================
-           JUSTIFIED PARAGRAPHS
-           ========================================== */
-
-        .detail-page p {
-            text-align: justify;
-            text-justify: inter-word;
-            hyphens: auto;
-        }
-
-        /* Preserve centred video captions */
-
-        .detail-page .video-caption,
-        .detail-page .icp-video-caption {
-            text-align: center;
         }
 
         /* ==========================================
@@ -498,193 +481,15 @@
             }
 
         }
-
-        /* ==========================================
-   RECONSTRUCTION VIDEO GALLERY
-   ========================================== */
-
-/* Main gallery:
-   Large 2x2 block on the left
-   Two small sets on the right
-   Four small sets underneath
-*/
-
-.reconstruction-gallery {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 18px;
-    margin: 30px 0 45px;
-    align-items: stretch;
-}
-
+        
 /* ==========================================
-   LARGE VIDEO BLOCK
+   JUSTIFIED PARAGRAPH ALIGNMENT
    ========================================== */
 
-.featured-video-grid {
-    grid-column: 1 / span 3;
-    grid-row: 1 / span 2;
-
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
-}
-
-/* Large video cards */
-
-.featured-video-card {
-    background: #ffffff;
-    border: 1px solid #d8dcd7;
-    border-radius: 8px;
-    padding: 14px;
-    min-width: 0;
-
-    display: flex;
-    flex-direction: column;
-}
-
-.featured-video-card h4 {
-    font-size: 15px;
-    font-weight: 700;
-    color: #1E7A55;
-    text-align: center;
-    margin: 0 0 12px;
-    line-height: 1.5;
-}
-
-.featured-video-card video {
-    display: block;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: contain;
-    background: #0b1920;
-    border-radius: 5px;
-}
-
-.detail-page .featured-video-card p {
-    font-size: 13px;
-    line-height: 1.6;
-    color: #53636a;
-    text-align: center;
-    margin: 12px 0 0;
-}
-
-/* ==========================================
-   SMALL VIDEO SETS
-   ========================================== */
-
-.small-video-set {
-    background: #ffffff;
-    border: 1px solid #d8dcd7;
-    border-radius: 8px;
-    padding: 8px;
-    min-width: 0;
-}
-
-/* Four videos inside each small set */
-
-.small-video-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 5px;
-}
-
-.small-video-grid video {
-    display: block;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: contain;
-    background: #0b1920;
-    border-radius: 3px;
-}
-
-/* ==========================================
-   SMALL SET POSITIONS
-   ========================================== */
-
-/* Two sets on the right */
-
-.small-set-1 {
-    grid-column: 4;
-    grid-row: 1;
-}
-
-.small-set-2 {
-    grid-column: 4;
-    grid-row: 2;
-}
-
-/* Four sets along the bottom */
-
-.small-set-3 {
-    grid-column: 1;
-    grid-row: 3;
-}
-
-.small-set-4 {
-    grid-column: 2;
-    grid-row: 3;
-}
-
-.small-set-5 {
-    grid-column: 3;
-    grid-row: 3;
-}
-
-.small-set-6 {
-    grid-column: 4;
-    grid-row: 3;
-}
-
-/* ==========================================
-   RESPONSIVE LAYOUT
-   ========================================== */
-
-@media (max-width: 900px) {
-
-    .reconstruction-gallery {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
-    }
-
-    .featured-video-grid {
-        grid-column: 1 / -1;
-        grid-row: auto;
-    }
-
-    .small-video-set {
-        grid-column: auto !important;
-        grid-row: auto !important;
-    }
-}
-
-@media (max-width: 600px) {
-
-    .reconstruction-gallery {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-    }
-
-    .featured-video-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .featured-video-card {
-        padding: 10px;
-    }
-
-    .featured-video-card h4 {
-        font-size: 14px;
-    }
-
-    .small-video-set {
-        padding: 5px;
-    }
-
-    .small-video-grid {
-        gap: 3px;
-    }
+.detail-page p {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
 }
 
     </style>
@@ -717,6 +522,7 @@
 
     </div>
 
+
     <!-- ==========================================
          INTRODUCTION
          ========================================== -->
@@ -729,22 +535,20 @@
         <strong>Object Deformability Score
         (Q<sub>O</sub>)</strong> for the 21 objects
         included in the GRAB benchmark.
-
         The methodology integrates controlled object compression,
         3D reconstruction, point-cloud preprocessing,
         geometric registration, and
         <strong>Density-Aware Chamfer Distance (DCD)</strong>
         to quantify deformation.
-
         The complete procedure encompasses the acquisition
         of undeformed and compressed object geometries,
         preparation and alignment of the corresponding
         point clouds, and calculation of a quantitative
-        deformability score.
-
-        Experimental illustrations and processing
-        demonstrations accompany the methodological descriptions.
+        deformability score. Experimental illustrations
+        and processing demonstrations accompany the
+        methodological descriptions.
     </p>
+
 
     <!-- ==========================================
          METHODOLOGY OVERVIEW
@@ -755,93 +559,74 @@
         <h2>Methodology Overview</h2>
 
         <p>
-            The methodology begins with controlled compression
-            and proceeds through seven sequential processing
-            stages, from object reconstruction to the calculation
-            of the final Object Deformability Score.
+            Object deformability is quantified through
+            six sequential processing stages, from
+            controlled compression to the calculation
+            of the final object-level score.
         </p>
 
         <div class="workflow-grid">
 
-    <div class="workflow-step">
-        <span class="workflow-number">STEP 01</span>
+            <div class="workflow-step">
+                <span class="workflow-number">STEP 01</span>
+                <h3>Controlled Compression</h3>
+                <p>
+                    Application of a 40 N compression
+                    force independently along the x and y axes.
+                </p>
+            </div>
 
-        <h3>Controlled Compression</h3>
+            <div class="workflow-step">
+                <span class="workflow-number">STEP 02</span>
+                <h3>3D Reconstruction</h3>
+                <p>
+                    Acquisition of object geometry before
+                    and during compression using RecFusion.
+                </p>
+            </div>
 
-        <p>
-            Application of a 40 N compression force
-            independently along the x and y directions.
-        </p>
-    </div>
+            <div class="workflow-step">
+                <span class="workflow-number">STEP 03</span>
+                <h3>Point-Cloud Conversion</h3>
+                <p>
+                    Export of reconstructed meshes and
+                    preparation of binary-format point clouds.
+                </p>
+            </div>
 
-    <div class="workflow-step">
-        <span class="workflow-number">STEP 02</span>
+            <div class="workflow-step">
+                <span class="workflow-number">STEP 04</span>
+                <h3>Preprocessing</h3>
+                <p>
+                    Removal of background geometry and
+                    unrelated points through spatial
+                    and colour-based filtering.
+                </p>
+            </div>
 
-        <h3>Object Reconstruction</h3>
+            <div class="workflow-step">
+                <span class="workflow-number">STEP 05</span>
+                <h3>Point-Cloud Alignment</h3>
+                <p>
+                    Coarse registration using MeshLab
+                    followed by fine alignment using ICP.
+                </p>
+            </div>
 
-        <p>
-            Reconstruction of undeformed and compressed
-            object geometries using RecFusion.
-        </p>
-    </div>
+            <div class="workflow-step">
+                <span class="workflow-number">STEP 06</span>
+                <h3>DCD Calculation</h3>
+                <p>
+                    Geometric comparison of aligned
+                    point clouds and aggregation of
+                    directional deformation measurements.
+                </p>
+            </div>
 
-    <div class="workflow-step">
-        <span class="workflow-number">STEP 03</span>
+        </div>
 
-        <h3>Mesh Export</h3>
-
-        <p>
-            Export of reconstructed object geometries
-            as 3D mesh files.
-        </p>
-    </div>
-
-    <div class="workflow-step">
-        <span class="workflow-number">STEP 04</span>
-
-        <h3>Background Removal</h3>
-
-        <p>
-            Removal of unwanted background geometry
-            using RecFusion, MeshLab, and colour filtering.
-        </p>
-    </div>
-
-    <div class="workflow-step">
-        <span class="workflow-number">STEP 05</span>
-
-        <h3>ASCII-to-Binary Conversion</h3>
-
-        <p>
-            Conversion of processed geometry files
-            into binary format using binary_ascii.py.
-        </p>
-    </div>
-
-    <div class="workflow-step">
-        <span class="workflow-number">STEP 06</span>
-
-        <h3>Point-Cloud Alignment</h3>
-
-        <p>
-            Coarse alignment using MeshLab followed
-            by fine registration using ICP.
-        </p>
-    </div>
-
-    <div class="workflow-step">
-        <span class="workflow-number">STEP 07</span>
-
-        <h3>DCD Calculation</h3>
-
-        <p>
-            Calculation of directional DCD values
-            and the final Object Deformability Score.
-        </p>
-    </div>
-
-</div>
     </section>
+
 
     <!-- ==========================================
          OBJECT DEFORMABILITY ATTRIBUTE
@@ -874,15 +659,14 @@
             As object mass and dimensions were constrained,
             deformability was selected as the principal
             object-related property for graspability
-            evaluation.
-
-            The property is quantified by comparing
-            3D representations acquired before and
-            during controlled compression, using DCD
-            as the geometric discrepancy measure.
+            evaluation. The property is quantified
+            by comparing 3D representations acquired
+            before and during controlled compression,
+            using DCD as the geometric discrepancy measure.
         </p>
 
     </section>
+
 
     <!-- ==========================================
          EXPERIMENTAL SETUP
@@ -893,12 +677,11 @@
         <h2>Experimental Setup for Deformation Measurement</h2>
 
         <p>
-            A customised experimental platform was developed
-            to measure changes in object geometry under
-            controlled compression.
 
-            The platform comprises a
-            <strong>UR10 robotic manipulator</strong>
+                A customised experimental platform was
+            developed to measure changes in object geometry
+            under controlled compression. The platform
+            comprises a <strong>UR10 robotic manipulator</strong>
             equipped with an
             <strong>OnRobot RG2 parallel gripper</strong>
             and customised compression pads.
@@ -913,8 +696,8 @@
 
             Measurements along both directions account
             for directional variations in object deformation
-            and provide a consistent basis for comparative
-            evaluation.
+            and provide a consistent basis for
+            comparative evaluation.
         </p>
 
         <figure class="research-figure">
@@ -937,9 +720,8 @@
 
         </figure>
 
-        <!-- ==========================================
-             CONTROLLED COMPRESSION
-             ========================================== -->
+
+        <!-- CONTROLLED COMPRESSION SUBSECTION -->
 
         <div class="method-subsection">
 
@@ -948,11 +730,10 @@
             <p>
                 For each object, the undeformed geometry
                 is initially acquired before applying
-                the compression force.
-
-                The object is then compressed using
-                the robotic gripper, and its geometry
-                is reconstructed under the applied load.
+                the compression force. The object is then
+                compressed using the robotic gripper,
+                and its geometry is reconstructed under
+                the applied load.
 
                 This procedure is conducted independently
                 along the x and y directions.
@@ -967,565 +748,320 @@
 
         </div>
 
-        <!-- ==========================================
-             OBJECT RECONSTRUCTION
-             ========================================== -->
+
+        <!-- 3D RECONSTRUCTION SUBSECTION -->
 
         <div class="method-subsection">
 
-            <h3>Object Reconstruction</h3>
+            <h3>3D Reconstruction and Point-Cloud Acquisition</h3>
 
             <p>
-                The three-dimensional geometries of the objects
-                were reconstructed using
-                <strong>RecFusion</strong> software and an
-                <strong>Intel RealSense D415 RGB-D camera</strong>.
+                The undeformed and compressed object geometries
+                are reconstructed using
+                <strong>RecFusion</strong> from RGB-D measurements
+                acquired by the RealSense camera.
 
-                For each object, separate reconstructions
-                were acquired before and during compression.
+                Depth measurements are projected into
+                three-dimensional space using the camera
+                intrinsic parameters.
 
-                The reconstruction process integrates
-                successive depth observations to generate
-                a three-dimensional representation
-                of the object's surface.
-                This procedure was performed independently
-                for compression along the x and y directions,
-                producing the corresponding undeformed
-                and compressed object geometries.
-
-                These reconstructions provide the geometric
-                information required for the subsequent
-                mesh processing and deformability analysis.
+                Successive observations are registered
+                and integrated through
+                <strong>Truncated Signed Distance Function
+                (TSDF) fusion</strong>, generating a
+                reconstructed representation of the object surface.
             </p>
 
-        </div>
-
-       <!-- ==========================================
-     MESH EXPORT
-     ========================================== -->
-
-<div class="method-subsection">
-
-    <h3>Mesh Export</h3>
-
-    <p>
-        Following reconstruction, the three-dimensional
-        object geometries were exported from
-        <strong>RecFusion</strong> as mesh files
-        for subsequent processing.
-
-        Separate mesh representations were retained
-        for the undeformed and compressed states,
-        allowing the geometric changes induced
-        by compression to be evaluated independently.
-        These exported meshes provided the input
-        for subsequent background removal,
-        colour filtering, and point-cloud registration.
-    </p>
-
-</div>
-
-
-<!-- ==========================================
-     BACKGROUND REMOVAL
-     ========================================== -->
-
-<div class="method-subsection">
-
-    <h3>Background Removal</h3>
-
-    <p>
-        The reconstructed object geometries may contain
-        unwanted background surfaces, gripper components,
-        and other environmental features captured during
-        the scanning process.
-
-        To minimise the influence of these non-object
-        regions on subsequent geometric measurements,
-        a two-stage background removal procedure
-        was employed using
-        <strong>RecFusion</strong>,
-        <strong>MeshLab</strong>, and a custom
-        Python implementation.
-    </p>
-
-    <p>
-        Initially, background removal was performed
-        using <strong>RecFusion</strong> to eliminate
-        unwanted environmental surfaces while retaining
-        the reconstructed object geometry.
-
-        This initial processing stage reduced the
-        presence of unnecessary background regions
-        within the exported meshes.
-        Following the initial background removal,
-        additional filtering was performed using
-        <strong>MeshLab</strong> to visually inspect
-        the reconstructed geometries and remove
-        residual unwanted points based on their
-        colour attributes.
-
-        This procedure was further supported by
-        a custom Python script,
-        <strong>color_filter.py</strong>,
-        which enables colour-based filtering
-        to isolate the target object from
-        remaining background regions and
-        gripper components.
-    </p>
-
-    <p>
-        The combined background removal and
-        colour filtering procedure was applied
-        to both the undeformed and compressed
-        object representations.
-
-        This processing stage ensured that
-        the resulting geometries primarily
-        represented the target object,
-        minimising the influence of unrelated
-        surfaces on subsequent point-cloud
-        registration and DCD calculations.
-        Following background removal and colour filtering,
-        the processed object geometry files for all
-        21 objects can be found in the
-
-        <a
-            href="https://github.com/Moni9612/Object-Deformability-Score-Calculation/tree/main/object_meshes"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="object-meshes-reference"
-        >
-            <strong>object_meshes</strong>
-        </a>
-
-        directory of the associated GitHub repository.
-    </p>
-
-</div>
-
-       <!-- ==========================================
-     ASCII TO BINARY CONVERSION
-     ========================================== -->
-
-<div class="method-subsection">
-
-    <h3>ASCII-to-Binary Conversion</h3>
-
-    <p>
-        Following background removal, the processed
-        object geometry files were converted from
-        <strong>ASCII to binary format</strong>
-        to prepare them for subsequent
-        point-cloud processing and registration.
-
-        This conversion was performed using
-        the custom Python script
-        <strong>binary_ascii.py</strong>.
-
-        The conversion changes the file encoding
-        while preserving the geometric information
-        required for subsequent analysis.
-
-        The resulting binary-format files
-        were used for point-cloud alignment
-        and geometric comparison.
-    </p>
-
-    <!-- ==========================================
-     RECONSTRUCTION VIDEO GALLERY
-     ========================================== -->
-
-<div class="reconstruction-section">
-
-    <h4>
-        3D Reconstruction Before and During Compression
-    </h4>
-
-    <p>
-        The following visualisations illustrate the
-        reconstructed RecFusion meshes and their
-        corresponding binary-format point-cloud
-        representations for the undeformed and
-        compressed object states.
-
-        The enlarged visualisations demonstrate
-        the reconstruction and conversion process,
-        while additional examples illustrate
-        the corresponding geometric representations
-        across different inorganic contaminant objects.
-    </p>
-
-    <div class="reconstruction-gallery">
-
-        <!-- ======================================
-             FOUR LARGE VIDEOS
-             ====================================== -->
-
-        <div class="featured-video-grid">
-
-            <!-- LARGE VIDEO 1 -->
-
-            <div class="featured-video-card">
-
-                <h4>
-                    (a) RecFusion 3D Mesh
-                    — Before Compression
-                </h4>
-
-                <video autoplay muted loop playsinline
-                       preload="metadata">
-
-                    <source
-                        src="assets/videos/before_grasp_recfusion.webm"
-                        type="video/webm"
-                    >
-
-                </video>
-
-                <p>
-                    Reconstructed object geometry
-                    before compression.
-                </p>
-
-            </div>
-
-
-            <!-- LARGE VIDEO 2 -->
-
-            <div class="featured-video-card">
-
-                <h4>
-                    (b) Binary Point-Cloud Representation
-                    — Before Compression
-                </h4>
-
-                <video autoplay muted loop playsinline
-                       preload="metadata">
-
-                    <source
-                        src="assets/videos/before_grasp_binary.webm"
-                        type="video/webm"
-                    >
-
-                </video>
-
-                <p>
-                    Binary-format point-cloud representation
-                    of the undeformed object.
-                </p>
-
-            </div>
-
-
-            <!-- LARGE VIDEO 3 -->
-
-            <div class="featured-video-card">
-
-                <h4>
-                    (c) RecFusion 3D Mesh
-                    — During Compression
-                </h4>
-
-                <video autoplay muted loop playsinline
-                       preload="metadata">
-
-                    <source
-                        src="assets/videos/after_grasp_recfusion.webm"
-                        type="video/webm"
-                    >
-
-                </video>
-
-                <p>
-                    Reconstructed object geometry
-                    under the applied compression force.
-                </p>
-
-            </div>
-
-
-            <!-- LARGE VIDEO 4 -->
-
-            <div class="featured-video-card">
-
-                <h4>
-                    (d) Binary Point-Cloud Representation
-                    — During Compression
-                </h4>
-
-                <video autoplay muted loop playsinline
-                       preload="metadata">
-
-                    <source
-                        src="assets/videos/after_grasp_binary.webm"
-                        type="video/webm"
-                    >
-
-                </video>
-
-                <p>
-                    Binary-format point-cloud representation
-                    of the compressed object.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- ======================================
-             SMALL SET 1 — BOTTLE
-             ====================================== -->
-
-        <div class="small-video-set small-set-1">
-
-            <div class="small-video-grid">
-
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="assets/videos/mbottle_before.webm" type="video/webm">
-                </video>
-
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="assets/videos/pbottle_before.webm" type="video/webm">
-                </video>
-
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="assets/videos/mbottle_after.webm" type="video/webm">
-                </video>
-
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="assets/videos/pbottle_after.webm" type="video/webm">
-                </video>
-
-            </div>
-
-        </div>
-
-
-        <!-- ======================================
-             SMALL SET 2 — BOX
-             ====================================== -->
-
-        <div class="small-video-set small-set-2">
-
-            <div class="small-video-grid">
-
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="assets/videos/mbox_before.webm" type="video/webm">
-                </video>
-
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="assets/videos/pbox_before.webm" type="video/webm">
-                </video>
-
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="assets/videos/mbox_after.webm" type="video/webm">
-                </video>
-
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="assets/videos/pbox_after.webm" type="video/webm">
-                </video>
-
-            </div>
-
-        </div>
-
-
-        <!-- ======================================
-             SMALL SET 3 — MESH BAG
-             ====================================== -->
-
-        <div class="small-video-set small-set-3">
-
-            <div class="small-video-grid">
-
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="assets/videos/mmesh_before.webm" type="video/webm">
-                </video>
-
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="assets/videos/pmesh_before.webm" type="video/webm">
-                </video>
-
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="assets/videos/mmesh_after.webm" type="video/webm">
-                </video>
-
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="assets/videos/pmesh_after.webm" type="video/webm">
-                </video>
-
-            </div>
-
-        </div>
-
-
-        <!-- ======================================
-             SMALL SET 4 — PLATE
-             ====================================== -->
-
-        <div class="small-video-set small-set-4">
-
-            <div class="small-video-grid">
-
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="assets/videos/mplate_before.webm" type="video/webm">
-                </video>
-
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="assets/videos/pplate_before.webm" type="video/webm">
-                </video>
-
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="assets/videos/mplate_after.webm" type="video/webm">
-                </video>
-
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="assets/videos/pplate_after.webm" type="video/webm">
-                </video>
-
-            </div>
-
-        </div>
-
-
-        <!-- ======================================
-             SMALL SET 5 — TIN CAN
-             ====================================== -->
-
-        <div class="small-video-set small-set-5">
-
-            <div class="small-video-grid">
-
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="assets/videos/mtin_before.webm" type="video/webm">
-                </video>
-
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="assets/videos/ptin_before.webm" type="video/webm">
-                </video>
-
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="assets/videos/mtin_after.webm" type="video/webm">
-                </video>
-
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="assets/videos/ptin_after.webm" type="video/webm">
-                </video>
-
-            </div>
-
-        </div>
-
-
-        <!-- ======================================
-             SMALL SET 6 — ADDITIONAL BOTTLE
-             ====================================== -->
-
-        <div class="small-video-set small-set-6">
-
-            <div class="small-video-grid">
-
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="assets/videos/mmbottle_before.webm" type="video/webm">
-                </video>
-
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="assets/videos/ppbottle_before.webm" type="video/webm">
-                </video>
-
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="assets/videos/mmbottle_after.webm" type="video/webm">
-                </video>
-
-                <video autoplay muted loop playsinline preload="metadata">
-                    <source src="assets/videos/ppbottle_after.webm" type="video/webm">
-                </video>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-        <!-- ==========================================
-             POINT-CLOUD ALIGNMENT
-             ========================================== -->
-
-        <div class="method-subsection">
-
-            <h3>Point-Cloud Alignment</h3>
-
-            <p>
-                Following preprocessing and file conversion,
-                the undeformed and compressed object point
-                clouds were aligned within a common
-                coordinate frame.
-
-                This registration procedure is essential
-                because differences in the position and
-                orientation of the reconstructed objects
-                could otherwise influence the calculated
-                geometric discrepancy.
-
-                A two-stage registration procedure
-                was employed, comprising coarse alignment
-                using MeshLab and fine alignment using
-                the Iterative Closest Point (ICP) algorithm.
-            </p>
-
-            <!-- COARSE ALIGNMENT -->
 
             <div class="processing-step">
+
+                <h4>Object Geometry Reconstruction</h4>
+
+                <p>
+                    Separate 3D reconstructions are acquired
+                    for the undeformed and compressed states.
+                    The resulting geometries capture the
+                    physical changes induced by the applied
+                    compression force.
+                </p>
+
+            </div>
+
+
+            <div class="processing-step">
+
+                <h4>Mesh Export</h4>
+
+                <p>
+                    The reconstructed geometries are exported
+                    as 3D mesh files. Separate mesh datasets
+                    are retained for the two compression states
+                    to support independent preprocessing
+                    and subsequent geometric comparison.
+                </p>
+
+            </div>
+
+
+            <div class="processing-step">
+
+                <h4>ASCII-to-Binary Conversion</h4>
+
+                <p>
+                    The exported ASCII-formatted geometry data
+                    are converted into binary format for
+                    subsequent point-cloud processing.
+
+                    This conversion is performed using
+                    <strong>binary_ascii.py</strong>,
+                    provided in the associated repository.
+                </p>
+
+            </div>
+
+
+            <!-- RECONSTRUCTION VIDEO COMPARISON -->
+
+            <div class="reconstruction-section">
+
+                <h4>
+                    3D Reconstruction Before and During Compression
+                </h4>
+
+                <p>
+                    The reconstruction results are illustrated
+                    through the original RecFusion meshes
+                    and their corresponding binary-format
+                    point-cloud representations for the
+                    undeformed and compressed object states.
+                </p>
+
+
+                <h4 class="comparison-heading">
+                    Before Compression
+                </h4>
+
+                <div class="video-comparison">
+
+                    <div class="video-panel">
+
+                        <h4>(a) RecFusion 3D Mesh</h4>
+
+                        <video autoplay muted loop playsinline
+                               preload="metadata">
+
+                            <source
+                                src="assets/videos/before_grasp_recfusion.webm"
+                                type="video/webm"
+                            >
+
+                            Your browser does not support HTML5 video.
+
+                        </video>
+
+                        <p class="video-caption">
+                            Reconstructed object geometry
+                            before compression.
+                        </p>
+
+                    </div>
+
+
+                    <div class="video-panel">
+
+                        <h4>(b) Binary Point-Cloud Representation</h4>
+
+                        <video autoplay muted loop playsinline
+                               preload="metadata">
+
+                            <source
+                                src="assets/videos/before_grasp_binary.webm"
+                                type="video/webm"
+                            >
+
+                            Your browser does not support HTML5 video.
+
+                        </video>
+
+                        <p class="video-caption">
+                            Corresponding binary-format
+                            point-cloud representation
+                            of the undeformed object.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <h4 class="comparison-heading">
+                    During Compression
+                </h4>
+
+                <div class="video-comparison">
+
+                    <div class="video-panel">
+
+                        <h4>(c) RecFusion 3D Mesh</h4>
+
+                        <video autoplay muted loop playsinline
+                               preload="metadata">
+
+                            <source
+                                src="assets/videos/after_grasp_recfusion.webm"
+                                type="video/webm"
+                            >
+
+                            Your browser does not support HTML5 video.
+
+                        </video>
+
+                        <p class="video-caption">
+                            Reconstructed object geometry
+                            under the applied compression force.
+                        </p>
+
+                    </div>
+
+
+                    <div class="video-panel">
+
+                        <h4>(d) Binary Point-Cloud Representation</h4>
+
+                        <video autoplay muted loop playsinline
+                               preload="metadata">
+
+                            <source
+                                src="assets/videos/after_grasp_binary.webm"
+                                type="video/webm"
+                            >
+
+                            Your browser does not support HTML5 video.
+
+                        </video>
+
+                        <p class="video-caption">
+                            Corresponding binary-format
+                            point-cloud representation
+                            of the compressed object.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <p>
+                The reconstructed 3D meshes for all 21 objects
+                are provided in the
+
+                <a href="#repository-button"
+                   class="object-meshes-reference">
+                    <strong>object_meshes</strong>
+                </a>
+
+                folder of the associated GitHub repository.
+            </p>
+
+        </div>
+
+
+        <!-- PREPROCESSING AND ALIGNMENT SUBSECTION -->
+
+        <div class="method-subsection">
+
+            <h3>Point-Cloud Preprocessing and Alignment</h3>
+
+            <p>
+                The reconstructed point clouds may contain
+                background geometry, gripper components,
+                and other points unrelated to the target object.
+
+                These points are removed before registration
+                to ensure that the subsequent DCD measurement
+                primarily reflects differences in object geometry.
+            </p>
+
+
+            <div class="processing-step">
+
+                <h4>Point-Cloud Filtering</h4>
+
+                <p>
+                    Spatial cropping and colour-based thresholding
+                    are applied using RecFusion and MeshLab
+                    to isolate the target object.
+
+                    The associated repository includes
+                    <strong>color_filter.py</strong>
+                    for colour-based point-cloud filtering.
+                </p>
+
+            </div>
+
+
+            <p>
+                Following preprocessing, the undeformed
+                and compressed point clouds are registered
+                within a common coordinate frame.
+
+                Registration is essential because differences
+                in object position or orientation could
+                otherwise contribute to the measured
+                geometric discrepancy.
+
+                A two-stage registration procedure,
+                comprising coarse alignment and fine
+                ICP registration, is employed.
+            </p>
+
+                        <div class="processing-step">
 
                 <h4>Coarse Alignment Using MeshLab</h4>
 
                 <p>
-                    Initial alignment was performed
-                    using MeshLab to approximately align
-                    the undeformed and compressed point clouds.
+                    Initial alignment is performed using
+                    MeshLab by approximately aligning
+                    the principal axes of the two point clouds.
 
-                    This procedure reduced differences
-                    in translation and orientation
-                    between the two representations,
-                    providing an initial alignment
-                    for subsequent ICP registration.
+                    This reduces differences in orientation
+                    and translation and establishes an
+                    initial correspondence for fine registration.
                 </p>
 
             </div>
 
-            <!-- FINE ALIGNMENT -->
 
             <div class="processing-step">
 
                 <h4>Fine Alignment Using ICP</h4>
 
                 <p>
-                    Following coarse alignment, the
-                    <strong>Iterative Closest Point (ICP)</strong>
-                    algorithm was employed to refine
-                    the registration.
+                    The <strong>Iterative Closest Point (ICP)</strong>
+                    algorithm is subsequently applied to refine
+                    the alignment.
 
-                    ICP iteratively identifies corresponding
-                    points and estimates a rigid transformation
-                    that reduces the geometric discrepancy
-                    between the two point clouds.
+                    ICP iteratively estimates
+                    point correspondences and a rigid
+                    transformation that minimises residual
+                    geometric distances between the
+                    two point clouds.
 
-                    The registration was implemented using
-                    the custom Python script
+                    This procedure reduces discrepancies
+                    associated with acquisition pose
+                    while retaining non-rigid geometric
+                    differences arising from compression.
+
+                    The implementation is provided in
                     <strong>icp_alignment.py</strong>.
-
-                    This procedure reduces differences
-                    associated with object position
-                    and orientation while retaining
-                    geometric variations caused by compression.
                 </p>
 
             </div>
 
-            <!-- ICP ALIGNMENT VIDEO -->
+
+            <!-- ICP VIDEO -->
 
             <div class="icp-video-section">
 
@@ -1535,13 +1071,8 @@
 
                 <div class="icp-video-container">
 
-                    <video
-                        autoplay
-                        muted
-                        loop
-                        playsinline
-                        preload="metadata"
-                    >
+                    <video autoplay muted loop playsinline
+                           preload="metadata">
 
                         <source
                             src="assets/videos/point_clouds_after_ICP_Alignment.webm"
@@ -1563,49 +1094,43 @@
 
             </div>
 
-            <p>
-                The aligned point clouds represent
-                the undeformed and compressed geometries
-                within a common coordinate frame.
 
-                These registered datasets were subsequently
-                used to calculate the geometric discrepancy
-                using Density-Aware Chamfer Distance.
+            <p>
+                The resulting registered point clouds
+                represent the same object under two
+                compression states within a common
+                coordinate frame.
+
+                These datasets form the input
+                to the DCD calculation.
             </p>
 
         </div>
 
-        <!-- ==========================================
-             DCD CALCULATION
-             ========================================== -->
+
+        <!-- DCD CALCULATION SUBSECTION -->
 
         <div class="method-subsection">
 
             <h3>Object Deformability Score Calculation</h3>
 
-            <p>
-                <strong>Density-Aware Chamfer Distance (DCD)</strong>
-                was employed to calculate the
-                <strong>Object Deformability Score
-                (Q<sub>O</sub>)</strong>
-                by quantifying the geometric discrepancy
-                between the undeformed and compressed
-                object geometries.
+           <p>
+    <strong>Density-Aware Chamfer Distance (DCD)</strong>
+    is employed to calculate the
+    <strong>Object Deformability Score (Q<sub>O</sub>)</strong>
+    by quantifying the geometric discrepancy between
+    the undeformed and compressed object geometries.
+    The metric incorporates nearest-neighbour distances
+    and density-aware normalisation to account for
+    variations in point sampling.
 
-                The metric incorporates nearest-neighbour
-                distances and density-aware normalisation
-                to account for variations in point sampling.
+    Let \(S_1\) denote the point cloud representing
+    the undeformed object and \(S_2\) denote the
+    corresponding point cloud under compression.
+    The DCD between these point clouds is
+    formulated as follows:
+</p>
 
-                Let \(S_1\) denote the point cloud
-                representing the undeformed object
-                and \(S_2\) denote the corresponding
-                point cloud under compression.
-
-                The DCD between these point clouds
-                is formulated as follows:
-            </p>
-
-            <!-- DCD EQUATION -->
 
             <div class="equation-container">
 
@@ -1634,7 +1159,12 @@
 
             </div>
 
-            <!-- NOTATION -->
+        </div>
+
+
+        <!-- DCD PARAMETER DEFINITIONS -->
+
+        <div class="method-subsection">
 
             <div class="concept-box">
 
@@ -1678,16 +1208,21 @@
 
             </div>
 
-            <!-- DCD INTERPRETATION -->
+        </div>
+
+
+        <!-- DCD INTERPRETATION -->
+
+        <div class="method-subsection">
 
             <p>
                 The DCD formulation evaluates geometric
                 discrepancies bidirectionally.
 
                 For each point in \(S_1\), the nearest
-                point in \(S_2\) is identified,
-                and the corresponding distance
-                and density contributions are calculated.
+                point in \(S_2\) is identified, and
+                the corresponding distance and density
+                contributions are calculated.
 
                 The same operation is performed from
                 \(S_2\) to \(S_1\), and the two
@@ -1707,25 +1242,13 @@
                 indicator of relative object deformation.
             </p>
 
-            <p>
-                The DCD calculation was performed independently
-                for compression along the x and y directions.
-
-                The resulting directional measurements
-                quantify the geometric changes induced
-                by compression along each axis.
-
-                These measurements were subsequently
-                combined to calculate the final
-                Object Deformability Score.
-            </p>
-
         </div>
 
     </section>
 
+
     <!-- ==========================================
-         FINAL OBJECT DEFORMABILITY SCORE
+         FINAL DEFORMABILITY SCORE
          ========================================== -->
 
     <section class="method-section" id="score-calculation">
@@ -1734,10 +1257,8 @@
 
         <p>
             Object deformation may vary with the direction
-            of the applied force.
-
-            Accordingly, DCD is calculated independently
-            for the
+            of the applied force. Accordingly, DCD is
+            calculated independently for the
             <strong>x-axis and y-axis compression experiments</strong>.
 
             Each directional measurement compares
@@ -1746,10 +1267,10 @@
 
             The final
             <strong>Object Deformability Score
-            (Q<sub>O</sub>)</strong>
-            is obtained by averaging the two
-            directional DCD values:
+            (Q<sub>O</sub>)</strong> is obtained
+            by averaging the two directional DCD values:
         </p>
+
 
         <div class="score-equation">
 
@@ -1764,6 +1285,7 @@
 
         </div>
 
+
         <p>
             Here, \(d_{\mathrm{DCD}}^{(x)}\) and
             \(d_{\mathrm{DCD}}^{(y)}\) denote
@@ -1772,16 +1294,17 @@
 
             Their arithmetic mean represents the
             object-level deformability score.
-
             The same measurement and processing
             procedure is applied to all 21 objects,
             yielding one deformability score per object.
 
             These scores enable comparative analysis
-            across individual objects and contaminant categories.
+            across individual objects and
+            contaminant categories.
         </p>
 
     </section>
+
 
     <!-- ==========================================
          OBJECT DEFORMABILITY RESULTS
@@ -1810,6 +1333,7 @@
             exhibit the lowest category-average score.
         </p>
 
+
         <figure class="deformability-figure">
 
             <img
@@ -1828,9 +1352,13 @@
 
         </figure>
 
+
+        <!-- CATEGORY-WISE COMPARISON -->
+
     </section>
 
 </main>
 
 </body>
 </html>
+
