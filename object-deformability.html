@@ -845,72 +845,123 @@
             of the final Object Deformability Score.
         </p>
 
-        <div class="workflow-grid">
+        
+<div class="workflow-grid">
 
-            <div class="workflow-step">
-                <span class="workflow-number">STEP 01</span>
-                <h3>Controlled Compression Procedure</h3>
-                <p>
-                    Application of a 40 N compression force
-                    independently along the x and y directions.
-                </p>
-            </div>
+    <!-- STEP 01 -->
 
-            <div class="workflow-step">
-                <span class="workflow-number">STEP 02</span>
-                <h3>Object Reconstruction</h3>
-                <p>
-                    Reconstruction of undeformed and compressed
-                    object geometries using RecFusion.
-                </p>
-            </div>
+    <a href="#controlled-compression"
+       class="workflow-step workflow-link">
 
-            <div class="workflow-step">
-                <span class="workflow-number">STEP 03</span>
-                <h3>Mesh Export</h3>
-                <p>
-                    Export of reconstructed object geometries
-                    as 3D mesh files.
-                </p>
-            </div>
+        <span class="workflow-number">STEP 01</span>
 
-            <div class="workflow-step">
-                <span class="workflow-number">STEP 04</span>
-                <h3>Background Removal</h3>
-                <p>
-                    Removal of unwanted background geometry
-                    using RecFusion, MeshLab, and colour filtering.
-                </p>
-            </div>
+        <h3>Controlled Compression</h3>
 
-            <div class="workflow-step">
-                <span class="workflow-number">STEP 05</span>
-                <h3>ASCII-to-Binary Conversion</h3>
-                <p>
-                    Conversion of processed geometry files
-                    into binary format using binary_ascii.py.
-                </p>
-            </div>
+        <p>
+            Application of a 40 N compression force
+            independently along the x and y directions.
+        </p>
 
-            <div class="workflow-step">
-                <span class="workflow-number">STEP 06</span>
-                <h3>Point-Cloud Alignment</h3>
-                <p>
-                    Coarse alignment using MeshLab followed
-                    by fine registration using ICP.
-                </p>
-            </div>
+    </a>
 
-            <div class="workflow-step">
-                <span class="workflow-number">STEP 07</span>
-                <h3>Object Deformability Score Calculation</h3>
-                <p>
-                    Calculation of directional DCD values
-                    and the final Object Deformability Score.
-                </p>
-            </div>
+    <!-- STEP 02 -->
 
-        </div>
+    <a href="#object-reconstruction"
+       class="workflow-step workflow-link">
+
+        <span class="workflow-number">STEP 02</span>
+
+        <h3>Object Reconstruction</h3>
+
+        <p>
+            Reconstruction of undeformed and compressed
+            object geometries using RecFusion.
+        </p>
+
+    </a>
+
+    <!-- STEP 03 -->
+
+    <a href="#mesh-export"
+       class="workflow-step workflow-link">
+
+        <span class="workflow-number">STEP 03</span>
+
+        <h3>Mesh Export</h3>
+
+        <p>
+            Export of reconstructed object geometries
+            as 3D mesh files.
+        </p>
+
+    </a>
+
+    <!-- STEP 04 -->
+
+    <a href="#background-removal"
+       class="workflow-step workflow-link">
+
+        <span class="workflow-number">STEP 04</span>
+
+        <h3>Background Removal</h3>
+
+        <p>
+            Removal of unwanted background geometry
+            using RecFusion, MeshLab, and colour filtering.
+        </p>
+
+    </a>
+
+    <!-- STEP 05 -->
+
+    <a href="#ascii-binary-conversion"
+       class="workflow-step workflow-link">
+
+        <span class="workflow-number">STEP 05</span>
+
+        <h3>ASCII-to-Binary Conversion</h3>
+
+        <p>
+            Conversion of processed geometry files
+            into binary format using binary_ascii.py.
+        </p>
+
+    </a>
+
+    <!-- STEP 06 -->
+
+    <a href="#point-cloud-alignment"
+       class="workflow-step workflow-link">
+
+        <span class="workflow-number">STEP 06</span>
+
+        <h3>Point-Cloud Alignment</h3>
+
+        <p>
+            Coarse alignment using MeshLab followed
+            by fine registration using ICP.
+        </p>
+
+    </a>
+
+    <!-- STEP 07 -->
+
+    <a href="#dcd-calculation"
+       class="workflow-step workflow-link">
+
+        <span class="workflow-number">STEP 07</span>
+
+        <h3>DCD Calculation</h3>
+
+        <p>
+            Calculation of directional DCD values
+            and the final Object Deformability Score.
+        </p>
+
+    </a>
+
+</div>
+
 
     </section>
 
@@ -970,7 +1021,9 @@
 
         <div class="method-subsection">
 
-            <h3>Controlled Compression Procedure</h3>
+            <h3 id="controlled-compression">
+    Controlled Compression Procedure
+</h3>
 
             <p>
                 For each object, the undeformed geometry
@@ -1000,7 +1053,9 @@
 
         <div class="method-subsection">
 
-            <h3>Object Reconstruction</h3>
+            <h3 id="object-reconstruction">
+    Object Reconstruction
+</h3>
 
             <p>
                 The three-dimensional geometries of the objects
@@ -1036,7 +1091,9 @@
 
         <div class="method-subsection">
 
-            <h3>Mesh Export</h3>
+            <h3 id="mesh-export">
+    Mesh Export
+</h3>
 
             <p>
                 Following reconstruction, the three-dimensional
@@ -1064,7 +1121,9 @@
 
         <div class="method-subsection">
 
-            <h3>Background Removal</h3>
+            <h3 id="background-removal">
+    Background Removal
+</h3>
 
             <p>
                 The reconstructed object geometries may contain
@@ -1148,7 +1207,9 @@
 
         <div class="method-subsection">
 
-            <h3>ASCII-to-Binary Conversion</h3>
+            <h3 id="ascii-binary-conversion">
+    ASCII-to-Binary Conversion
+</h3>
 
             <p>
                 Following background removal, the processed
@@ -1630,7 +1691,9 @@
 
         <div class="method-subsection">
 
-            <h3>Point-Cloud Alignment</h3>
+            <h3 id="point-cloud-alignment">
+    Point-Cloud Alignment
+</h3>
 
             <p>
                 Following preprocessing and file conversion,
@@ -1743,7 +1806,9 @@
 
         <div class="method-subsection">
 
-            <h3>Object Deformability Score Calculation</h3>
+            <h3 id="dcd-calculation">
+    Object Deformability Score Calculation
+</h3>
 
             <p>
                 <strong>Density-Aware Chamfer Distance (DCD)</strong>
