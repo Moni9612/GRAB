@@ -405,6 +405,141 @@ html {
 
         }
 
+        
+/* Grasping and vision modalities */
+
+.modality-panel {
+    margin: 30px 0 40px;
+    padding: 26px;
+    background: #ffffff;
+    border: 1px solid #d8dcd7;
+    border-radius: 10px;
+}
+
+.modality-panel h3 {
+    margin: 0 0 22px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0b1920;
+}
+
+.modality-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) 50px minmax(0, 1fr);
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 14px;
+}
+
+.modality-source,
+.modality-target {
+    background: #f5f7f4;
+    border: 1px solid #e1e5df;
+    border-radius: 7px;
+    padding: 18px 20px;
+}
+
+.modality-label {
+    display: block;
+    margin-bottom: 12px;
+    color: #1E7A55;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.modality-name {
+    display: block;
+    color: #0b1920;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.modality-source .modality-name + .modality-name {
+    margin-top: 9px;
+    padding-top: 9px;
+    border-top: 1px solid #e1e5df;
+}
+
+.modality-arrow {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    color: #1E7A55;
+}
+
+.modality-description {
+    display: block;
+    margin-top: 6px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #53636a;
+}
+
+.modality-dataset {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-top: 22px;
+    margin-top: 22px;
+    border-top: 1px solid #e1e5df;
+}
+
+.dataset-count {
+    min-width: 90px;
+    padding: 15px;
+    background: #f5f7f4;
+    border-radius: 7px;
+    text-align: center;
+}
+
+.dataset-count strong {
+    display: block;
+    font-size: 30px;
+    color: #1E7A55;
+}
+
+.dataset-count span {
+    font-size: 12px;
+    color: #53636a;
+}
+
+.modality-dataset h4 {
+    margin: 0 0 6px;
+    font-size: 16px;
+    color: #0b1920;
+}
+
+.modality-dataset p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #53636a;
+}
+
+@media (max-width: 650px) {
+    .modality-panel {
+        padding: 18px;
+    }
+
+    .modality-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .modality-arrow {
+        transform: rotate(90deg);
+        font-size: 24px;
+    }
+
+    .modality-dataset {
+        align-items: flex-start;
+    }
+}
+
+
     </style>
 
 </head>
@@ -554,6 +689,116 @@ html {
             with its viewing direction perpendicular
             to the experimental surface.
         </p>
+
+        
+<!-- Grasping and Vision Modalities -->
+
+<div class="modality-panel">
+
+    <h3>Grasping and Vision Modalities</h3>
+
+    <!-- Parallel-jaw grasping modalities -->
+
+    <div class="modality-row">
+
+        <div class="modality-source">
+
+            <span class="modality-label">
+                Grasping Modalities
+            </span>
+
+            <span class="modality-name">
+                Rigid parallel-jaw gripper
+            </span>
+
+            <span class="modality-name">
+                Fin-Ray soft adaptive gripper
+            </span>
+
+        </div>
+
+        <div class="modality-arrow" aria-hidden="true">
+            &#8594;
+        </div>
+
+        <div class="modality-target">
+
+            <span class="modality-label">
+                Vision Model
+            </span>
+
+            <span class="modality-name">
+                AnyGrasp
+            </span>
+
+            <span class="modality-description">
+                6D grasp pose estimation
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- Suction grasping modality -->
+
+    <div class="modality-row">
+
+        <div class="modality-source">
+
+            <span class="modality-label">
+                Grasping Modality
+            </span>
+
+            <span class="modality-name">
+                Suction gripper
+            </span>
+
+        </div>
+
+        <div class="modality-arrow" aria-hidden="true">
+            &#8594;
+        </div>
+
+        <div class="modality-target">
+
+            <span class="modality-label">
+                Vision Model
+            </span>
+
+            <span class="modality-name">
+                SuctionNet
+            </span>
+
+            <span class="modality-description">
+                Suction grasp estimation
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- Experimental object dataset -->
+
+    <div class="modality-dataset">
+
+        <div class="dataset-count">
+            <strong>21</strong>
+            <span>Objects</span>
+        </div>
+
+        <div>
+            <h4>Experimental Object Dataset</h4>
+
+            <p>
+                Seven inorganic contaminant categories,
+                with three representative objects per category.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
 
 
         <div class="protocol-subsection">
