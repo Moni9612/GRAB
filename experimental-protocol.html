@@ -655,6 +655,45 @@ html {
 }
 
 
+/* Clickable vision model boxes */
+
+.modality-clickable {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.modality-clickable:hover {
+    background-color: #edf6f0;
+    border-color: #1E7A55;
+    box-shadow: 0 3px 12px rgba(30, 122, 85, 0.10);
+    transform: translateY(-2px);
+}
+
+.modality-clickable:hover .modality-name {
+    color: #1E7A55;
+}
+
+.modality-clickable:focus-visible {
+    outline: 2px solid #1E7A55;
+    outline-offset: 3px;
+}
+
+.modality-clickable .modality-name {
+    transition: color 0.2s ease;
+}
+
+
 
 
     </style>
