@@ -674,6 +674,103 @@
             }
 
         }
+        
+/* ==========================================
+   DCD EQUATION AND NOTATION - SIDE BY SIDE
+   ========================================== */
+
+.dcd-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: 28px;
+    align-items: center;
+    margin: 30px 0 40px;
+}
+
+/* Left: Equation */
+
+.dcd-equation-panel {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dcd-equation-panel .equation-container {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 20px 5px 40px;
+    background: transparent;
+    border: none;
+    text-align: center;
+    overflow-x: auto;
+}
+
+/* Equation number */
+
+.dcd-equation-panel .equation-number {
+    position: absolute;
+    right: 10px;
+    bottom: 8px;
+    font-size: 13px;
+    color: #53636a;
+}
+
+/* Right: Notation */
+
+.dcd-notation-panel {
+    min-width: 0;
+    padding-left: 22px;
+    border-left: 2px solid #d3e4d9;
+}
+
+.dcd-notation-panel h4 {
+    margin: 0 0 18px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #0b1920;
+}
+
+.detail-page .dcd-notation-panel p {
+    font-size: 13px;
+    line-height: 1.65;
+    margin: 0 0 13px;
+    text-align: left;
+    hyphens: none;
+}
+
+.dcd-notation-panel strong {
+    color: #0b1920;
+}
+
+/* Adjust equation size to fit */
+
+.dcd-equation-panel mjx-container {
+    font-size: 90% !important;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 850px) {
+
+    .dcd-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .dcd-equation-panel mjx-container {
+        font-size: 100% !important;
+    }
+
+    .dcd-notation-panel {
+        padding-left: 18px;
+    }
+
+}
+
 
     </style>
 
@@ -1670,78 +1767,89 @@
                 is formulated as follows:
             </p>
 
-            <!-- DCD EQUATION -->
+            
+<!-- DCD Equation and Notation -->
 
-            <div class="equation-container">
+<div class="dcd-layout">
 
-                \[
-                \begin{aligned}
-                d_{\mathrm{DCD}}(S_1,S_2)
-                = \frac{1}{2}\Bigg(
-                &\frac{1}{|S_1|}
-                \sum_{x\in S_1}
-                \left(
-                1-\frac{1}{\hat{n}_y}
-                e^{-\alpha\|x-\hat{y}\|_2}
-                \right)
-                \\[10pt]
-                +\;&\frac{1}{|S_2|}
-                \sum_{y\in S_2}
-                \left(
-                1-\frac{1}{\hat{n}_x}
-                e^{-\alpha\|y-\hat{x}\|_2}
-                \right)
-                \Bigg)
-                \end{aligned}
-                \]
+    <!-- LEFT: DCD EQUATION -->
 
-                <div class="equation-number">(6)</div>
+    <div class="dcd-equation-panel">
 
-            </div>
+        <div class="equation-container">
 
-            <!-- NOTATION -->
+            \[
+            \begin{aligned}
+            d_{\mathrm{DCD}}(S_1,S_2)
+            = \frac{1}{2}\Bigg(
+            &\frac{1}{|S_1|}
+            \sum_{x\in S_1}
+            \left(
+            1-\frac{1}{\hat{n}_y}
+            e^{-\alpha\|x-\hat{y}\|_2}
+            \right)
+            \\[10pt]
+            +\;&\frac{1}{|S_2|}
+            \sum_{y\in S_2}
+            \left(
+            1-\frac{1}{\hat{n}_x}
+            e^{-\alpha\|y-\hat{x}\|_2}
+            \right)
+            \Bigg)
+            \end{aligned}
+            \]
 
-            <div class="concept-box">
+            <div class="equation-number">(6)</div>
 
-                <h4>Notation</h4>
+        </div>
 
-                <p>
-                    <strong>\(S_1\):</strong>
-                    Point cloud acquired before compression.
-                </p>
+    </div>
 
-                <p>
-                    <strong>\(S_2\):</strong>
-                    Point cloud acquired during compression.
-                </p>
+    <!-- RIGHT: NOTATION -->
 
-                <p>
-                    <strong>\(\hat{y}\) and \(\hat{x}\):</strong>
-                    Nearest-neighbour points identified
-                    in the opposite point cloud.
-                </p>
+    <div class="dcd-notation-panel">
 
-                <p>
-                    <strong>\(\|x-\hat{y}\|_2\):</strong>
-                    Euclidean distance between a point
-                    and its nearest neighbour.
-                </p>
+        <h4>Notation</h4>
 
-                <p>
-                    <strong>\(\hat{n}_y\) and
-                    \(\hat{n}_x\):</strong>
-                    Density-normalisation factors associated
-                    with the corresponding nearest-neighbour points.
-                </p>
+        <p>
+            <strong>\(S_1\):</strong>
+            Point cloud acquired before compression.
+        </p>
 
-                <p>
-                    <strong>\(\alpha\):</strong>
-                    Parameter controlling the sensitivity
-                    of the exponential distance term
-                    to geometric discrepancies.
-                </p>
+        <p>
+            <strong>\(S_2\):</strong>
+            Point cloud acquired during compression.
+        </p>
 
-            </div>
+        <p>
+            <strong>\(\hat{y}\) and \(\hat{x}\):</strong>
+            Nearest-neighbour points identified
+            in the opposite point cloud.
+        </p>
+
+        <p>
+            <strong>\(\|x-\hat{y}\|_2\):</strong>
+            Euclidean distance between a point
+            and its nearest neighbour.
+        </p>
+
+        <p>
+            <strong>\(\hat{n}_y\) and \(\hat{n}_x\):</strong>
+            Density-normalisation factors associated
+            with the corresponding nearest-neighbour points.
+        </p>
+
+        <p>
+            <strong>\(\alpha\):</strong>
+            Parameter controlling the sensitivity
+            of the exponential distance term
+            to geometric discrepancies.
+        </p>
+
+    </div>
+
+</div>
+
 
             <p>
                 The DCD formulation evaluates geometric
