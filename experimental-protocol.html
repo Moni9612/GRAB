@@ -588,6 +588,74 @@ html {
 }
 
 
+/* Shared headings for grasping and vision modalities */
+
+.modality-column-headings {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) 50px minmax(0, 1fr);
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.modality-column-headings span {
+    color: #1E7A55;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+/* Keep the modality boxes vertically aligned */
+
+.modality-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) 50px minmax(0, 1fr);
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 14px;
+}
+
+.modality-source,
+.modality-target {
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Mobile layout */
+
+@media (max-width: 650px) {
+
+    .modality-column-headings {
+        display: none;
+    }
+
+    .modality-row {
+        grid-template-columns: 1fr;
+    }
+
+    .modality-source::before {
+        content: "GRASPING MODALITY";
+    }
+
+    .modality-target::before {
+        content: "VISION MODEL";
+    }
+
+    .modality-source::before,
+    .modality-target::before {
+        display: block;
+        margin-bottom: 12px;
+        color: #1E7A55;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+    }
+}
+
+
+
 
     </style>
 
@@ -740,91 +808,79 @@ html {
         </p>
 
         
+
 <!-- Grasping and Vision Modalities -->
 
-<div class="modality-panel">
+<div class="modality-column-headings">
+    <span>GRASPING MODALITIES (3)</span>
+    <span aria-hidden="true"></span>
+    <span>VISION MODELS (2)</span>
+</div>
 
-    <h3>Grasping and Vision Modalities</h3>
+<!-- Rigid and Fin-Ray grippers -->
 
-    <!-- Parallel-jaw  -->
+<div class="modality-row">
 
-    <div class="modality-row">
+    <div class="modality-source">
 
-        <div class="modality-source">
+        <span class="modality-name">
+            Rigid parallel-jaw gripper
+        </span>
 
-            <span class="modality-label">
-                
-            </span>
-
-            <span class="modality-name">
-                Rigid parallel-jaw gripper
-            </span>
-
-            <span class="modality-name">
-                Fin-Ray soft adaptive gripper
-            </span>
-
-        </div>
-
-        <div class="modality-arrow" aria-hidden="true">
-            &#8594;
-        </div>
-
-        <div class="modality-target">
-
-            <span class="modality-label">
-                Vision Model
-            </span>
-
-            <span class="modality-name">
-                AnyGrasp
-            </span>
-
-            <span class="modality-description">
-                6D grasp pose estimation
-            </span>
-
-        </div>
+        <span class="modality-name">
+            Fin-Ray soft adaptive gripper
+        </span>
 
     </div>
 
-    <!-- Suction grasping modality -->
+    <div class="modality-arrow" aria-hidden="true">
+        &#8594;
+    </div>
 
-    <div class="modality-row">
+    <div class="modality-target">
 
-        <div class="modality-source">
+        <span class="modality-name">
+            AnyGrasp
+        </span>
 
-            <span class="modality-label">
-                Grasping Modality
-            </span>
-
-            <span class="modality-name">
-                Suction gripper
-            </span>
-
-        </div>
-
-        <div class="modality-arrow" aria-hidden="true">
-            &#8594;
-        </div>
-
-        <div class="modality-target">
-
-            <span class="modality-label">
-                Vision Model
-            </span>
-
-            <span class="modality-name">
-                SuctionNet
-            </span>
-
-            <span class="modality-description">
-                Suction grasp estimation
-            </span>
-
-        </div>
+        <span class="modality-description">
+            6D grasp pose estimation
+        </span>
 
     </div>
+
+</div>
+
+<!-- Suction gripper -->
+
+<div class="modality-row">
+
+    <div class="modality-source">
+
+        <span class="modality-name">
+            Suction gripper
+        </span>
+
+    </div>
+
+    <div class="modality-arrow" aria-hidden="true">
+        &#8594;
+    </div>
+
+    <div class="modality-target">
+
+        <span class="modality-name">
+            SuctionNet
+        </span>
+
+        <span class="modality-description">
+            Suction grasp estimation
+        </span>
+
+    </div>
+
+</div>
+
 
     
 <!-- Experimental Object Dataset -->
