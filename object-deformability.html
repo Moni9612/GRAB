@@ -165,41 +165,50 @@
             margin: 0 0 15px;
         }
 
-        .workflow-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 14px;
-            margin-top: 25px;
-        }
+       
+/* Methodology Overview - Compact Cards */
 
-        .workflow-step {
-            background: #f5f7f4;
-            border: 1px solid #e1e5df;
-            border-radius: 7px;
-            padding: 18px;
-        }
+.workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
 
-        .workflow-number {
-            display: block;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: #1E7A55;
-            margin-bottom: 10px;
-        }
+.workflow-step {
+    background: #f5f7f4;
+    border: 1px solid #e1e5df;
+    border-radius: 6px;
+    padding: 12px 14px;
+}
 
-        .workflow-step h3 {
-            font-size: 15px;
-            font-weight: 700;
-            color: #0b1920;
-            margin: 0 0 8px;
-        }
+.workflow-number {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: #1E7A55;
+    margin-bottom: 6px;
+}
 
-        .detail-page .workflow-step p {
-            font-size: 13px;
-            line-height: 1.6;
-            margin: 0;
-        }
+.workflow-step h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0b1920;
+    margin: 0 0 6px;
+}
+
+/* Keep descriptions left-aligned, not justified */
+
+.detail-page .workflow-step p {
+    font-size: 12px;
+    line-height: 1.55;
+    margin: 0;
+    text-align: left;
+    text-justify: auto;
+    hyphens: none;
+}
+
 
         /* ==========================================
            FIGURES
