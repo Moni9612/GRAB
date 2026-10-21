@@ -540,6 +540,55 @@ html {
 }
 
 
+/* Experimental Object Dataset Figure */
+
+.dataset-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.dataset-figure {
+    margin: 22px 0 0;
+    padding: 15px;
+    background: #f5f7f4;
+    border: 1px solid #e1e5df;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.dataset-figure img {
+    display: block;
+    width: 100%;
+    max-width: 850px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.dataset-figure figcaption {
+    margin-top: 12px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #53636a;
+    text-align: center;
+}
+
+@media (max-width: 650px) {
+    .modality-dataset {
+        flex-direction: column;
+    }
+
+    .dataset-content {
+        width: 100%;
+    }
+
+    .dataset-figure {
+        padding: 10px;
+    }
+}
+
+
+
     </style>
 
 </head>
@@ -777,27 +826,47 @@ html {
 
     </div>
 
-    <!-- Experimental object dataset -->
+    
+<!-- Experimental Object Dataset -->
 
-    <div class="modality-dataset">
+<div class="modality-dataset">
 
-        <div class="dataset-count">
-            <strong>21</strong>
-            <span>Objects</span>
-        </div>
+    <div class="dataset-count">
+        <strong>21</strong>
+        <span>Objects</span>
+    </div>
 
-        <div>
-            <h4>Experimental Object Dataset</h4>
+    <div class="dataset-content">
 
-            <p>
-                Seven inorganic contaminant categories,
-                with three representative objects per category.
-            </p>
-        </div>
+        <h4>Experimental Object Dataset</h4>
+
+        <p>
+            Seven inorganic contaminant categories,
+            with three representative objects per category.
+        </p>
+
+        <!-- Object Deformability Scores Figure -->
+
+        <figure class="dataset-figure">
+
+            <img
+                src="assets/images/Object_Deformability_Scores.png"
+                alt="Object deformability scores across seven inorganic contaminant categories"
+                loading="lazy"
+            >
+
+            <figcaption>
+                Object Deformability Scores for the
+                21 objects across seven inorganic
+                contaminant categories.
+            </figcaption>
+
+        </figure>
 
     </div>
 
 </div>
+
 
 
 
