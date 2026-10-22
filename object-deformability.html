@@ -1794,26 +1794,6 @@ A compression force of 40 N was applied independently along the x and y axes to 
 
             </div>
 
-            <div class="processing-step">
-
-                <h4>Fine Alignment Using ICP</h4>
-
-                <p>
-                    After coarse alignment, run the ICP registration procedure using
-                    <a href="https://github.com/Moni9612/Object-Deformability-Score-Calculation/blob/main/Density_aware_Chamfer_Distance/icp_alignment.py"
-   class="script-link"
-   target="_blank"
-   rel="noopener noreferrer">
-    <strong>icp_alignment.py</strong>
-</a>.
-
-                    ICP iteratively identifies corresponding points and estimates a rigid transformation that reduces
-                    the discrepancy between the two point clouds. Inspect the resulting registration to check that
-                    differences caused by object placement have been reduced while deformation-related geometry remains distinguishable.
-                </p>
-
-            </div>
-
     </div>
 
     <!-- RIGHT: Existing ICP alignment video -->
@@ -1845,6 +1825,26 @@ A compression force of 40 N was applied independently along the x and y axes to 
     </div>
 
 </div>
+
+<div class="processing-step">
+
+                <h4>Fine Alignment Using ICP</h4>
+
+                <p>
+                    After coarse alignment, run the ICP registration procedure using
+                    <a href="https://github.com/Moni9612/Object-Deformability-Score-Calculation/blob/main/Density_aware_Chamfer_Distance/icp_alignment.py"
+   class="script-link"
+   target="_blank"
+   rel="noopener noreferrer">
+    <strong>icp_alignment.py</strong>
+</a>.
+
+                    ICP iteratively identifies corresponding points and estimates a rigid transformation that reduces
+                    the discrepancy between the two point clouds. Inspect the resulting registration to check that
+                    differences caused by object placement have been reduced while deformation-related geometry remains distinguishable.
+                </p>
+
+            </div>
             <p>
                 The aligned point clouds represent
                 the undeformed and compressed geometries
