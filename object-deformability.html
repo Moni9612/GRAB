@@ -1007,18 +1007,18 @@ html {
             controlled compression.
 
             The platform comprises a
-            <strong>UR10 robotic manipulator</strong>
+            UR10 robotic manipulator
             equipped with an
-            <strong>OnRobot RG2 parallel gripper</strong>
+            OnRobot RG2 parallel gripper
             and customised compression pads.
 
-            An <strong>Intel RealSense D415 RGB-D camera</strong>
+            An Intel RealSense D415 RGB-D camera
             and RecFusion 3D reconstruction software
             are employed to acquire the object geometry.
 
             A compression force of
-            <strong>40 N</strong> is applied independently
-            along the <strong>x and y axes</strong>.
+            40 N is applied independently
+            along the x and y axes.
 
             Measurements along both directions account
             for directional variations in object deformation
@@ -1091,8 +1091,8 @@ html {
             <p>
                 The three-dimensional geometries of the objects
                 were reconstructed using
-                <strong>RecFusion</strong> software and an
-                <strong>Intel RealSense D415 RGB-D camera</strong>.
+                RecFusion software and an
+                Intel RealSense D415 RGB-D camera.
 
                 For each object, separate reconstructions
                 were acquired before and during compression.
@@ -1129,7 +1129,7 @@ html {
             <p>
                 Following reconstruction, the three-dimensional
                 object geometries were exported from
-                <strong>RecFusion</strong> as mesh files
+                RecFusion as mesh files
                 for subsequent processing.
 
                 Separate mesh representations were retained
@@ -1166,14 +1166,14 @@ html {
                 regions on subsequent geometric measurements,
                 a two-stage background removal procedure
                 was employed using
-                <strong>RecFusion</strong>,
-                <strong>MeshLab</strong>, and a custom
+                RecFusion,
+                MeshLab, and a custom
                 Python implementation.
             </p>
 
             <p>
                 Initially, background removal was performed
-                using <strong>RecFusion</strong> to eliminate
+                using RecFusion to eliminate
                 unwanted environmental surfaces while retaining
                 the reconstructed object geometry.
 
@@ -1185,7 +1185,7 @@ html {
             <p>
                 Following the initial background removal,
                 additional filtering was performed using
-                <strong>MeshLab</strong> to visually inspect
+                MeshLab to visually inspect
                 the reconstructed geometries and remove
                 residual unwanted points based on their
                 colour attributes.
@@ -1245,7 +1245,7 @@ html {
             <p>
                 Following background removal, the processed
                 object geometry files were converted from
-                <strong>ASCII to binary format</strong>
+                ASCII to binary format
                 to prepare them for subsequent
                 point-cloud processing and registration.
 
@@ -1768,7 +1768,7 @@ html {
 
                 <p>
                     Following coarse alignment, the
-                    <strong>Iterative Closest Point (ICP)</strong>
+                    Iterative Closest Point (ICP)
                     algorithm was employed to refine
                     the registration.
 
@@ -1842,10 +1842,10 @@ html {
 </h3>
 
             <p>
-                <strong>Density-Aware Chamfer Distance (DCD)</strong>
+                Density-Aware Chamfer Distance (DCD)
                 was employed to calculate the
-                <strong>Object Deformability Score
-                (Q<sub>O</sub>)</strong>
+                Object Deformability Score
+                (Q<sub>O</sub>)
                 by quantifying the geometric discrepancy
                 between the undeformed and compressed
                 object geometries.
@@ -1993,15 +1993,15 @@ html {
 
             Accordingly, DCD is calculated independently
             for the
-            <strong>x-axis and y-axis compression experiments</strong>.
+            x-axis and y-axis compression experiments.
 
             Each directional measurement compares
             the registered undeformed and compressed
             point clouds.
 
             The final
-            <strong>Object Deformability Score
-            (Q<sub>O</sub>)</strong>
+            Object Deformability Score
+            (Q<sub>O</sub>)
             is obtained by averaging the two
             directional DCD values:
         </p>
