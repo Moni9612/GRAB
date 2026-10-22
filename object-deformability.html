@@ -1248,7 +1248,7 @@ A compression force of 40 N was applied independently along the x and y axes to 
 
             <p>
                 Following background removal, the processed
-                object geometry files were converted from
+                object geometry files need to be converted from
                 ASCII to binary format
                 to prepare them for subsequent
                 point-cloud processing and registration.
@@ -1267,7 +1267,7 @@ A compression force of 40 N was applied independently along the x and y axes to 
                 required for subsequent analysis.
 
                 The resulting binary-format files
-                were used for point-cloud alignment
+                can be used for point-cloud alignment
                 and geometric comparison.
             </p>
 
@@ -1738,7 +1738,7 @@ A compression force of 40 N was applied independently along the x and y axes to 
             <p>
                 Following preprocessing and file conversion,
                 the undeformed and compressed object point
-                clouds were aligned within a common
+                clouds need to be aligned within a common
                 coordinate frame.
 
                 This registration procedure is essential
@@ -1758,15 +1758,9 @@ A compression force of 40 N was applied independently along the x and y axes to 
                 <h4>Coarse Alignment Using MeshLab</h4>
 
                 <p>
-                    Initial alignment was performed
-                    using MeshLab to approximately align
-                    the undeformed and compressed point clouds.
-
-                    This procedure reduced differences
-                    in translation and orientation
-                    between the two representations,
-                    providing an initial alignment
-                    for subsequent ICP registration.
+                    Open the undeformed and compressed point clouds in MeshLab and approximately align their positions and orientations. 
+                    Aim to reduce the initial translation and rotation differences between the two representations so that the subsequent 
+                    ICP registration can refine the alignment.
                 </p>
 
             </div>
@@ -1776,18 +1770,7 @@ A compression force of 40 N was applied independently along the x and y axes to 
                 <h4>Fine Alignment Using ICP</h4>
 
                 <p>
-                    Following coarse alignment, the
-                    Iterative Closest Point (ICP)
-                    algorithm was employed to refine
-                    the registration.
-
-                    ICP iteratively identifies corresponding
-                    points and estimates a rigid transformation
-                    that reduces the geometric discrepancy
-                    between the two point clouds.
-
-                    The registration was implemented using
-                    the custom Python script
+                    After coarse alignment, run the ICP registration procedure using
                     <a href="https://github.com/Moni9612/Object-Deformability-Score-Calculation/blob/main/Density_aware_Chamfer_Distance/icp_alignment.py"
    class="script-link"
    target="_blank"
@@ -1795,10 +1778,9 @@ A compression force of 40 N was applied independently along the x and y axes to 
     <strong>icp_alignment.py</strong>
 </a>.
 
-                    This procedure reduces differences
-                    associated with object position
-                    and orientation while retaining
-                    geometric variations caused by compression.
+                    ICP iteratively identifies corresponding points and estimates a rigid transformation that reduces
+                    the discrepancy between the two point clouds. Inspect the resulting registration to check that
+                    differences caused by object placement have been reduced while deformation-related geometry remains distinguishable.
                 </p>
 
             </div>
@@ -1838,7 +1820,7 @@ A compression force of 40 N was applied independently along the x and y axes to 
                 the undeformed and compressed geometries
                 within a common coordinate frame.
 
-                These registered datasets were subsequently
+                These registered datasets can be subsequently
                 used to calculate the geometric discrepancy
                 using Density-Aware Chamfer Distance.
             </p>
