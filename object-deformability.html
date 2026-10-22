@@ -1123,9 +1123,7 @@ html {
                 successive depth observations to generate
                 a three-dimensional representation
                 of the object's surface.
-            </p>
-
-            <p>
+          
                 This procedure was performed independently
                 for compression along the x and y directions,
                 producing the corresponding undeformed
@@ -1158,9 +1156,7 @@ html {
                 for the undeformed and compressed states,
                 allowing the geometric changes induced
                 by compression to be evaluated independently.
-            </p>
-
-            <p>
+            
                 These exported meshes provided the input
                 for subsequent background removal,
                 colour filtering, and point-cloud registration.
@@ -1202,9 +1198,7 @@ html {
                 This initial processing stage reduced the
                 presence of unnecessary background regions
                 within the exported meshes.
-            </p>
-
-            <p>
+        
                 Following the initial background removal,
                 additional filtering was performed using
                 MeshLab to visually inspect
@@ -1238,9 +1232,7 @@ html {
                 minimising the influence of unrelated
                 surfaces on subsequent point-cloud
                 registration and DCD calculations.
-            </p>
-
-            <p>
+          
                 Following background removal and colour filtering,
                 the processed object geometry files for all
                 21 objects can be found in the
@@ -1984,67 +1976,42 @@ html {
 </div>
 
 
-            <p>
-                The DCD formulation evaluates geometric
-                discrepancies bidirectionally.
-
-                For each point in \(S_1\), the nearest
-                point in \(S_2\) is identified,
-                and the corresponding distance
-                and density contributions are calculated.
-
-                The same operation is performed from
-                \(S_2\) to \(S_1\), and the two
-                contributions are averaged.
-
-                The exponential distance term incorporates
-                the magnitude of geometric differences,
-                while the density-aware factors account
-                for variations in local point distribution.
-
-                Smaller geometric discrepancies generally
-                yield lower DCD values, whereas larger
-                discrepancies yield higher values.
-
-                Under the standardised compression conditions,
-                DCD therefore provides a quantitative
-                indicator of relative object deformation.
-            </p>
-
-            <p>
-    The Density-Aware Chamfer Distance (DCD) was calculated
-    using the Python script
-    <a href="https://github.com/Moni9612/Object-Deformability-Score-Calculation/blob/main/Density_aware_Chamfer_Distance/dcd_bench.py"
-       class="script-link"
-       target="_blank"
-       rel="noopener noreferrer">
-        <strong>dcd_bench.py</strong>
-    </a>,
-    independently for compression along the x and y directions.
-    The resulting directional DCD values quantify the geometric
-    changes induced by compression along each axis.
-    These values were subsequently combined to calculate
-    the final Object Deformability Score.
+            
+<p>
+    The DCD formulation evaluates geometric discrepancies
+    bidirectionally. For each point in \(S_1\), the nearest
+    point in \(S_2\) is identified, and the corresponding
+    distance and density contributions are calculated.
+    The same operation is performed from \(S_2\) to \(S_1\),
+    and the two contributions are averaged. The exponential
+    distance term captures geometric discrepancies, while
+    the density-aware factors account for variations in
+    local point distribution. Smaller geometric discrepancies
+    generally yield lower DCD values, whereas larger
+    discrepancies yield higher values. Under standardised
+    compression conditions, DCD therefore provides a
+    quantitative indicator of relative object deformation.
 </p>
 
-        <p>
-            Object deformation may vary with the direction
-            of the applied force.
+<p>
+    Since object deformation may vary with the direction
+    of the applied force, DCD was calculated independently
+    for the x- and y-axis compression experiments using
+    the Python script
+    <a
+        href="https://github.com/Moni9612/Object-Deformability-Score-Calculation/blob/main/Density_aware_Chamfer_Distance/dcd_bench.py"
+        class="script-link"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        <strong>dcd_bench.py</strong>
+    </a>.
+    Each directional calculation compares the registered
+    undeformed and compressed point clouds. The final
+    Object Deformability Score (\(Q_O\)) is obtained by
+    averaging the two directional DCD values:
+</p>
 
-            Accordingly, DCD is calculated independently
-            for the
-            x-axis and y-axis compression experiments.
-
-            Each directional measurement compares
-            the registered undeformed and compressed
-            point clouds.
-
-            The final
-            Object Deformability Score
-            (Q<sub>O</sub>)
-            is obtained by averaging the two
-            directional DCD values:
-        </p>
 
         <div class="score-equation">
 
