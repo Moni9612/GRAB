@@ -833,6 +833,50 @@ html {
     outline-offset: 3px;
 }
 
+/* Point-Cloud Alignment: Side-by-side layout */
+
+.alignment-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+    margin-top: 20px;
+}
+
+.alignment-content {
+    min-width: 0;
+}
+
+.alignment-video {
+    min-width: 0;
+}
+
+/* Override the existing ICP video width and spacing */
+.alignment-video .icp-video-section {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.alignment-video video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Keep the video caption within the right column */
+.alignment-video figcaption {
+    max-width: 100%;
+}
+
+/* Stack vertically on smaller screens */
+@media (max-width: 768px) {
+    .alignment-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
     </style>
 
 </head>
@@ -1712,11 +1756,15 @@ A compression force of 40 N was applied independently along the x and y axes to 
 
         <div class="method-subsection">
 
-            <h3 id="point-cloud-alignment">
-    Point-Cloud Alignment
-</h3>
+            
+<h3 id="point-cloud-alignment">Point-Cloud Alignment</h3>
 
-            <p>
+<div class="alignment-layout">
+
+    <!-- LEFT: Existing explanation and alignment steps -->
+    <div class="alignment-content">
+
+<p>
                 Following preprocessing and file conversion,
                 the undeformed and compressed object point
                 clouds need to be aligned within a common
@@ -1766,7 +1814,12 @@ A compression force of 40 N was applied independently along the x and y axes to 
 
             </div>
 
-            <!-- ICP ALIGNMENT VIDEO -->
+    </div>
+
+    <!-- RIGHT: Existing ICP alignment video -->
+    <div class="alignment-video">
+
+        <!-- ICP ALIGNMENT VIDEO -->
 
             <div class="icp-video-section">
 
@@ -1796,6 +1849,9 @@ A compression force of 40 N was applied independently along the x and y axes to 
 
             </div>
 
+    </div>
+
+</div>
             <p>
                 The aligned point clouds represent
                 the undeformed and compressed geometries
