@@ -469,3 +469,15 @@ footer {
     margin-bottom: 5px;
 }
 
+
+/* Reduce gap between PROTOCOL label and heading */
+
+.benchmark .card:nth-child(3) .number {
+    margin-bottom: 5px;
+}
+
+.benchmark .card:nth-child(3) h2 {
+    margin-top: 0;
+}
+
+
