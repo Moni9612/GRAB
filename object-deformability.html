@@ -1024,28 +1024,13 @@ html {
 
     <section class="method-section" id="experimental-setup">
         <p>
-            A customised experimental platform was developed
-            to measure changes in object geometry under
-            controlled compression.
+            A customised experimental platform needs to be developed to measure changes in object geometry
+            under controlled compression. The platform should comprise a UR10 robotic manipulator equipped
+            with an OnRobot RG2 parallel gripper and customised compression pads as shown in Figure 1. An Intel RealSense D415 RGB-D camera,
+            integrated with RecFusion 3D reconstruction software, can be used to acquire the three-dimensional object geometries.
 
-            The platform comprises a
-            UR10 robotic manipulator
-            equipped with an
-            OnRobot RG2 parallel gripper
-            and customised compression pads.
-
-            An Intel RealSense D415 RGB-D camera
-            and RecFusion 3D reconstruction software
-            are employed to acquire the object geometry.
-
-            A compression force of
-            40 N is applied independently
-            along the x and y axes.
-
-            Measurements along both directions account
-            for directional variations in object deformation
-            and provide a consistent basis for comparative
-            evaluation.
+A compression force of 40 N was applied independently along the x and y axes to evaluate directional variations in object deformation.
+            Measurements obtained from both directions provide a consistent basis for comparing the deformability of different objects.
         </p>
 
         <figure class="research-figure">
@@ -1183,31 +1168,31 @@ html {
                 To minimise the influence of these non-object
                 regions on subsequent geometric measurements,
                 a two-stage background removal procedure
-                was employed using
+                should be employed using
                 RecFusion,
                 MeshLab, and a custom
                 Python implementation.
             </p>
 
             <p>
-                Initially, background removal was performed
+                Initially, background removal can be performed
                 using RecFusion to eliminate
                 unwanted environmental surfaces while retaining
                 the reconstructed object geometry.
 
-                This initial processing stage reduced the
+                This initial processing stage will reduce the
                 presence of unnecessary background regions
                 within the exported meshes.
         
                 Following the initial background removal,
-                additional filtering was performed using
+                additional filtering can be performed using
                 MeshLab to visually inspect
                 the reconstructed geometries and remove
                 residual unwanted points based on their
                 colour attributes.
 
-                This procedure was further supported by
-                a custom Python script,
+                To further support this procedure, please use the
+                the custom Python script,
                 <a href="https://github.com/Moni9612/Object-Deformability-Score-Calculation/blob/main/Density_aware_Chamfer_Distance/color_filter.py"
    class="script-link"
    target="_blank"
@@ -1222,7 +1207,7 @@ html {
 
             <p>
                 The combined background removal and
-                colour filtering procedure was applied
+                colour filtering procedure should be applied
                 to both the undeformed and compressed
                 object representations.
 
