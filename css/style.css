@@ -420,3 +420,33 @@ footer {
         padding-bottom: 8px;
     }
 }
+
+
+/* Pipeline heading and repository button side by side */
+
+.pipeline-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.pipeline-header h2 {
+    margin: 0;
+    flex: 1;
+    min-width: 0;
+}
+
+.pipeline-header .repo-button {
+    flex-shrink: 0;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .pipeline-header {
+        flex-wrap: wrap;
+    }
+}
