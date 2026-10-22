@@ -456,3 +456,16 @@ footer {
 .benchmark .card:nth-child(2) h2 {
     line-height: 1.1;
 }
+
+
+/* Reduce gap between DEFORMABILITY label and heading */
+
+.benchmark .card:nth-child(2) h2 {
+    margin-top: 0;
+    line-height: 1.15;
+}
+
+.benchmark .card:nth-child(2) .number {
+    margin-bottom: 5px;
+}
+
