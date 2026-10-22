@@ -454,5 +454,5 @@ footer {
 /* Match the middle card heading line spacing to the first card */
 
 .benchmark .card:nth-child(2) h2 {
-    line-height: 1.15;
+    line-height: 1.1;
 }
