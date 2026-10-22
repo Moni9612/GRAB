@@ -1017,7 +1017,7 @@ html {
         <h4>Experimental Object Dataset</h4>
 
         <p>
-            The experimental dataset should comprise 21 inorganic objects from seven contaminant categories, with three representative objects selected from each category. These objects need to be organised into the clusters described in Level 2 before conducting the cluttered-scene experiments.
+            The experimental dataset should comprise 21 inorganic objects from seven contaminant categories, with three representative objects selected from each category. 
         </p>
 
         <!-- Object Deformability Scores Figure -->
@@ -1058,7 +1058,14 @@ html {
         <h2>Single Isolated Object — Level 1</h2>
 
         <p>
-            For Level 1, each object needs to be placed individually at five predefined workspace positions: the four corners and the centre. These positions should be used to assess grasping performance across different locations within the camera field of view and the robot's accessible workspace. Each of the 21 objects needs to be tested at all five positions using each of the three grasping modalities, resulting in <strong>105 grasp attempts per gripper</strong> and <strong>315 trials overall</strong>. In the original GRAB experiments, suction grasping was unsuccessful for plastic bags and mesh bags because a reliable suction seal could not be established or maintained. Accordingly, these two categories should be excluded from the suction-based experiments in Levels 2–4 when reproducing the GRAB protocol.
+            For Level 1, each object needs to be placed individually at five predefined workspace positions: 
+            the four corners and the centre. These positions should be used to assess grasping performance across 
+            different locations within the camera field of view and the robot's accessible workspace. Each of the 
+            21 objects needs to be tested at all five positions using each of the three grasping modalities, 
+            resulting in 105 grasp attempts per gripper and 315 trials overall. In the original GRAB experiments, 
+            suction grasping was unsuccessful for plastic bags and mesh bags because a reliable suction seal could 
+            not be established or maintained. Accordingly, these two categories should be excluded from the 
+            suction-based experiments in Levels 2–4 when reproducing the GRAB protocol.
         </p>
 
     </section>
@@ -1082,7 +1089,10 @@ html {
             <h3>Object Cluster Formation</h3>
 
             <p>
-            The 21-object dataset needs to be divided into three clusters of seven objects, with each cluster containing one representative object from each of the seven inorganic contaminant categories. The cluster configurations are illustrated in Figure 2. For suction-based experiments, plastic bags and mesh bags should be excluded based on the Level 1 observations, leaving <strong>five objects per cluster</strong>.
+            The 21-object dataset needs to be divided into three clusters of seven objects, with each cluster containing 
+                one representative object from each of the seven inorganic contaminant categories. The cluster configurations 
+                are illustrated in Figure 2. For suction-based experiments, plastic bags and mesh bags should be excluded based 
+                on the Level 1 observations, leaving five objects per cluster.
         </p>
 
         </div>
@@ -1104,7 +1114,12 @@ html {
             <h3>Grasp Execution</h3>
 
             <p>
-            For each grasping cycle, candidate grasp poses need to be generated using AnyGrasp for the rigid and Fin-Ray grippers or SuctionNet for the suction gripper. Following post-processing, the highest-ranked feasible grasp should be selected from the top eight candidate poses. Seven consecutive grasp attempts need to be conducted for each seven-object cluster with the rigid and Fin-Ray grippers; five attempts per cluster should be conducted for the suction gripper after excluding plastic bags and mesh bags. Each of the three cluster configurations needs to be repeated <strong>five times</strong>, yielding 105 attempts for each parallel-jaw modality and 75 for suction.
+            For each grasping cycle, candidate grasp poses need to be generated using AnyGrasp for the rigid 
+            and Fin-Ray grippers or SuctionNet for the suction gripper. Following post-processing, the highest-ranked
+            feasible grasp should be selected from the top eight candidate poses. Seven consecutive grasp attempts 
+            need to be conducted for each seven-object cluster with the rigid and Fin-Ray grippers; five attempts 
+            per cluster should be conducted for the suction gripper after excluding plastic bags and mesh bags. 
+            Each of the three cluster configurations needs to be repeated five times, yielding 105 attempts for each parallel-jaw modality and 75 for suction.
         </p>
 
         </div>
@@ -1140,7 +1155,9 @@ html {
         </figure>
 
         <p>
-            Level 3 requires the inorganic object density to be increased to assess grasping under heavy clutter. Each scene should contain <strong>14 inorganic objects</strong> for the rigid and Fin-Ray grippers, reflecting the maximum practical object density used in GRAB under the specified workspace and camera depth constraints.
+            Level 3 requires the inorganic object density to be increased to assess grasping under heavy clutter.
+            Each scene should contain 14 inorganic objects for the rigid and Fin-Ray grippers, reflecting the 
+            maximum practical object density used in GRAB under the specified workspace and camera depth constraints.
         </p>
 
 
@@ -1149,7 +1166,10 @@ html {
             <h3>Heavy-Clutter Configuration</h3>
 
             <p>
-            The three clusters established in Level 2 need to be combined in pairs to form three heavy-clutter configurations: <strong>Cluster 1 + Cluster 2</strong>, <strong>Cluster 1 + Cluster 3</strong> and <strong>Cluster 2 + Cluster 3</strong>. Each combination should contain two representatives of every inorganic contaminant category, producing 14 objects per scene. For suction-based trials, plastic bags and mesh bags need to be excluded, resulting in <strong>10 objects per scene</strong>.
+            The three clusters established in Level 2 need to be combined in pairs to form three heavy-clutter configurations:
+            Cluster 1 + Cluster 2, Cluster 1 + Cluster 3 and Cluster 2 + Cluster 3. Each combination should contain 
+            two representatives of every inorganic contaminant category, producing 14 objects per scene. For suction-based trials,
+            plastic bags and mesh bags need to be excluded, resulting in 10 objects per scene.
         </p>
 
         </div>
@@ -1166,7 +1186,10 @@ html {
         </div>
 
             <p>
-            The grasp-generation, post-processing and selection procedure specified for Level 2 should also be applied in Level 3. For each cluster-pair configuration, <strong>14 consecutive grasp attempts</strong> need to be performed with each parallel-jaw gripper, or <strong>10 attempts</strong> with the suction gripper. Each of the three configurations should be evaluated over <strong>five repetitions</strong>, yielding 210 attempts per parallel-jaw gripper and 150 suction attempts.
+            The grasp-generation, post-processing and selection procedure specified for Level 2 should also be applied in Level 3. 
+            For each cluster-pair configuration, 14 consecutive grasp attempts need to be performed with each parallel-jaw gripper,
+            or 10 attempts with the suction gripper. Each of the three configurations should be evaluated over
+            five repetitions, yielding 210 attempts per parallel-jaw gripper and 150 suction attempts.
         </p>
 
         </div>
@@ -1183,7 +1206,10 @@ html {
         <h2>Mixed Food Waste Scene — Level 4</h2>
 
         <p>
-            Level 4 requires inorganic contaminants to be combined with organic food waste to evaluate grasping in a heterogeneous, moisture-affected environment. Each mixed scene should contain <strong>seven inorganic contaminants and seven organic food waste items</strong>, forming a <strong>14-object configuration</strong> for the rigid and Fin-Ray grippers. This condition is intended to introduce occlusion, surface moisture, adhesion, irregular geometries and contact interactions between organic and inorganic materials.
+            Level 4 requires inorganic contaminants to be combined with organic food waste to evaluate grasping in a heterogeneous,
+            moisture-affected environment. Each mixed scene should contain seven inorganic contaminants and seven organic food waste items,
+            forming a 14-object configuration for the rigid and Fin-Ray grippers. This condition is intended to introduce occlusion,
+            surface moisture, adhesion, irregular geometries and contact interactions between organic and inorganic materials.
         </p>
 
 
@@ -1203,7 +1229,7 @@ html {
             <h3>Organic Sample Preparation</h3>
 
             <p>
-            For each selected fruit or vegetable, the item needs to be cut into two halves, with <strong>one half</strong> retained as the experimental sample. The seven prepared samples should be immersed in water, removed and drained before being stored together in a plastic bag under ambient conditions for seven days, following the GRAB preparation procedure. Moisture released during storage contributes to a liquid-rich organic residue that can form the watery base of the mixed-waste scene. The volume and viscosity of the accumulated liquid were not measured in the original experiments and should not be treated as controlled quantitative parameters.
+            For each selected fruit or vegetable, the item needs to be cut into two halves, with one half retained as the experimental sample. The seven prepared samples should be immersed in water, removed and drained before being stored together in a plastic bag under ambient conditions for seven days, following the GRAB preparation procedure. Moisture released during storage contributes to a liquid-rich organic residue that can form the watery base of the mixed-waste scene. The volume and viscosity of the accumulated liquid were not measured in the original experiments and should not be treated as controlled quantitative parameters.
         </p>
 
         </div>
@@ -1260,7 +1286,12 @@ html {
         </div>
 
             <p>
-            The grasp-generation and selection procedure established in Level 2 should be retained for Level 4: AnyGrasp or SuctionNet needs to be used according to the grasping modality, and the highest-ranked feasible grasp should be selected from the top eight post-processed candidates. Each mixed configuration should be evaluated over <strong>five repetitions</strong>. To reproduce the reported trial counts, <strong>14 consecutive grasp attempts</strong> need to be conducted per repetition for each parallel-jaw gripper and <strong>10 attempts</strong> per repetition for suction, giving 210 trials per parallel-jaw gripper and 150 suction trials. As in Levels 2 and 3, plastic bags and mesh bags should be excluded from suction-gripper evaluation because of the seal limitations observed in Level 1.
+            The grasp-generation and selection procedure established in Level 2 should be retained for Level 4: AnyGrasp or SuctionNet needs to
+            be used according to the grasping modality, and the highest-ranked feasible grasp should be selected from the top eight post-processed
+            candidates. Each mixed configuration should be evaluated over five repetitions. To reproduce the reported trial counts, 
+            14 consecutive grasp attempts need to be conducted per repetition for each parallel-jaw gripper and 10 attempts per repetition for suction,
+            giving 210 trials per parallel-jaw gripper and 150 suction trials. As in Levels 2 and 3, plastic bags and mesh bags should be excluded from 
+            suction-gripper evaluation because of the seal limitations observed in Level 1.
         </p>
 
         <!--
