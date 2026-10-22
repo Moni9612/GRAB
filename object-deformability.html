@@ -31,7 +31,7 @@
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
     </script>
 
-    <style>
+    <>
 
         /* ==========================================
            MAIN PAGE LAYOUT
@@ -875,6 +875,17 @@ html {
         grid-template-columns: 1fr;
         gap: 25px;
     }
+}
+
+/* Align introductory text with the top of the ICP video */
+
+.alignment-content > p:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.alignment-layout {
+    align-items: start;
 }
 
     </style>
