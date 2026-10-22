@@ -806,12 +806,8 @@ html {
     <h1>Experimental Protocol</h1>
 
     <p>
-        The GRAB benchmark evaluates robotic grasping
-        performance across four progressively challenging
-        experimental conditions, ranging from isolated
-        objects to heavily cluttered mixed food waste
-        environments. 
-    </p>
+            This experimental protocol provides a reproducible methodology for evaluating robotic grasping performance across four progressively challenging conditions, ranging from isolated inorganic objects to heavily cluttered mixed food waste scenes. Each level specifies the required object arrangement, scene preparation and grasping procedure so that evaluations can be conducted consistently across the three grasping modalities.
+        </p>
 
     <!-- ==========================================
          EXPERIMENTAL METHODOLOGY OVERVIEW
@@ -822,13 +818,8 @@ html {
         <h2>Experimental Methodology Overview</h2>
 
         <p>
-    Four experimental levels were designed to progressively
-    increase the complexity of robotic grasping in cluttered
-    environments using a
-    <a href="#robotic-grasping-pipeline" class="section-link">
-        Real-World Robotic Grasping Pipeline
-    </a>.
-</p>
+            Four experimental levels need to be conducted in sequence to progressively increase the complexity of robotic grasping in cluttered environments. The <a href="#robotic-grasping-pipeline" class="section-link">Real-World Robotic Grasping Pipeline</a> provides the common experimental platform and grasp-generation approach for all four levels.
+        </p>
 
         
 <div class="protocol-grid">
@@ -926,14 +917,7 @@ html {
         </figure>
 
         <p>
-            The experimental platform comprises a
-            UR10 robotic manipulator
-            and an Intel RealSense D415 RGB-D camera
-            operating within a 40 × 40 cm² workspace.
-            The camera is positioned approximately
-            52.5 cm above the workspace,
-            with its viewing direction perpendicular
-            to the experimental surface.
+            The experimental platform should comprise a UR10 robotic manipulator and an Intel RealSense D415 RGB-D camera operating over a 40 × 40 cm² workspace. To reproduce the GRAB configuration, the camera needs to be positioned approximately 52.5 cm above the workspace, with its viewing direction perpendicular to the experimental surface.
         </p>
 
         
@@ -1033,7 +1017,7 @@ html {
         <h4>Experimental Object Dataset</h4>
 
         <p>
-            The experimental dataset comprises 21 inorganic objects across seven contaminant categories, with three representative objects selected from each category.
+            The experimental dataset should comprise 21 inorganic objects from seven contaminant categories, with three representative objects selected from each category. These objects need to be organised into the clusters described in Level 2 before conducting the cluttered-scene experiments.
         </p>
 
         <!-- Object Deformability Scores Figure -->
@@ -1059,17 +1043,8 @@ html {
 </div>
 
             <p>
-                Four progressively challenging
-                experimental conditions were established.
-                The first level evaluates individual
-                objects in isolation, while Levels 2
-                and 3 introduce randomized inorganic
-                clutter at increasing object densities.
-                Level 4 extends the evaluation to
-                mixed organic–inorganic food waste,
-                incorporating moisture-related
-                environmental disturbances.
-            </p>
+            The evaluation needs to progress through four experimental conditions. Level 1 establishes isolated-object grasping performance; Levels 2 and 3 introduce randomised inorganic clutter at increasing object densities; and Level 4 incorporates organic materials and moisture-related disturbances into mixed food waste scenes.
+        </p>
 
     </section>
 
@@ -1083,31 +1058,7 @@ html {
         <h2>Single Isolated Object — Level 1</h2>
 
         <p>
-            In this experiment, each object was evaluated at five
-            predefined workspace positions:
-            the four corners and the centre.
-            These positions were selected to
-            examine grasping performance across
-            different locations within the
-            camera's field of view and the
-            robot's accessible workspace.
-
-            Each of the 21 objects need to be tested
-            at all five positions using the
-            three grasping modalities.
-            This will result in
-            <strong>105 grasp attempts per gripper</strong>
-            and <strong>315 trials overall</strong>.
-
-            Initial experiments indicated that
-            suction grasping was unsuccessful
-            for plastic bags and mesh bags,
-            primarily due to difficulties
-            establishing and maintaining
-            a reliable suction seal.
-            Consequently, these two categories
-            were excluded from subsequent
-            suction-based clutter experiments.
+            For Level 1, each object needs to be placed individually at five predefined workspace positions: the four corners and the centre. These positions should be used to assess grasping performance across different locations within the camera field of view and the robot's accessible workspace. Each of the 21 objects needs to be tested at all five positions using each of the three grasping modalities, resulting in <strong>105 grasp attempts per gripper</strong> and <strong>315 trials overall</strong>. In the original GRAB experiments, suction grasping was unsuccessful for plastic bags and mesh bags because a reliable suction seal could not be established or maintained. Accordingly, these two categories should be excluded from the suction-based experiments in Levels 2–4 when reproducing the GRAB protocol.
         </p>
 
     </section>
@@ -1122,11 +1073,7 @@ html {
         <h2>Medium-Clutter Scene — Level 2</h2>
 
         <p>
-            Level 2 evaluates robotic grasping
-            performance under moderate clutter
-            by introducing multiple inorganic
-            objects simultaneously into the
-            experimental workspace.
+            Level 2 requires multiple inorganic objects to be introduced into the workspace simultaneously to evaluate grasping under medium-clutter conditions. Three predefined object clusters and repeated randomised scene arrangements should be used to ensure consistent object composition while varying spatial configurations.
         </p>
 
 
@@ -1135,19 +1082,8 @@ html {
             <h3>Object Cluster Formation</h3>
 
             <p>
-                The 21-object dataset was divided
-                into three clusters of seven objects,
-                each containing one representative
-                from every inorganic contaminant
-                category. The object sets are
-                illustrated in Figure 2.
-
-                For suction-based experiments,
-                plastic bags and mesh bags were
-                excluded in accordance with the
-                Level 1 observations, resulting
-                in <strong>five objects per cluster</strong>.
-            </p>
+            The 21-object dataset needs to be divided into three clusters of seven objects, with each cluster containing one representative object from each of the seven inorganic contaminant categories. The cluster configurations are illustrated in Figure 2. For suction-based experiments, plastic bags and mesh bags should be excluded based on the Level 1 observations, leaving <strong>five objects per cluster</strong>.
+        </p>
 
         </div>
 
@@ -1157,16 +1093,8 @@ html {
             <h3>Randomized Scene Generation</h3>
 
             <p>
-                Objects belonging to each cluster
-                were randomly dropped into the
-                experimental workspace from a
-                storage box to generate varied
-                spatial arrangements.
-                This procedure introduced
-                differences in object positions,
-                orientations, contact conditions,
-                and partial occlusions between trials.
-            </p>
+            For each repetition, the objects belonging to a cluster need to be randomly dropped from a storage box into the experimental workspace. This randomised placement should generate variations in object position, orientation, contact and partial occlusion without changing the predefined cluster composition.
+        </p>
 
         </div>
 
@@ -1176,23 +1104,8 @@ html {
             <h3>Grasp Execution</h3>
 
             <p>
-                During each grasping cycle,
-                candidate grasp poses were
-                generated using AnyGrasp or
-                SuctionNet, depending on the
-                grasping modality.
-                Following post-processing,
-                the highest-ranked feasible
-                candidate was selected from
-                the top eight grasp poses.
-
-                Consecutive seven grasping attempts
-                were performed on the objects
-                within each cluster.
-                Each cluster configuration
-                was evaluated over
-                <strong>five repetitions</strong>.
-            </p>
+            For each grasping cycle, candidate grasp poses need to be generated using AnyGrasp for the rigid and Fin-Ray grippers or SuctionNet for the suction gripper. Following post-processing, the highest-ranked feasible grasp should be selected from the top eight candidate poses. Seven consecutive grasp attempts need to be conducted for each seven-object cluster with the rigid and Fin-Ray grippers; five attempts per cluster should be conducted for the suction gripper after excluding plastic bags and mesh bags. Each of the three cluster configurations needs to be repeated <strong>five times</strong>, yielding 105 attempts for each parallel-jaw modality and 75 for suction.
+        </p>
 
         </div>
 
@@ -1227,15 +1140,7 @@ html {
         </figure>
 
         <p>
-            Level 3 investigates grasping performance
-            under heavy clutter by increasing the
-            number of inorganic objects within
-            the experimental workspace.
-            Each scene contained
-            <strong>14 inorganic objects</strong>,
-            representing the maximum practical
-            object density under the workspace
-            dimensions and camera depth constraints.
+            Level 3 requires the inorganic object density to be increased to assess grasping under heavy clutter. Each scene should contain <strong>14 inorganic objects</strong> for the rigid and Fin-Ray grippers, reflecting the maximum practical object density used in GRAB under the specified workspace and camera depth constraints.
         </p>
 
 
@@ -1244,24 +1149,8 @@ html {
             <h3>Heavy-Clutter Configuration</h3>
 
             <p>
-                The three clusters established in
-                Level 2 were combined in pairs to
-                generate three heavy-clutter
-                configurations:
-                <strong>Cluster 1 + Cluster 2</strong>,
-                <strong>Cluster 1 + Cluster 3</strong>,
-                and <strong>Cluster 2 + Cluster 3</strong>.
-
-                Each configuration comprised two
-                representative objects from each
-                inorganic contaminant category,
-                resulting in 14 objects per scene.
-
-                For suction-based experiments,
-                plastic bags and mesh bags were
-                excluded, reducing the scene
-                composition to 10 inorganic objects.
-            </p>
+            The three clusters established in Level 2 need to be combined in pairs to form three heavy-clutter configurations: <strong>Cluster 1 + Cluster 2</strong>, <strong>Cluster 1 + Cluster 3</strong> and <strong>Cluster 2 + Cluster 3</strong>. Each combination should contain two representatives of every inorganic contaminant category, producing 14 objects per scene. For suction-based trials, plastic bags and mesh bags need to be excluded, resulting in <strong>10 objects per scene</strong>.
+        </p>
 
         </div>
 
@@ -1271,23 +1160,14 @@ html {
             <h3>Randomized Scene Generation</h3>
 
             <p>
-                Objects were randomly dropped
-                into the workspace to establish
-                varied clutter arrangements.
-                The increased object density
-                introduced additional occlusions,
-                contact interactions, and
-                restrictions on feasible
-                grasp approach directions.
-            </p>
+            For each repetition, the objects from the selected cluster pair need to be randomly dropped into the workspace to produce a new heavy-clutter arrangement. The resulting scenes should vary in object orientation, occlusion and contact interactions while retaining the same cluster-pair composition.
+        </p>
 
         </div>
 
             <p>
-                The same grasp-selection and execution
-                procedures established in Level 2
-                were retained, and 14 grasp attempts were executed on each heavy-clutter configuration.
-            </p>
+            The grasp-generation, post-processing and selection procedure specified for Level 2 should also be applied in Level 3. For each cluster-pair configuration, <strong>14 consecutive grasp attempts</strong> need to be performed with each parallel-jaw gripper, or <strong>10 attempts</strong> with the suction gripper. Each of the three configurations should be evaluated over <strong>five repetitions</strong>, yielding 210 attempts per parallel-jaw gripper and 150 suction attempts.
+        </p>
 
         </div>
 
@@ -1303,26 +1183,7 @@ html {
         <h2>Mixed Food Waste Scene — Level 4</h2>
 
         <p>
-            Level 4 evaluates robotic grasping
-            performance under heterogeneous
-            food waste conditions by introducing
-            organic materials and moisture-related
-            environmental disturbances.
-
-            Each scene comprised
-            <strong>seven inorganic contaminants
-            and seven organic food waste items</strong>,
-            resulting in a mixed
-            <strong>14-object configuration</strong>.
-
-            Compared with the preceding clutter
-            levels, this experimental condition
-            introduced additional challenges
-            associated with object occlusion,
-            surface moisture, adhesion,
-            irregular geometries, and
-            contact interactions between
-            organic and inorganic materials.
+            Level 4 requires inorganic contaminants to be combined with organic food waste to evaluate grasping in a heterogeneous, moisture-affected environment. Each mixed scene should contain <strong>seven inorganic contaminants and seven organic food waste items</strong>, forming a <strong>14-object configuration</strong> for the rigid and Fin-Ray grippers. This condition is intended to introduce occlusion, surface moisture, adhesion, irregular geometries and contact interactions between organic and inorganic materials.
         </p>
 
 
@@ -1331,24 +1192,8 @@ html {
             <h3>Organic Material Selection</h3>
 
             <p>
-                Seven commonly encountered fruits
-                and vegetables were selected
-                as representative organic food
-                waste materials:
-                <strong>Packham pear, carrot,
-                apple, orange, cucumber,
-                capsicum, and green Nashi pear</strong>.
-
-                These materials were selected
-                to introduce variation in
-                geometric characteristics,
-                surface texture, firmness,
-                and moisture-related properties.
-
-                The resulting organic material
-                set represented a heterogeneous
-                mixture of food waste components.
-            </p>
+            Seven representative organic food waste materials should be selected: <strong>Packham pear, carrot, apple, orange, cucumber, capsicum and green Nashi pear</strong>. Using these materials allows the mixed scenes to incorporate differences in geometry, surface texture, firmness and moisture-related characteristics.
+        </p>
 
         </div>
 
@@ -1358,34 +1203,8 @@ html {
             <h3>Organic Sample Preparation</h3>
 
             <p>
-                For each selected fruit or vegetable,
-                <strong>one half of the original
-                item</strong> was used to prepare
-                the experimental sample,
-                producing a set of seven
-                organic food waste objects.
-
-                The prepared organic samples
-                were immersed in water,
-                subsequently removed,
-                and maintained at room temperature
-                before being introduced into
-                the experimental workspace.
-
-                This preparation procedure
-                was intended to reproduce
-                moisture-related characteristics
-                associated with commingled
-                household food waste.
-
-                The wet organic samples
-                introduced additional
-                surface moisture and
-                variable contact conditions,
-                increasing the complexity
-                of the mixed-scene
-                grasping environment.
-            </p>
+            For each selected fruit or vegetable, the item needs to be cut into two halves, with <strong>one half</strong> retained as the experimental sample. The seven prepared samples should be immersed in water, removed and drained before being stored together in a plastic bag under ambient conditions for seven days, following the GRAB preparation procedure. Moisture released during storage contributes to a liquid-rich organic residue that can form the watery base of the mixed-waste scene. The volume and viscosity of the accumulated liquid were not measured in the original experiments and should not be treated as controlled quantitative parameters.
+        </p>
 
         </div>
 
@@ -1395,23 +1214,8 @@ html {
             <h3>Mixed-Scene Generation</h3>
 
             <p>
-                The three inorganic clusters
-                established in Level 2
-                were reused to generate
-                the Level 4 configurations.
-
-                Each cluster contained
-                seven inorganic objects,
-                comprising one representative
-                from each contaminant category.
-
-                The seven prepared organic
-                samples were combined
-                independently with each
-                inorganic cluster,
-                producing three mixed
-                14-object configurations.
-            </p>
+            The three inorganic clusters defined in Level 2 need to be reused to construct the mixed-waste scenes. Each seven-object inorganic cluster should be combined separately with the seven prepared organic samples, yielding three mixed configurations containing 14 objects each for the rigid and Fin-Ray grippers. For suction experiments, plastic bags and mesh bags should be excluded, leaving five inorganic contaminants alongside the seven organic items.
+        </p>
 
             <div class="processing-step">
 
@@ -1450,54 +1254,14 @@ html {
             </div>
 
             <p>
-                For each configuration,
-                the inorganic and organic
-                objects were randomly
-                introduced into the
-                experimental workspace
-                to generate heterogeneous
-                clutter arrangements.
-
-                This procedure introduced
-                variations in object position,
-                orientation, contact conditions,
-                and occlusion while retaining
-                a predefined object composition.
-            </p>
+            For each configuration, the inorganic and organic objects need to be randomly introduced into the experimental workspace to create heterogeneous clutter. The randomisation should vary positions, orientations, occlusions and contact conditions while maintaining the specified material composition. The prepared organic residue should be retained as part of the moisture-affected scene.
+        </p>
 
         </div>
 
             <p>
-                The objective of Level 4 was to evaluate
-                robotic grasping performance under more
-                realistic food waste conditions by
-                incorporating organic materials alongside
-                inorganic contaminants.
-
-                The organic materials were introduced
-                to simulate the heterogeneous composition
-                and environmental disturbances encountered
-                in real-world food waste, including surface
-                moisture, object occlusion, adhesion,
-                and physical interactions between materials.
-
-                Candidate grasp poses were generated using
-                AnyGrasp or SuctionNet, depending on the
-                grasping modality.
-
-                Following post-processing, the highest-ranked
-                feasible grasp was selected from the top
-                eight candidate poses.
-
-                Consecutive grasping attempts were performed
-                under these mixed-scene conditions.
-
-                Consistent with Levels 2 and 3,
-                plastic bags and mesh bags were excluded
-                from suction-gripper evaluations because
-                reliable suction attachment could not
-                be established during Level 1 experiments.
-            </p>
+            The grasp-generation and selection procedure established in Level 2 should be retained for Level 4: AnyGrasp or SuctionNet needs to be used according to the grasping modality, and the highest-ranked feasible grasp should be selected from the top eight post-processed candidates. Each mixed configuration should be evaluated over <strong>five repetitions</strong>. To reproduce the reported trial counts, <strong>14 consecutive grasp attempts</strong> need to be conducted per repetition for each parallel-jaw gripper and <strong>10 attempts</strong> per repetition for suction, giving 210 trials per parallel-jaw gripper and 150 suction trials. As in Levels 2 and 3, plastic bags and mesh bags should be excluded from suction-gripper evaluation because of the seal limitations observed in Level 1.
+        </p>
 
         <!--
         REPRODUCIBILITY NOTE:
