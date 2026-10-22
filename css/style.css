@@ -366,3 +366,30 @@ footer {
     color: #1E7A55;
     text-decoration: underline;
 }
+/* Homepage preview images */
+
+.homepage-image {
+    width: 100%;
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homepage-image img {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+/* Responsive layout */
+
+@media (max-width: 768px) {
+    .homepage-image img {
+        max-width: 100%;
+        height: auto;
+    }
+}
