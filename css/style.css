@@ -393,3 +393,30 @@ footer {
         height: auto;
     }
 }
+
+
+/* Keep all benchmark highlights on one line */
+
+.metrics {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    white-space: nowrap;
+}
+
+.metrics span {
+    flex-shrink: 0;
+}
+
+/* Allow horizontal scrolling on narrow screens */
+
+@media (max-width: 900px) {
+    .metrics {
+        justify-content: flex-start;
+        overflow-x: auto;
+        max-width: 100%;
+        padding-bottom: 8px;
+    }
+}
