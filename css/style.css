@@ -499,4 +499,25 @@ footer {
 }
 
 
+/* Align descriptions across all three homepage cards */
+
+.benchmark .card h2,
+.benchmark .card .pipeline-header {
+    min-height: 58px;
+}
+
+/* Keep heading and repository button aligned */
+.benchmark .card .pipeline-header {
+    display: flex;
+    align-items: center;
+}
+
+/* Allow natural spacing on smaller screens */
+@media (max-width: 768px) {
+    .benchmark .card h2,
+    .benchmark .card .pipeline-header {
+        min-height: 0;
+    }
+}
+
 
