@@ -785,6 +785,30 @@ html {
     text-align: justify;
 }
 
+/* Position arrows in top-right corners */
+
+.model-card {
+    position: relative;
+}
+
+.model-card-arrow {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    left: auto;
+
+    font-size: 16px;
+    line-height: 1;
+    color: #1E7A55;
+
+    transition: transform 0.25s ease;
+}
+
+/* Move arrow slightly on hover */
+.model-card:hover .model-card-arrow {
+    transform: translate(3px, -3px);
+}
+
 
     </style>
 
