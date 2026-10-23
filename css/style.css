@@ -810,3 +810,35 @@ footer {
     margin: 0 auto;
 }
 
+/* ==========================================
+   KEEP DEFORMABILITY VIDEO INSIDE CARD 2
+   ========================================== */
+
+/* Prevent Card 2 content from overflowing */
+.benchmark .card:nth-child(2) {
+    min-width: 0;
+}
+
+/* Limit video container to Card 2 width */
+.benchmark .card:nth-child(2) .homepage-image {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 18px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Control video dimensions */
+.benchmark .card:nth-child(2) .homepage-image video {
+    display: block;
+    width: 100%;
+    max-width: 260px;
+    height: 180px;
+    max-height: 180px;
+    object-fit: contain;
+    border-radius: 6px;
+    flex-shrink: 1;
+}
+
