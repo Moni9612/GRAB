@@ -239,7 +239,7 @@ h1 {
     font-size: 23px;
     letter-spacing: -.7px;
     margin: 16px 0 10px;
-}
+}index.html
 
 .card p {
     color: #53636a;
@@ -525,4 +525,67 @@ footer {
     letter-spacing: -0.7px;
 }
 
+/* ==========================================
+   GRAB EXPERIMENT VIDEO SECTION
+   ========================================== */
 
+.grab-video-section {
+    max-width: 1100px;
+    margin: 25px auto 45px;
+    padding: 20px 24px;
+    text-align: center;
+}
+
+.grab-video-section h2 {
+    font-size: 24px;
+    color: #0b1920;
+    margin: 0 0 12px;
+}
+
+.grab-video-section p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #53636a;
+    margin: 0 auto 22px;
+}
+
+.grab-video-container {
+    max-width: 850px;
+    margin: 0 auto;
+    background: #0b1920;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.grab-video-container video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.video-sound-button {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 11px 22px;
+    background: #1E7A55;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.video-sound-button:hover {
+    background: #155c40;
+}
+
+@media (max-width: 768px) {
+    .grab-video-section {
+        padding: 15px;
+    }
+
+    .grab-video-section h2 {
+        font-size: 20px;
+    }
+}
