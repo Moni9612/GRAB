@@ -822,6 +822,62 @@ html {
     transform: translate(3px, -3px);
 }
 
+
+/* ==========================================
+   ORGANIC MATERIAL SELECTION LAYOUT
+   ========================================== */
+
+.organic-selection-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 25px;
+    align-items: start;
+    margin-top: 15px;
+}
+
+.organic-selection-content {
+    min-width: 0;
+    border-left: 2px solid #d5e5da;
+    padding-left: 22px;
+}
+
+.organic-selection-content h4 {
+    color: #1E7A55;
+    margin: 0 0 18px;
+}
+
+.organic-selection-content p {
+    margin: 0;
+    line-height: 1.8;
+}
+
+.organic-selection-image {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.organic-selection-image img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 6px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .organic-selection-layout {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .organic-selection-image img {
+        max-width: 280px;
+    }
+}
+
+
     </style>
 
 </head>
