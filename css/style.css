@@ -451,12 +451,6 @@ footer {
     }
 }
 
-/* Match the middle card heading line spacing to the first card */
-
-.benchmark .card:nth-child(2) h2 {
-    line-height: 1.0;
-}
-
 
 /* Reduce gap between DEFORMABILITY label and heading */
 
@@ -518,6 +512,17 @@ footer {
     .benchmark .card .pipeline-header {
         min-height: 0;
     }
+}
+
+/* ==========================================
+   CONSISTENT HOMEPAGE CARD HEADING SPACING
+   ========================================== */
+
+.benchmark .card h2,
+.benchmark .card .pipeline-header h2 {
+    font-size: 23px;
+    line-height: 1.15;
+    letter-spacing: -0.7px;
 }
 
 
