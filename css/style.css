@@ -563,22 +563,6 @@ footer {
     height: auto;
 }
 
-.video-sound-button {
-    display: inline-block;
-    margin-top: 16px;
-    padding: 11px 22px;
-    background: #1E7A55;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.video-sound-button:hover {
-    background: #155c40;
-}
 
 @media (max-width: 768px) {
     .grab-video-section {
