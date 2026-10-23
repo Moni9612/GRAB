@@ -654,4 +654,50 @@ footer {
     transform: translate(3px, -3px);
 }
 
+/* ==========================================
+   GRAB AUTHORS AND AFFILIATIONS
+   ========================================== */
+
+.hero-authors {
+    max-width: 1050px;
+    margin: 28px auto 0;
+    text-align: center;
+    color: #dce8e8;
+}
+
+.author-names {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.author-affiliations {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #a4b9bd;
+}
+
+.hero-authors sup {
+    font-size: 10px;
+    vertical-align: super;
+    margin-left: 1px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .hero-authors {
+        margin-top: 22px;
+        padding: 0 10px;
+    }
+
+    .author-names {
+        font-size: 14px;
+    }
+
+    .author-affiliations {
+        font-size: 12px;
+    }
+}
+
 
