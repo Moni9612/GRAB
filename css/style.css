@@ -795,3 +795,18 @@ footer {
         height: auto;
     }
 }
+
+/* ==========================================
+   CARD 2 - OBJECT DEFORMABILITY VIDEO
+   ========================================== */
+
+.benchmark .card:nth-child(2) .deformability-preview-video {
+    display: block;
+    width: 100%;
+    max-width: 260px;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 6px;
+    margin: 0 auto;
+}
+
