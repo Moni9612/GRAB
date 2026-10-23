@@ -767,3 +767,31 @@ footer {
     margin-bottom: 55px;
 }
 
+
+/* ==========================================
+   ENLARGE IMAGES IN CARDS 1 AND 3
+   ========================================== */
+
+.benchmark .card:nth-child(1) .homepage-image img,
+.benchmark .card:nth-child(3) .homepage-image img {
+    width: 100%;
+    max-width: 340px;
+    height: 230px;
+    object-fit: contain;
+}
+
+/* Keep Card 2 image unchanged */
+.benchmark .card:nth-child(2) .homepage-image img {
+    max-width: 180px;
+    height: 180px;
+    object-fit: contain;
+}
+
+/* Responsive image sizing */
+@media (max-width: 768px) {
+    .benchmark .card:nth-child(1) .homepage-image img,
+    .benchmark .card:nth-child(3) .homepage-image img {
+        max-width: 100%;
+        height: auto;
+    }
+}
