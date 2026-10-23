@@ -791,24 +791,37 @@ html {
     position: relative;
 }
 
+
+/* Keep arrows permanently visible */
+
+.model-card {
+    position: relative;
+}
+
 .model-card-arrow {
     position: absolute;
     top: 12px;
     right: 15px;
     left: auto;
 
+    display: block;
+    visibility: visible;
+    opacity: 1;
+
     font-size: 16px;
     line-height: 1;
     color: #1E7A55;
 
+    transform: none;
     transition: transform 0.25s ease;
 }
 
-/* Move arrow slightly on hover */
+/* Slight arrow movement on hover */
 .model-card:hover .model-card-arrow {
+    opacity: 1;
+    visibility: visible;
     transform: translate(3px, -3px);
 }
-
 
     </style>
 
