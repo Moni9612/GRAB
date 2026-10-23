@@ -628,3 +628,31 @@ footer {
     color: #0b1920;
 }
 
+/* ==========================================
+   CORNER ARROWS FOR CLICKABLE CARDS
+   ========================================== */
+
+.benchmark .clickable-card {
+    position: relative;
+}
+
+.benchmark .card-corner-arrow {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1;
+
+    color: #1E7A55;
+    transition: transform 0.25s ease,
+                color 0.25s ease;
+}
+
+/* Slight movement when hovering over the card */
+.benchmark .clickable-card:hover .card-corner-arrow {
+    transform: translate(3px, -3px);
+    color: #155c40;
+}
+
