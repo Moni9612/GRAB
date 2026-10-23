@@ -31,7 +31,7 @@ body {
    ========================================== */
 
 .hero {
-    min-height: 580px; /*610*/
+    min-height: 630px; /*610*/
     background: radial-gradient(
         circle at 52% 30%,
         #112b30 0%,
