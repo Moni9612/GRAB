@@ -589,3 +589,31 @@ footer {
         font-size: 20px;
     }
 }
+
+/* ==========================================
+   GRAB VIDEO SIZE AND ALIGNMENT
+   ========================================== */
+
+.grab-video-section {
+    width: 100%;
+    max-width: 1000px;
+    margin: 25px auto 45px;
+    padding: 20px 24px;
+    text-align: center;
+}
+
+.grab-video-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.grab-video-container video {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
