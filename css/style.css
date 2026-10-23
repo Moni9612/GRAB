@@ -454,7 +454,7 @@ footer {
 /* Match the middle card heading line spacing to the first card */
 
 .benchmark .card:nth-child(2) h2 {
-    line-height: 1.05;
+    line-height: 1.0;
 }
 
 
@@ -462,7 +462,7 @@ footer {
 
 .benchmark .card:nth-child(2) h2 {
     margin-top: 0;
-    line-height: 1.15;
+    line-height: 1.0;
 }
 
 .benchmark .card:nth-child(2) .number {
