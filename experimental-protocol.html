@@ -785,30 +785,27 @@ html {
     text-align: justify;
 }
 
-/* Position arrows in top-right corners */
+/* ==========================================
+   ALWAYS VISIBLE CORNER ARROWS
+   AnyGrasp and SuctionNet
+   ========================================== */
 
-.model-card {
+.modality-target.modality-clickable {
     position: relative;
 }
 
-
-/* Keep arrows permanently visible */
-
-.model-card {
-    position: relative;
-}
-
-.model-card-arrow {
+.modality-clickable .model-card-arrow {
     position: absolute;
     top: 12px;
     right: 15px;
     left: auto;
 
     display: block;
-    visibility: visible;
     opacity: 1;
+    visibility: visible;
 
     font-size: 16px;
+    font-weight: 500;
     line-height: 1;
     color: #1E7A55;
 
@@ -816,10 +813,8 @@ html {
     transition: transform 0.25s ease;
 }
 
-/* Slight arrow movement on hover */
-.model-card:hover .model-card-arrow {
-    opacity: 1;
-    visibility: visible;
+/* Small movement on hover */
+.modality-clickable:hover .model-card-arrow {
     transform: translate(3px, -3px);
 }
 
