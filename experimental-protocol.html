@@ -1348,16 +1348,31 @@ html {
         </p>
 
         <p class="parameter-row">
-            <strong>Grasp Stability Score (S<sub>B</sub>)</strong>
-            <span class="parameter-colon">:</span>
-            <span>From Force vs Time plots from force sensor measurements in the parallel grasp pipeline, and Pressure vs Time plots from pressure sensor measurements in the suction grasp pipeline.</span>
-        </p>
+    <strong>Grasp Stability Score (S<sub>B</sub>)</strong>
+    <span class="parameter-colon">:</span>
+    <span>
+        From Force vs Time plots from force sensor measurements in the
+        <a href="https://github.com/Moni9612/anygrasp_benchmark_ws/tree/bfeaaaaad544977312f3cd8bf71bf544a1ff7f08#step-4-activate-the-data-collection-pipeline"
+            target="_blank" rel="noopener noreferrer">parallel grasp pipeline</a>,
+        and Pressure vs Time plots from pressure sensor measurements in the
+        <a href="https://github.com/Moni9612/suctionnet_benchmark_ws/tree/7025675a861b25ba90c2dd10f48bd04bc03e26a5#step-3-activate-suction-gripper-and-data-collection-pipeline"
+            target="_blank" rel="noopener noreferrer">suction grasp pipeline</a>.
+    </span>
+</p>
 
         <p class="parameter-row">
-            <strong>Grasp Efficiency Score (S<sub>F</sub>)</strong>
-            <span class="parameter-colon">:</span>
-            <span>Grasp cycle time is calculated in move_robot.py under respective pipelines.(Anygrasp or SuctionNet)</span>
-        </p>
+    <strong>Grasp Efficiency Score (S<sub>F</sub>)</strong>
+    <span class="parameter-colon">:</span>
+    <span>
+        Grasp cycle time is calculated in move_robot.py
+        under respective pipelines.
+        (<a href="https://github.com/Moni9612/anygrasp_benchmark_ws/blob/bfeaaaaad544977312f3cd8bf71bf544a1ff7f08/move_robot/src/move_robot.cpp"
+            target="_blank" rel="noopener noreferrer">Anygrasp</a>
+        or
+        <a href="https://github.com/Moni9612/suctionnet_benchmark_ws/blob/7025675a861b25ba90c2dd10f48bd04bc03e26a5/suction_move_robot/src/suction_move_robot.cpp"
+            target="_blank" rel="noopener noreferrer">SuctionNet</a>)
+    </span>
+</p>
     </div>
 
 </div>
