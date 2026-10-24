@@ -940,12 +940,13 @@ html {
 }
 
 
-/* Align parameter names on the left and colons vertically */
+
+/* Three-column parameter alignment */
 
 .parameter-card .parameter-row {
     display: grid;
-    grid-template-columns: 270px minmax(0, 1fr);
-    column-gap: 8px;
+    grid-template-columns: 260px 10px minmax(0, 1fr);
+    column-gap: 5px;
     align-items: start;
 }
 
@@ -953,30 +954,31 @@ html {
     display: block;
     text-align: left;
     white-space: normal;
-    overflow-wrap: normal;
 }
 
-.parameter-card .parameter-row span {
+.parameter-card .parameter-row .parameter-colon {
+    font-weight: bold;
+    color: #0b1920;
+    text-align: center;
+}
+
+.parameter-card .parameter-row span:last-child {
     min-width: 0;
     text-align: left;
 }
 
-/* Align colons at the end of the label column */
-.parameter-card .parameter-row strong {
-    text-align: right;
-}
-
-/* Mobile responsiveness */
+/* Responsive layout */
 @media (max-width: 600px) {
     .parameter-card .parameter-row {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr) 10px;
         row-gap: 4px;
     }
 
-    .parameter-card .parameter-row strong {
-        text-align: left;
+    .parameter-card .parameter-row span:last-child {
+        grid-column: 1 / -1;
     }
 }
+
 
 
     </style>
