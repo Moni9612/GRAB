@@ -1157,30 +1157,61 @@ html {
             (For Rigid parallel-jaw gripper and Fin-Ray soft adaptive gripper refer to Parallel Grasping Pipeline, and for Suction gripper refer to Suction Grasping Pipeline), 
             resulting in 105 grasp atr
             </p>
+       <!-- Level 1: Graspability and Performance Parameters -->
+
+<div class="level-parameters">
+
+    <!-- Card 1: Graspability Parameters -->
+    <div class="parameter-card">
+
+        <h4>Graspability Parameters</h4>
+
         <p>
-            Graspability parameters:
+            <strong>Object Deformability Score (Q<sub>O</sub>):</strong>
+            From respective independently calculated DCD values
+            for each object (DCD calculation).
         </p>
+
         <p>
-            Object Deformability Score (Qo) - From respective independantly calculated DCD values for each object (DCD calculation)
+            <strong>Pose Score (Q<sub>P</sub>):</strong>
+            From respective vision models.
         </p>
+
         <p>
-            Pose Score (Qp) - from respective vision models
+            <strong>Clutter Score (Q<sub>C</sub>):</strong>
+            Respective occupancy measurements are included
+            in demo.py and inference.py codes.
         </p>
+
+    </div>
+
+    <!-- Card 2: Performance Parameters -->
+    <div class="parameter-card">
+
+        <h4>Performance Parameters</h4>
+
         <p>
-            Clutter Score (Qc) - Respective occupancy measurements are included in demo.py and inference.py codes
+            <strong>Grasp Success Score (S<sub>P</sub>):</strong>
+            Success or Failure.
         </p>
+
         <p>
-            Performance parameters:
+            <strong>Grasp Stability Score (S<sub>B</sub>):</strong>
+            From Force vs Time plots from force sensor measurements
+            in the parallel grasp pipeline, and Pressure vs Time
+            plots from pressure sensor measurements in the
+            suction grasp pipeline.
         </p>
+
         <p>
-            Grasp Success Score (Sp) - Success or Failure
+            <strong>Grasp Efficiency Score (S<sub>F</sub>):</strong>
+            Grasp cycle time is calculated in move_robot.py
+            under respective pipelines.
         </p>
-        <p>
-            Grasp Stability Score (Sb) - From Force vs Time plots from force sensor measurements in parallel grasp pipeline, and Pressure vs Time plot from pressure sensor measurements in suction grasp pipeline
-        </p>
-        <p>
-            Grasp Efficiency Score (Sf) - Grasp cycle time is calculated in move_robot.py under respective pipelines
-        </p>
+
+    </div>
+
+</div>
 
         
         
