@@ -938,30 +938,39 @@ html {
         padding: 16px;
     }
 }
-/* Align wrapped descriptions after parameter names */
+
+/* Align parameter labels and colons vertically */
 
 .parameter-card .parameter-row {
     display: grid;
-    grid-template-columns: max-content minmax(0, 1fr);
-    column-gap: 6px;
+    grid-template-columns: 255px minmax(0, 1fr);
+    column-gap: 8px;
     align-items: start;
 }
 
 .parameter-card .parameter-row strong {
+    display: block;
+    text-align: right;
     white-space: nowrap;
 }
 
 .parameter-card .parameter-row span {
     min-width: 0;
+    text-align: left;
 }
 
-/* Stack labels and descriptions on narrow screens */
-@media (max-width: 600px) {
+/* Responsive layout */
+@media (max-width: 768px) {
     .parameter-card .parameter-row {
         grid-template-columns: 1fr;
         row-gap: 4px;
     }
+
+    .parameter-card .parameter-row strong {
+        text-align: left;
+    }
 }
+
     </style>
 
 </head>
