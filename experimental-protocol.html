@@ -884,7 +884,60 @@ html {
     padding-left: 22px;
 }
 
+/* ==========================================
+   LEVEL 1 PARAMETER CARDS
+   ========================================== */
 
+.level-parameters {
+    margin: 25px 0 25px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.parameter-card {
+    background: #f5f7f4;
+    border: 1px solid #dce5dd;
+    border-left: 3px solid #1E7A55;
+    border-radius: 8px;
+
+    padding: 20px 24px;
+}
+
+.parameter-card h4 {
+    color: #1E7A55;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 16px;
+}
+
+.parameter-card p {
+    color: #53636a;
+    font-size: 16px;
+    line-height: 1.75;
+    margin: 0 0 12px;
+}
+
+.parameter-card p:last-child {
+    margin-bottom: 0;
+}
+
+.parameter-card strong {
+    color: #0b1920;
+    font-weight: 600;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .level-parameters {
+        margin-left: 12px;
+        margin-right: 0;
+    }
+
+    .parameter-card {
+        padding: 16px;
+    }
+}
     </style>
 
 </head>
