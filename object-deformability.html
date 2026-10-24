@@ -888,6 +888,33 @@ html {
     align-items: start;
 }
 
+/* Figure 1: DCD reconstruction video */
+
+.dcd-video-figure {
+    width: 100%;
+    max-width: 850px;
+    margin: 25px auto 30px;
+    padding: 0;
+    text-align: center;
+    background: transparent;
+    border: none;
+}
+
+.dcd-video-figure video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 0 auto;
+}
+
+.dcd-video-figure figcaption {
+    margin-top: 12px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #53636a;
+}
+
     </style>
 
 </head>
@@ -1087,25 +1114,31 @@ A compression force of 40 N was applied independently along the x and y axes to 
             Measurements obtained from both directions provide a consistent basis for comparing the deformability of different objects.
         </p>
 
-        <figure class="research-figure">
+        
+<!-- Figure 1: Experimental Setup for 3D Reconstruction -->
+<figure class="dcd-video-figure">
 
-            <img
-                src="assets/images/DCD.png"
-                alt="Experimental setup and point-cloud processing workflow"
-                loading="lazy"
-            >
+    <video
+        autoplay
+        muted
+        loop
+        playsinline
+        controls
+        preload="metadata"
+    >
+        <source
+            src="assets/videos/DCD%20figure.mp4"
+            type="video/mp4"
+        >
+        Your browser does not support the video tag.
+    </video>
 
-            <figcaption>
-                <strong>Figure 1.</strong>
-                Experimental setup and point-cloud processing:
-                (a) customised scanning platform,
-                (b) RecFusion 3D reconstruction,
-                (c) undeformed object point cloud,
-                (d) compressed object point cloud, and
-                (e) registered point clouds after alignment.
-            </figcaption>
+    <figcaption>
+        <strong>Figure 1.</strong> Experimental Setup for 3D Reconstruction
+    </figcaption>
 
-        </figure>
+</figure>
+
 
         <!-- ==========================================
              CONTROLLED COMPRESSION
