@@ -938,6 +938,30 @@ html {
         padding: 16px;
     }
 }
+/* Align wrapped descriptions after parameter names */
+
+.parameter-card .parameter-row {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    column-gap: 6px;
+    align-items: start;
+}
+
+.parameter-card .parameter-row strong {
+    white-space: nowrap;
+}
+
+.parameter-card .parameter-row span {
+    min-width: 0;
+}
+
+/* Stack labels and descriptions on narrow screens */
+@media (max-width: 600px) {
+    .parameter-card .parameter-row {
+        grid-template-columns: 1fr;
+        row-gap: 4px;
+    }
+}
     </style>
 
 </head>
@@ -1208,7 +1232,7 @@ html {
             For Level 1, each object needs to be placed individually at five predefined workspace positions: 
             the four corners and the centre. Each of the 21 objects needs to be tested at all five positions using each of the three grasping modalities 
             (For Rigid parallel-jaw gripper and Fin-Ray soft adaptive gripper refer to Parallel Grasping Pipeline, and for Suction gripper refer to Suction Grasping Pipeline), 
-            resulting in 105 grasp atr
+            resulting in 105 grasp attempts.
             </p>
        <!-- Level 1: Graspability and Performance Parameters -->
 
@@ -1217,53 +1241,30 @@ html {
     <!-- Card 1: Graspability Parameters -->
     <div class="parameter-card">
 
-        <h4>Graspability Parameters</h4>
+    <h4>Graspability Parameters</h4>
 
-        <p>
-            <strong>Object Deformability Score (Q<sub>O</sub>):</strong>
+    <p class="parameter-row">
+        <strong>Object Deformability Score (Q<sub>O</sub>):</strong>
+        <span>
             From respective independently calculated DCD values
             for each object (DCD calculation).
-        </p>
+        </span>
+    </p>
 
-        <p>
-            <strong>Pose Score (Q<sub>P</sub>):</strong>
-            From respective vision models.
-        </p>
+    <p class="parameter-row">
+        <strong>Pose Score (Q<sub>P</sub>):</strong>
+        <span>From respective vision models.</span>
+    </p>
 
-        <p>
-            <strong>Clutter Score (Q<sub>C</sub>):</strong>
+    <p class="parameter-row">
+        <strong>Clutter Score (Q<sub>C</sub>):</strong>
+        <span>
             Respective occupancy measurements are included
             in demo.py and inference.py codes.
-        </p>
+        </span>
+    </p>
 
-    </div>
-
-    <!-- Card 2: Performance Parameters -->
-    <div class="parameter-card">
-
-        <h4>Performance Parameters</h4>
-
-        <p>
-            <strong>Grasp Success Score (S<sub>P</sub>):</strong>
-            Success or Failure.
-        </p>
-
-        <p>
-            <strong>Grasp Stability Score (S<sub>B</sub>):</strong>
-            From Force vs Time plots from force sensor measurements
-            in the parallel grasp pipeline, and Pressure vs Time
-            plots from pressure sensor measurements in the
-            suction grasp pipeline.
-        </p>
-
-        <p>
-            <strong>Grasp Efficiency Score (S<sub>F</sub>):</strong>
-            Grasp cycle time is calculated in move_robot.py
-            under respective pipelines.
-        </p>
-
-    </div>
-
+</div>
 </div>
 
         
