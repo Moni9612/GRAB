@@ -1259,65 +1259,57 @@ html {
 
 <div class="level-parameters">
 
-    <!-- Card 1: Graspability Parameters -->
+    
+<div class="level-parameters">
+
+    <!-- Graspability Parameters -->
     <div class="parameter-card">
+        <h4>Graspability Parameters</h4>
 
-    <h4>Graspability Parameters</h4>
+        <p class="parameter-row">
+            <strong>Object Deformability Score (Q<sub>O</sub>)</strong>
+            <span class="parameter-colon">:</span>
+            <span>From respective independently calculated DCD values for each object (DCD calculation).</span>
+        </p>
 
-    <p class="parameter-row">
-        <strong>Object Deformability Score (Q<sub>O</sub>):</strong>
-        <span>
-            From respective independently calculated DCD values
-            for each object (DCD calculation).
-        </span>
-    </p>
+        <p class="parameter-row">
+            <strong>Pose Score (Q<sub>P</sub>)</strong>
+            <span class="parameter-colon">:</span>
+            <span>From respective vision models.</span>
+        </p>
 
-    <p class="parameter-row">
-        <strong>Pose Score (Q<sub>P</sub>):</strong>
-        <span>From respective vision models.</span>
-    </p>
+        <p class="parameter-row">
+            <strong>Clutter Score (Q<sub>C</sub>)</strong>
+            <span class="parameter-colon">:</span>
+            <span>Respective occupancy measurements are included in demo.py and inference.py codes.</span>
+        </p>
+    </div>
 
-    <p class="parameter-row">
-        <strong>Clutter Score (Q<sub>C</sub>):</strong>
-        <span>
-            Respective occupancy measurements are included
-            in demo.py and inference.py codes.
-        </span>
-    </p>
+    <!-- Performance Parameters -->
+    <div class="parameter-card">
+        <h4>Performance Parameters</h4>
 
-</div>
+        <p class="parameter-row">
+            <strong>Grasp Success Score (S<sub>P</sub>)</strong>
+            <span class="parameter-colon">:</span>
+            <span>Success or Failure.</span>
+        </p>
 
-    <!-- Card 2: Performance Parameters -->
-<div class="parameter-card">
+        <p class="parameter-row">
+            <strong>Grasp Stability Score (S<sub>B</sub>)</strong>
+            <span class="parameter-colon">:</span>
+            <span>From Force vs Time plots from force sensor measurements in the parallel grasp pipeline, and Pressure vs Time plots from pressure sensor measurements in the suction grasp pipeline.</span>
+        </p>
 
-    <h4>Performance Parameters</h4>
-
-    <p class="parameter-row">
-        <strong>Grasp Success Score (S<sub>P</sub>):</strong>
-        <span>
-            Success or Failure.
-        </span>
-    </p>
-
-    <p class="parameter-row">
-        <strong>Grasp Stability Score (S<sub>B</sub>):</strong>
-        <span>
-            From Force vs Time plots from force sensor measurements
-            in the parallel grasp pipeline, and Pressure vs Time
-            plots from pressure sensor measurements in the
-            suction grasp pipeline.
-        </span>
-    </p>
-
-    <p class="parameter-row">
-        <strong>Grasp Efficiency Score (S<sub>F</sub>):</strong>
-        <span>
-            Grasp cycle time is calculated in move_robot.py
-            under respective pipelines.
-        </span>
-    </p>
+        <p class="parameter-row">
+            <strong>Grasp Efficiency Score (S<sub>F</sub>)</strong>
+            <span class="parameter-colon">:</span>
+            <span>Grasp cycle time is calculated in move_robot.py under respective pipelines.</span>
+        </p>
+    </div>
 
 </div>
+
 </div>
 
         
