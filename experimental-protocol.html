@@ -939,19 +939,21 @@ html {
     }
 }
 
-/* Align parameter labels and colons vertically */
+
+/* Align parameter names on the left and colons vertically */
 
 .parameter-card .parameter-row {
     display: grid;
-    grid-template-columns: 255px minmax(0, 1fr);
+    grid-template-columns: 270px minmax(0, 1fr);
     column-gap: 8px;
     align-items: start;
 }
 
 .parameter-card .parameter-row strong {
     display: block;
-    text-align: right;
-    white-space: nowrap;
+    text-align: left;
+    white-space: normal;
+    overflow-wrap: normal;
 }
 
 .parameter-card .parameter-row span {
@@ -959,8 +961,13 @@ html {
     text-align: left;
 }
 
-/* Responsive layout */
-@media (max-width: 768px) {
+/* Align colons at the end of the label column */
+.parameter-card .parameter-row strong {
+    text-align: right;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
     .parameter-card .parameter-row {
         grid-template-columns: 1fr;
         row-gap: 4px;
@@ -970,6 +977,7 @@ html {
         text-align: left;
     }
 }
+
 
     </style>
 
