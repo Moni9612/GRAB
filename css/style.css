@@ -841,4 +841,31 @@ footer {
     border-radius: 6px;
     flex-shrink: 1;
 }
+/* Homepage card figures */
 
+.benchmark .homepage-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 18px;
+}
+
+/* Figure 1 and Figure 3 */
+.benchmark .homepage-image img {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    height: 230px;
+    object-fit: contain;
+}
+
+/* Figure 2: DCD calculation video */
+.benchmark .card:nth-child(2) .homepage-image video {
+    display: block;
+    width: 100%;
+    max-width: 260px;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 6px;
+}
