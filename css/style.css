@@ -907,3 +907,15 @@ footer {
     flex-shrink: 1;
 }
 
+/* Enlarge only the first card's pipeline image */
+
+.benchmark .card:nth-child(1) .homepage-image img {
+    width: 115%;
+    max-width: none;
+    height: 230px;
+    max-height: none;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+
