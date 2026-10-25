@@ -890,7 +890,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* Apply the same dimensions to all images and videos */
