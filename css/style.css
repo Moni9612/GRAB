@@ -869,3 +869,41 @@ footer {
     object-fit: contain;
     border-radius: 6px;
 }
+
+/* ==========================================
+   HOMEPAGE - EQUAL FIGURE SIZE AND ALIGNMENT
+   ========================================== */
+
+/* Make all three cards use vertical flex layout */
+.benchmark .grid > .card {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Give all figure containers equal dimensions */
+.benchmark .card .homepage-image {
+    width: 100%;
+    height: 230px;
+    margin-top: auto;
+    padding-top: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Apply the same dimensions to all images and videos */
+.benchmark .card .homepage-image img,
+.benchmark .card .homepage-image video,
+.benchmark .card:nth-child(2) .homepage-image video {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    height: 210px;
+    max-height: 210px;
+    object-fit: contain;
+    border-radius: 4px;
+    flex-shrink: 1;
+}
+
