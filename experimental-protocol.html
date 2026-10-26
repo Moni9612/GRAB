@@ -1146,19 +1146,16 @@ html {
 
 
 
-/* ==========================================
-   LEVEL 3 - RANDOMIZED SCENE GENERATION
-   ========================================== */
+/* Level 3: Heading and paragraph left, video right */
 
 .level3-randomized-layout {
     display: grid;
-    grid-template-columns: 1.65fr 1fr;
+    grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
     gap: 25px;
     align-items: center;
     margin: 25px 0;
 }
 
-/* Left: Heading and paragraph */
 .level3-randomized-content {
     min-width: 0;
     border-left: 2px solid #d5e5da;
@@ -1176,8 +1173,8 @@ html {
     line-height: 1.8;
 }
 
-/* Right: Video */
 .level3-randomized-video {
+    min-width: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1192,7 +1189,6 @@ html {
     border-radius: 6px;
 }
 
-/* Mobile responsiveness */
 @media (max-width: 768px) {
     .level3-randomized-layout {
         grid-template-columns: 1fr;
@@ -1200,7 +1196,6 @@ html {
     }
 
     .level3-randomized-video video {
-        max-width: 100%;
         height: auto;
     }
 }
@@ -1746,13 +1741,11 @@ html {
         </div>
 
 
-
-
 <!-- Level 3: Randomized Scene Generation -->
 
 <div class="level3-randomized-layout">
 
-    <!-- Left: Heading and Paragraph -->
+    <!-- LEFT COLUMN: Heading + Paragraph -->
     <div class="level3-randomized-content">
 
         <h4>Randomized Scene Generation</h4>
@@ -1768,8 +1761,9 @@ html {
 
     </div>
 
-    <!-- Right: Level 3 Video -->
+    <!-- RIGHT COLUMN: Video -->
     <div class="level3-randomized-video">
+
         <video autoplay muted loop playsinline preload="metadata">
             <source
                 src="assets/images/Level%203.mp4"
@@ -1777,11 +1771,10 @@ html {
             >
             Your browser does not support the video tag.
         </video>
+
     </div>
 
 </div>
-
-
 
             <p>
             The grasp-generation, post-processing and selection procedure specified for Level 2 should also be applied in Level 3. 
