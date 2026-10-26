@@ -1082,21 +1082,9 @@ html {
 }
 
 
-/* ==========================================
-   LEVEL 2 - RANDOMIZED SCENE GENERATION
-   ========================================== */
+/* Level 2: Heading above paragraph and video */
 
-.level2-randomized-layout {
-    display: grid;
-    grid-template-columns: 1.65fr 1fr;
-    gap: 25px;
-    align-items: center;
-    margin: 25px 0;
-}
-
-/* Left: Description */
 .level2-randomized-content {
-    min-width: 0;
     border-left: 2px solid #d5e5da;
     padding-left: 22px;
 }
@@ -1106,12 +1094,19 @@ html {
     margin: 0 0 18px;
 }
 
-.level2-randomized-content p {
+.level2-randomized-layout {
+    display: grid;
+    grid-template-columns: 1.65fr 1fr;
+    gap: 25px;
+    align-items: center;
+    margin: 0;
+}
+
+.level2-randomized-layout p {
     margin: 0;
     line-height: 1.8;
 }
 
-/* Right: Video */
 .level2-randomized-video {
     display: flex;
     justify-content: center;
@@ -1122,7 +1117,7 @@ html {
     display: block;
     width: 100%;
     max-width: 340px;
-    height: 220px;
+    height: 180px;
     object-fit: contain;
     border-radius: 6px;
 }
@@ -1139,6 +1134,7 @@ html {
         height: auto;
     }
 }
+
 
     </style>
 
@@ -1584,10 +1580,10 @@ html {
 
         
 <div class="level2-randomized-layout">
-
+    <h4>Randomized Scene Generation</h4>
     <!-- Left: Randomized Scene Generation -->
     <div class="level2-randomized-content">
-        <h4>Randomized Scene Generation</h4>
+        
 
         <p>
             For each repetition, the objects belonging to a cluster
