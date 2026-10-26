@@ -1145,6 +1145,62 @@ html {
 }
 
 
+/* ==========================================
+   LEVEL 3 - RANDOMIZED SCENE GENERATION
+   ========================================== */
+
+.level3-randomized-content {
+    border-left: 2px solid #d5e5da;
+    padding-left: 22px;
+    margin-left: 20px;
+}
+
+.level3-randomized-content h4 {
+    color: #1E7A55;
+    margin: 0 0 18px;
+}
+
+.level3-randomized-layout {
+    display: grid;
+    grid-template-columns: 1.65fr 1fr;
+    gap: 25px;
+    align-items: center;
+    margin: 0;
+}
+
+.level3-randomized-layout p {
+    margin: 0;
+    line-height: 1.8;
+}
+
+.level3-randomized-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.level3-randomized-video video {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .level3-randomized-layout {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .level3-randomized-video video {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
     </style>
 
 </head>
@@ -1686,16 +1742,40 @@ html {
         </div>
 
 
-        <div class="protocol-subsection">
 
-            <h3>Randomized Scene Generation</h3>
+<!-- Level 3: Randomized Scene Generation -->
 
-            <p>
-            For each repetition, the objects from the selected cluster pair need to be randomly dropped into the workspace to produce a new heavy-clutter arrangement. 
-                The resulting scenes should vary in object orientation, occlusion and contact interactions while retaining the same cluster-pair composition.
+<div class="level3-randomized-content">
+
+    <h4>Randomized Scene Generation</h4>
+
+    <div class="level3-randomized-layout">
+
+        <!-- Left: Paragraph -->
+        <p>
+            For each repetition, the objects from the selected cluster
+            pair need to be randomly dropped into the workspace to
+            produce a new heavy-clutter arrangement. The resulting
+            scenes should vary in object orientation, occlusion and
+            contact interactions while retaining the same cluster-pair
+            composition.
         </p>
 
+        <!-- Right: Level 3 video -->
+        <div class="level3-randomized-video">
+            <video autoplay muted loop playsinline preload="metadata">
+                <source
+                    src="assets/images/Level%203.mp4"
+                    type="video/mp4"
+                >
+                Your browser does not support the video tag.
+            </video>
         </div>
+
+    </div>
+
+</div>
+
 
             <p>
             The grasp-generation, post-processing and selection procedure specified for Level 2 should also be applied in Level 3. 
