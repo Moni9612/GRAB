@@ -1200,6 +1200,109 @@ html {
     }
 }
 
+/* ==========================================
+   LEVEL 4 - MIXED-SCENE GENERATION
+   ========================================== */
+
+/* Top: Description on left, video on right */
+.level4-mixed-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* Left: Heading and description */
+.level4-mixed-content {
+    min-width: 0;
+}
+
+.level4-mixed-content h3 {
+    color: #1E7A55;
+    margin: 0 0 18px;
+}
+
+.level4-mixed-content p {
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* Right: Video */
+.level4-mixed-video {
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.level4-mixed-video video {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+/* Three configuration cards in one row */
+.level4-config-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin: 30px 0;
+}
+
+.level4-config-grid .processing-step {
+    margin: 0;
+    min-width: 0;
+    padding: 22px 24px;
+    background: #f5f7f4;
+    border: 1px solid #dce5dd;
+    border-left: 3px solid #1E7A55;
+    border-radius: 6px;
+}
+
+.level4-config-grid .processing-step h4 {
+    color: #1E7A55;
+    margin: 0 0 14px;
+}
+
+.level4-config-grid .processing-step p {
+    margin: 0;
+    line-height: 1.75;
+}
+
+/* Bottom paragraph */
+.level4-mixed-footer {
+    margin: 25px 0 0;
+    line-height: 1.8;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .level4-config-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .level4-mixed-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .level4-mixed-video video {
+        max-width: 100%;
+    }
+
+    .level4-config-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
     </style>
 
 </head>
@@ -1851,55 +1954,91 @@ html {
         </div>
 
 
-        <div class="protocol-subsection">
+        
+<!-- Level 4: Mixed-Scene Generation -->
+
+<div class="protocol-subsection">
+
+    <!-- Top section: Description and Video -->
+    <div class="level4-mixed-layout">
+
+        <!-- Left: Heading and Description -->
+        <div class="level4-mixed-content">
 
             <h3>Mixed-Scene Generation</h3>
 
             <p>
-            The three inorganic clusters defined in Level 2 need to be reused to construct the mixed-waste scenes. Each seven-object inorganic cluster should be combined separately with the seven prepared organic samples, yielding three mixed configurations containing 14 objects each for the rigid and Fin-Ray grippers. For suction experiments, plastic bags and mesh bags should be excluded, leaving five inorganic contaminants alongside the seven organic items.
-        </p>
-
-            <div class="processing-step">
-
-                <h4>Configuration 1</h4>
-
-                <p>
-                    Inorganic Cluster 1
-                    combined with seven organic
-                    food waste items.
-                </p>
-
-            </div>
-
-            <div class="processing-step">
-
-                <h4>Configuration 2</h4>
-
-                <p>
-                    Inorganic Cluster 2
-                    combined with seven organic
-                    food waste items.
-                </p>
-
-            </div>
-
-            <div class="processing-step">
-
-                <h4>Configuration 3</h4>
-
-                <p>
-                    Inorganic Cluster 3
-                    combined with seven organic
-                    food waste items.
-                </p>
-
-            </div>
-
-            <p>
-            For each configuration, the inorganic and organic objects need to be randomly introduced into the experimental workspace to create heterogeneous clutter. The randomisation should vary positions, orientations, occlusions and contact conditions while maintaining the specified material composition. The prepared organic residue should be retained as part of the moisture-affected scene.
-        </p>
+                The three inorganic clusters defined in Level 2 need to be
+                reused to construct the mixed-waste scenes. Each seven-object
+                inorganic cluster should be combined separately with the
+                seven prepared organic samples, yielding three mixed
+                configurations containing 14 objects each for the rigid
+                and Fin-Ray grippers. For suction experiments, plastic
+                bags and mesh bags should be excluded, leaving five
+                inorganic contaminants alongside the seven organic items.
+            </p>
 
         </div>
+
+        <!-- Right: Level 4 Video -->
+        <div class="level4-mixed-video">
+
+            <video autoplay muted loop playsinline preload="metadata">
+                <source
+                    src="assets/images/Level%204%20.mp4"
+                    type="video/mp4"
+                >
+                Your browser does not support the video tag.
+            </video>
+
+        </div>
+
+    </div>
+
+
+    <!-- Three Configuration Cards -->
+    <div class="level4-config-grid">
+
+        <div class="processing-step">
+            <h4>Configuration 1</h4>
+            <p>
+                Inorganic Cluster 1 combined with seven
+                organic food waste items.
+            </p>
+        </div>
+
+        <div class="processing-step">
+            <h4>Configuration 2</h4>
+            <p>
+                Inorganic Cluster 2 combined with seven
+                organic food waste items.
+            </p>
+        </div>
+
+        <div class="processing-step">
+            <h4>Configuration 3</h4>
+            <p>
+                Inorganic Cluster 3 combined with seven
+                organic food waste items.
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- Bottom: Randomisation Description -->
+    <p class="level4-mixed-footer">
+        For each configuration, the inorganic and organic objects need
+        to be randomly introduced into the experimental workspace to
+        create heterogeneous clutter. The randomisation should vary
+        positions, orientations, occlusions and contact conditions
+        while maintaining the specified material composition. The
+        prepared organic residue should be retained as part of the
+        moisture-affected scene.
+    </p>
+
+</div>
+
 
             <p>
             The grasp-generation and selection procedure established in Level 2 should be retained for Level 4: AnyGrasp or SuctionNet needs to
