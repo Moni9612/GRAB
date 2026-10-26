@@ -1082,6 +1082,64 @@ html {
 }
 
 
+/* ==========================================
+   LEVEL 2 - RANDOMIZED SCENE GENERATION
+   ========================================== */
+
+.level2-randomized-layout {
+    display: grid;
+    grid-template-columns: 1.65fr 1fr;
+    gap: 25px;
+    align-items: center;
+    margin: 25px 0;
+}
+
+/* Left: Description */
+.level2-randomized-content {
+    min-width: 0;
+    border-left: 2px solid #d5e5da;
+    padding-left: 22px;
+}
+
+.level2-randomized-content h4 {
+    color: #1E7A55;
+    margin: 0 0 18px;
+}
+
+.level2-randomized-content p {
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* Right: Video */
+.level2-randomized-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.level2-randomized-video video {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    height: 220px;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .level2-randomized-layout {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .level2-randomized-video video {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
     </style>
 
 </head>
@@ -1524,16 +1582,36 @@ html {
         </div>
 
 
-        <div class="protocol-subsection">
+        
+<div class="level2-randomized-layout">
 
-            <h3>Randomized Scene Generation</h3>
+    <!-- Left: Randomized Scene Generation -->
+    <div class="level2-randomized-content">
+        <h4>Randomized Scene Generation</h4>
 
-            <p>
-            For each repetition, the objects belonging to a cluster need to be randomly dropped from a storage box into the experimental workspace. 
-                This randomised placement should generate variations in object position, orientation, contact and partial occlusion without changing the predefined cluster composition.
+        <p>
+            For each repetition, the objects belonging to a cluster
+            need to be randomly dropped from a storage box into the
+            experimental workspace. This randomised placement should
+            generate variations in object position, orientation,
+            contact and partial occlusion without changing the
+            predefined cluster composition.
         </p>
+    </div>
 
-        </div>
+    <!-- Right: Level 2 video -->
+    <div class="level2-randomized-video">
+        <video autoplay muted loop playsinline preload="metadata">
+            <source
+                src="assets/images/Level%202%20.mp4"
+                type="video/mp4"
+            >
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+</div>
+
 
 
         <div class="protocol-subsection">
