@@ -1025,6 +1025,56 @@ html {
     text-decoration-thickness: 2px;
 }
 
+/* ==========================================
+   LEVEL 1 - INTRODUCTION AND FIGURE
+   ========================================== */
+
+.level1-intro-layout {
+    display: grid;
+    grid-template-columns: 1.65fr 1fr;
+    gap: 30px;
+    align-items: center;
+    margin: 25px 0 30px;
+}
+
+/* Left: Description */
+.level1-intro-text {
+    min-width: 0;
+}
+
+.level1-intro-text p {
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* Right: Figure */
+.level1-intro-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.level1-intro-image img {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .level1-intro-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .level1-intro-image img {
+        max-width: 100%;
+    }
+}
+
 
     </style>
 
@@ -1296,12 +1346,36 @@ html {
 
         <h2>Single Isolated Object — Level 1</h2>
 
+       
+<!-- Level 1: Introduction with figure -->
+
+<div class="level1-intro-layout">
+
+    <!-- Left: Experimental description -->
+    <div class="level1-intro-text">
         <p>
-            For Level 1, each object needs to be placed individually at five predefined workspace positions: 
-            the four corners and the centre. Each of the 21 objects needs to be tested at all five positions using each of the three grasping modalities 
-            (For Rigid parallel-jaw gripper and Fin-Ray soft adaptive gripper refer to Parallel Grasping Pipeline, and for Suction gripper refer to Suction Grasping Pipeline), 
+            For Level 1, each object needs to be placed individually
+            at five predefined workspace positions: the four corners
+            and the centre. Each of the 21 objects needs to be tested
+            at all five positions using each of the three grasping
+            modalities (For Rigid parallel-jaw gripper and Fin-Ray
+            soft adaptive gripper refer to Parallel Grasping Pipeline,
+            and for Suction gripper refer to Suction Grasping Pipeline),
             resulting in 105 grasp attempts.
-            </p>
+        </p>
+    </div>
+
+    <!-- Right: Level 1 figure -->
+    <div class="level1-intro-image">
+        <img
+            src="assets/images/Level%201.png"
+            alt="Level 1 single isolated object experimental setup"
+            loading="lazy"
+        >
+    </div>
+
+</div>
+
        <!-- Level 1: Graspability and Performance Parameters -->
 
 <div class="level-parameters">
