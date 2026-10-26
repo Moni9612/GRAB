@@ -1145,11 +1145,22 @@ html {
 }
 
 
+
 /* ==========================================
    LEVEL 3 - RANDOMIZED SCENE GENERATION
    ========================================== */
 
+.level3-randomized-layout {
+    display: grid;
+    grid-template-columns: 1.65fr 1fr;
+    gap: 25px;
+    align-items: center;
+    margin: 25px 0;
+}
+
+/* Left: Heading and paragraph */
 .level3-randomized-content {
+    min-width: 0;
     border-left: 2px solid #d5e5da;
     padding-left: 22px;
     margin-left: 20px;
@@ -1160,19 +1171,12 @@ html {
     margin: 0 0 18px;
 }
 
-.level3-randomized-layout {
-    display: grid;
-    grid-template-columns: 1.65fr 1fr;
-    gap: 25px;
-    align-items: center;
-    margin: 0;
-}
-
-.level3-randomized-layout p {
+.level3-randomized-content p {
     margin: 0;
     line-height: 1.8;
 }
 
+/* Right: Video */
 .level3-randomized-video {
     display: flex;
     justify-content: center;
