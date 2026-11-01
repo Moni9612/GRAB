@@ -932,9 +932,12 @@ footer {
    FUNDING AND LAB ACKNOWLEDGEMENT
    ========================================== */
 
+/* Full-width Funding Section */
 .grab-funding-section {
-    background: #eef0ec;
-    padding: 35px 24px 55px;
+    background: #0b1920;
+    width: 100%;
+    padding: 45px 24px;
+    box-sizing: border-box;
 }
 
 /* Two-column layout */
@@ -1027,5 +1030,30 @@ footer {
         padding: 24px;
     }
 }
+/* Funding cards on dark navy background */
 
+.grab-lab-card,
+.grab-funding-card {
+    background: #10252d;
+    border: 1px solid #30434a;
+    border-radius: 12px;
+}
+
+/* Logo remains clearly visible */
+.grab-lab-card img {
+    display: block;
+    width: 100%;
+    max-width: 210px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Funding text */
+.grab-funding-card h3 {
+    color: #ffffff;
+}
+
+.grab-funding-card p {
+    color: #d5e0e2;
+}
 
