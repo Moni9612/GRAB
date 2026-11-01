@@ -1056,4 +1056,15 @@ footer {
 .grab-funding-card p {
     color: #d5e0e2;
 }
+/* Funding section hyperlink */
 
+.grab-funding-card .grab-funding-link {
+    color: #75c9a1;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+}
+
+.grab-funding-card .grab-funding-link:hover {
+    color: #ffffff;
+}
